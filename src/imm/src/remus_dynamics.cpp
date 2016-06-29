@@ -19,7 +19,7 @@ imm::euler msg_euler;
 Remus vehicle = Remus({1.0, 0, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0.1, 0}, 4);
 
 // the time step of the ode solver and message publishing
-double step_size = 0.01;
+double step_size = 0.05;
 
 void timerCallback(const ros::TimerEvent&)
 {
