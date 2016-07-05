@@ -7,6 +7,7 @@ project(imm)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
+  tf
   visualization_msgs
   message_generation
 )
@@ -50,7 +51,7 @@ add_definitions(-std=c++11)
 ## Generate messages in the 'msg' folder
 add_message_files(
   FILES
-  euler.msg
+  pose.msg
   control.msg
 )
 
@@ -106,7 +107,7 @@ generate_messages(
 catkin_package(
    INCLUDE_DIRS include
 #  LIBRARIES imm
-   CATKIN_DEPENDS roscpp std_msgs visualization_msgs message_runtime
+   CATKIN_DEPENDS roscpp std_msgs visualization_msgs message_runtime tf
    DEPENDS Eigen Boost
 )
 

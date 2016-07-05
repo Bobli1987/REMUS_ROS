@@ -15,14 +15,14 @@ add_custom_target(imm_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/pose.msg" NAME_WE)
+add_custom_target(_imm_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imm" "/home/bo/dev/REMUS/src/imm/msg/pose.msg" ""
+)
+
 get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
 add_custom_target(_imm_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imm" "/home/bo/dev/REMUS/src/imm/msg/control.msg" ""
-)
-
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/euler.msg" NAME_WE)
-add_custom_target(_imm_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "imm" "/home/bo/dev/REMUS/src/imm/msg/euler.msg" ""
 )
 
 #
@@ -32,13 +32,13 @@ add_custom_target(_imm_generate_messages_check_deps_${_filename}
 ### Section generating for lang: gencpp
 ### Generating Messages
 _generate_msg_cpp(imm
-  "/home/bo/dev/REMUS/src/imm/msg/control.msg"
+  "/home/bo/dev/REMUS/src/imm/msg/pose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/imm
 )
 _generate_msg_cpp(imm
-  "/home/bo/dev/REMUS/src/imm/msg/euler.msg"
+  "/home/bo/dev/REMUS/src/imm/msg/control.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/imm
@@ -58,9 +58,9 @@ add_custom_target(imm_generate_messages_cpp
 add_dependencies(imm_generate_messages imm_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/pose.msg" NAME_WE)
 add_dependencies(imm_generate_messages_cpp _imm_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/euler.msg" NAME_WE)
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
 add_dependencies(imm_generate_messages_cpp _imm_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -73,13 +73,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imm_generate_messages_cpp)
 ### Section generating for lang: genlisp
 ### Generating Messages
 _generate_msg_lisp(imm
-  "/home/bo/dev/REMUS/src/imm/msg/control.msg"
+  "/home/bo/dev/REMUS/src/imm/msg/pose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/imm
 )
 _generate_msg_lisp(imm
-  "/home/bo/dev/REMUS/src/imm/msg/euler.msg"
+  "/home/bo/dev/REMUS/src/imm/msg/control.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/imm
@@ -99,9 +99,9 @@ add_custom_target(imm_generate_messages_lisp
 add_dependencies(imm_generate_messages imm_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/pose.msg" NAME_WE)
 add_dependencies(imm_generate_messages_lisp _imm_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/euler.msg" NAME_WE)
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
 add_dependencies(imm_generate_messages_lisp _imm_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -114,13 +114,13 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS imm_generate_messages_lisp)
 ### Section generating for lang: genpy
 ### Generating Messages
 _generate_msg_py(imm
-  "/home/bo/dev/REMUS/src/imm/msg/control.msg"
+  "/home/bo/dev/REMUS/src/imm/msg/pose.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/imm
 )
 _generate_msg_py(imm
-  "/home/bo/dev/REMUS/src/imm/msg/euler.msg"
+  "/home/bo/dev/REMUS/src/imm/msg/control.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/imm
@@ -140,9 +140,9 @@ add_custom_target(imm_generate_messages_py
 add_dependencies(imm_generate_messages imm_generate_messages_py)
 
 # add dependencies to all check dependencies targets
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/pose.msg" NAME_WE)
 add_dependencies(imm_generate_messages_py _imm_generate_messages_check_deps_${_filename})
-get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/euler.msg" NAME_WE)
+get_filename_component(_filename "/home/bo/dev/REMUS/src/imm/msg/control.msg" NAME_WE)
 add_dependencies(imm_generate_messages_py _imm_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

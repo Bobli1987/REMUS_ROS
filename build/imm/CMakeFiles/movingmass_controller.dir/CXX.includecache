@@ -22,7 +22,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/bo/dev/REMUS/devel/include/imm/euler.h
+/home/bo/dev/REMUS/devel/include/imm/pose.h
 string
 -
 vector
@@ -91,8 +91,8 @@ eigen3/Eigen/Dense
 -
 controller.h
 /home/bo/dev/REMUS/src/imm/src/controller.h
-imm/euler.h
-/home/bo/dev/REMUS/src/imm/src/imm/euler.h
+imm/pose.h
+/home/bo/dev/REMUS/src/imm/src/imm/pose.h
 imm/control.h
 /home/bo/dev/REMUS/src/imm/src/imm/control.h
 remus.h

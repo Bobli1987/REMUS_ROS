@@ -45,24 +45,24 @@ CMAKE_BINARY_DIR = /home/bo/dev/REMUS/build
 # Include the progress variables for this target.
 include imm/CMakeFiles/imm_generate_messages_lisp.dir/progress.make
 
+imm/CMakeFiles/imm_generate_messages_lisp: /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/pose.lisp
 imm/CMakeFiles/imm_generate_messages_lisp: /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/control.lisp
-imm/CMakeFiles/imm_generate_messages_lisp: /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/euler.lisp
+
+/home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/pose.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
+/home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/pose.lisp: /home/bo/dev/REMUS/src/imm/msg/pose.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from imm/pose.msg"
+	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bo/dev/REMUS/src/imm/msg/pose.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg
 
 /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/control.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
 /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/control.lisp: /home/bo/dev/REMUS/src/imm/msg/control.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from imm/control.msg"
 	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bo/dev/REMUS/src/imm/msg/control.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg
 
-/home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/euler.lisp: /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py
-/home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/euler.lisp: /home/bo/dev/REMUS/src/imm/msg/euler.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Lisp code from imm/euler.msg"
-	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/bo/dev/REMUS/src/imm/msg/euler.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg
-
 imm_generate_messages_lisp: imm/CMakeFiles/imm_generate_messages_lisp
+imm_generate_messages_lisp: /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/pose.lisp
 imm_generate_messages_lisp: /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/control.lisp
-imm_generate_messages_lisp: /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/euler.lisp
 imm_generate_messages_lisp: imm/CMakeFiles/imm_generate_messages_lisp.dir/build.make
 .PHONY : imm_generate_messages_lisp
 

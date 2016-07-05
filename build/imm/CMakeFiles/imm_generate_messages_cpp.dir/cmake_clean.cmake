@@ -1,7 +1,7 @@
 FILE(REMOVE_RECURSE
   "CMakeFiles/imm_generate_messages_cpp"
+  "/home/bo/dev/REMUS/devel/include/imm/pose.h"
   "/home/bo/dev/REMUS/devel/include/imm/control.h"
-  "/home/bo/dev/REMUS/devel/include/imm/euler.h"
 )
 
 # Per-language clean rules from dependency scanning.

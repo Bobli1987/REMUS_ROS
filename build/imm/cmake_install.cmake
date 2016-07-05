@@ -34,7 +34,7 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/imm/msg" TYPE FILE FILES
-    "/home/bo/dev/REMUS/src/imm/msg/euler.msg"
+    "/home/bo/dev/REMUS/src/imm/msg/pose.msg"
     "/home/bo/dev/REMUS/src/imm/msg/control.msg"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

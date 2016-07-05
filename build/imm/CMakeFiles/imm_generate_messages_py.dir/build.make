@@ -45,32 +45,32 @@ CMAKE_BINARY_DIR = /home/bo/dev/REMUS/build
 # Include the progress variables for this target.
 include imm/CMakeFiles/imm_generate_messages_py.dir/progress.make
 
+imm/CMakeFiles/imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_pose.py
 imm/CMakeFiles/imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_control.py
-imm/CMakeFiles/imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_euler.py
 imm/CMakeFiles/imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py
+
+/home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_pose.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_pose.py: /home/bo/dev/REMUS/src/imm/msg/pose.msg
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG imm/pose"
+	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/bo/dev/REMUS/src/imm/msg/pose.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg
 
 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_control.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_control.py: /home/bo/dev/REMUS/src/imm/msg/control.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG imm/control"
 	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/bo/dev/REMUS/src/imm/msg/control.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg
 
-/home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_euler.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
-/home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_euler.py: /home/bo/dev/REMUS/src/imm/msg/euler.msg
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python from MSG imm/euler"
-	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/bo/dev/REMUS/src/imm/msg/euler.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg
-
 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py: /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py
+/home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_pose.py
 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_control.py
-/home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_euler.py
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating Python msg __init__.py for imm"
 	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg --initpy
 
 imm_generate_messages_py: imm/CMakeFiles/imm_generate_messages_py
+imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_pose.py
 imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_control.py
-imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_euler.py
 imm_generate_messages_py: /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py
 imm_generate_messages_py: imm/CMakeFiles/imm_generate_messages_py.dir/build.make
 .PHONY : imm_generate_messages_py

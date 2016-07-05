@@ -81,15 +81,20 @@ movingmass_controller_EXTERNAL_OBJECTS =
 
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: imm/CMakeFiles/movingmass_controller.dir/build.make
+/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libtf.so
+/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libtf2_ros.so
+/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libactionlib.so
+/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libmessage_filters.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libroscpp.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libtf2.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/librosconsole.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/librosconsole_log4cxx.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/librosconsole_backend_interface.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /usr/lib/liblog4cxx.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libxmlrpcpp.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/libroscpp_serialization.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /opt/ros/indigo/lib/librostime.so
 /home/bo/dev/REMUS/devel/lib/imm/movingmass_controller: /usr/lib/x86_64-linux-gnu/libboost_date_time.so

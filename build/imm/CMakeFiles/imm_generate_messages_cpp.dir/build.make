@@ -45,26 +45,26 @@ CMAKE_BINARY_DIR = /home/bo/dev/REMUS/build
 # Include the progress variables for this target.
 include imm/CMakeFiles/imm_generate_messages_cpp.dir/progress.make
 
+imm/CMakeFiles/imm_generate_messages_cpp: /home/bo/dev/REMUS/devel/include/imm/pose.h
 imm/CMakeFiles/imm_generate_messages_cpp: /home/bo/dev/REMUS/devel/include/imm/control.h
-imm/CMakeFiles/imm_generate_messages_cpp: /home/bo/dev/REMUS/devel/include/imm/euler.h
+
+/home/bo/dev/REMUS/devel/include/imm/pose.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
+/home/bo/dev/REMUS/devel/include/imm/pose.h: /home/bo/dev/REMUS/src/imm/msg/pose.msg
+/home/bo/dev/REMUS/devel/include/imm/pose.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from imm/pose.msg"
+	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bo/dev/REMUS/src/imm/msg/pose.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/include/imm -e /opt/ros/indigo/share/gencpp/cmake/..
 
 /home/bo/dev/REMUS/devel/include/imm/control.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
 /home/bo/dev/REMUS/devel/include/imm/control.h: /home/bo/dev/REMUS/src/imm/msg/control.msg
 /home/bo/dev/REMUS/devel/include/imm/control.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from imm/control.msg"
 	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bo/dev/REMUS/src/imm/msg/control.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/include/imm -e /opt/ros/indigo/share/gencpp/cmake/..
 
-/home/bo/dev/REMUS/devel/include/imm/euler.h: /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py
-/home/bo/dev/REMUS/devel/include/imm/euler.h: /home/bo/dev/REMUS/src/imm/msg/euler.msg
-/home/bo/dev/REMUS/devel/include/imm/euler.h: /opt/ros/indigo/share/gencpp/cmake/../msg.h.template
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating C++ code from imm/euler.msg"
-	cd /home/bo/dev/REMUS/build/imm && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/indigo/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/bo/dev/REMUS/src/imm/msg/euler.msg -Iimm:/home/bo/dev/REMUS/src/imm/msg -Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg -p imm -o /home/bo/dev/REMUS/devel/include/imm -e /opt/ros/indigo/share/gencpp/cmake/..
-
 imm_generate_messages_cpp: imm/CMakeFiles/imm_generate_messages_cpp
+imm_generate_messages_cpp: /home/bo/dev/REMUS/devel/include/imm/pose.h
 imm_generate_messages_cpp: /home/bo/dev/REMUS/devel/include/imm/control.h
-imm_generate_messages_cpp: /home/bo/dev/REMUS/devel/include/imm/euler.h
 imm_generate_messages_cpp: imm/CMakeFiles/imm_generate_messages_cpp.dir/build.make
 .PHONY : imm_generate_messages_cpp
 

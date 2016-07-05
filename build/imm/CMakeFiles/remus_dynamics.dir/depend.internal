@@ -3,13 +3,15 @@
 
 imm/CMakeFiles/remus_dynamics.dir/src/remus_dynamics.cpp.o
  /home/bo/dev/REMUS/devel/include/imm/control.h
- /home/bo/dev/REMUS/devel/include/imm/euler.h
+ /home/bo/dev/REMUS/devel/include/imm/pose.h
  /home/bo/dev/REMUS/src/imm/include/imm/current.h
  /home/bo/dev/REMUS/src/imm/include/imm/remus.h
  /home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
  /opt/ros/indigo/include/geometry_msgs/Point.h
+ /opt/ros/indigo/include/geometry_msgs/Pose.h
+ /opt/ros/indigo/include/geometry_msgs/Quaternion.h
  /opt/ros/indigo/include/geometry_msgs/Twist.h
  /opt/ros/indigo/include/geometry_msgs/Vector3.h
  /opt/ros/indigo/include/ros/advertise_options.h

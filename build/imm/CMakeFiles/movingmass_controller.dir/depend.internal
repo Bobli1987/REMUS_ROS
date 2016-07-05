@@ -3,7 +3,7 @@
 
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o
  /home/bo/dev/REMUS/devel/include/imm/control.h
- /home/bo/dev/REMUS/devel/include/imm/euler.h
+ /home/bo/dev/REMUS/devel/include/imm/pose.h
  /home/bo/dev/REMUS/src/imm/include/imm/controller.h
  /home/bo/dev/REMUS/src/imm/include/imm/current.h
  /home/bo/dev/REMUS/src/imm/include/imm/remus.h

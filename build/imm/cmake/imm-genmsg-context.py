@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/bo/dev/REMUS/src/imm/msg/euler.msg;/home/bo/dev/REMUS/src/imm/msg/control.msg"
+messages_str = "/home/bo/dev/REMUS/src/imm/msg/pose.msg;/home/bo/dev/REMUS/src/imm/msg/control.msg"
 services_str = ""
 pkg_name = "imm"
 dependencies_str = "std_msgs"

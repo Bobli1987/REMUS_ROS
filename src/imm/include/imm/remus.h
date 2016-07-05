@@ -88,6 +88,10 @@ public:
     vector<double> init_velocity_, init_position_;
     // current velocity and position of the vehicle
     Vector6d velocity_, position_;
+    // current euler angle of the vehicle
+    Vector3d euler_;
+    // current quaternion of the vehicle
+    Vector4d quaternion_;
     // relative velocity with respect to the ocean current
     Vector6d relative_velocity_;
     // time vector of the simulation
@@ -101,6 +105,8 @@ public:
     inline Matrix3d CrossProductOperator(const Vector3d &vec) const;
     // rotation matrix declaration
     static Matrix3d RotationMatrix(const Vector3d &angle);
+    // transformation from Euler angle representation to quaternion
+    static Vector4d Euler2q(const Vector3d &angle);
     // angular transformation matrix declaration
     static Matrix3d AngularTransMatrix(const Vector3d &angle);
     // transformation matrix from the body-fixed frame to the earth-fixed frame
@@ -144,6 +150,8 @@ Remus::Remus(const vector<double> &init_velocity, const vector<double> &init_pos
         init_velocity_(init_velocity), init_position_(init_position) {
     velocity_ << init_velocity[0], init_velocity[1], init_velocity[2], init_velocity[3], init_velocity[4], init_velocity[5];
     position_ << init_position[0], init_position[1], init_position[2], init_position[3], init_position[4], init_position[5];
+    euler_ << init_position[3], init_position[4], init_position[5];
+    quaternion_ = Euler2q(euler_);
     ocean_current_ = OceanCurrent(current_velocity);
     relative_velocity_ = velocity_ - CurrentVelocity(position_);
     velocity_history_ = {velocity_};
@@ -152,12 +160,14 @@ Remus::Remus(const vector<double> &init_velocity, const vector<double> &init_pos
     actuation_ << main_thrust, 0, 0, 0, 0, 0;
     control_on_ = control_on;
 }
+
 // The ocean current velocity with respect to the body-fixed frame
 Vector6d Remus::CurrentVelocity(const Vector6d &position) const {
     Vector3d angle;
     angle << position[3], position[4], position[5];
     return TransformationMatrix(angle).inverse() * ocean_current_.GetCurrentVelocity();
 }
+
 // The ocean current acceleration with respect to the body-fixed frame
 Vector6d Remus::CurrentAcceleration(const Vector6d &velocity, const Vector6d &position) const {
     Vector6d current_acceleration;
@@ -166,12 +176,14 @@ Vector6d Remus::CurrentAcceleration(const Vector6d &velocity, const Vector6d &po
     current_acceleration << - CrossProductOperator(angular_velocity) * CurrentVelocity(position).head(3), Vector3d::Zero();
     return current_acceleration;
 }
+
 // cross product operator
 Matrix3d Remus::CrossProductOperator(const Vector3d &vec) const {
     Matrix3d cross_product;
     cross_product << 0, -vec[2], vec[1], vec[2], 0, -vec[0], -vec[1], vec[0], 0;
     return cross_product;
 }
+
 // rotation matrix definition
 Matrix3d Remus::RotationMatrix(const Vector3d &angle) {
     Matrix3d rz, ry, rx;
@@ -180,6 +192,49 @@ Matrix3d Remus::RotationMatrix(const Vector3d &angle) {
     rx << 1, 0, 0, 0, cos(angle[0]), -sin(angle[0]), 0, sin(angle[0]), cos(angle[0]);
     return rz * ry * rx;
 }
+
+// transformation from rotation matrix to an unit quaternion
+Vector4d Remus::Euler2q(const Vector3d &angle) {
+    Vector4d q;
+    float p1, p2, p3, p4;
+    Matrix3d R = RotationMatrix(angle);
+    float trace = R.trace();
+    q << R(0,0), R(1,1), R(2,2), trace;
+    Vector4d::Index maxRow, maxCol;
+    float max = q.maxCoeff(&maxRow, &maxCol);
+    float p_i = std::sqrt(1 + 2*max - trace);
+
+    switch (maxRow) {
+    case 0: {
+        p1 = p_i;
+        p2 = (R(1,0) + R(0,1))/p_i;
+        p3 = (R(0,2) + R(2,0))/p_i;
+        p4 = (R(2,1) - R(1,2))/p_i;
+    }
+    case 1: {
+        p1 = (R(1,0) + R(0,1))/p_i;
+        p2 = p_i;
+        p3 = (R(2,1) + R(1,2))/p_i;
+        p4 = (R(0,2) - R(2,0))/p_i;
+    }
+    case 2: {
+        p1 = (R(0,2) + R(2,0))/p_i;
+        p2 = (R(2,1) + R(1,2))/p_i;
+        p3 = p_i;
+        p4 = (R(1,0) - R(0,1))/p_i;
+    }
+    case 3: {
+        p1 = (R(2,1) - R(1,2))/p_i;
+        p2 = (R(0,2) - R(2,0))/p_i;
+        p3 = (R(1,0) - R(0,1))/p_i;
+        p4 = p_i;
+    }
+    }
+    q << 0.5*p1, 0.5*p2, 0.5*p3, 0.5*p4;
+    q = q/q.dot(q);
+    return q;
+}
+
 // angular transformation matrix definition
 Matrix3d Remus::AngularTransMatrix(const Vector3d &angle) {
     if (abs(abs(angle[1]) - pi/2) <= pi/6)
@@ -190,6 +245,7 @@ Matrix3d Remus::AngularTransMatrix(const Vector3d &angle) {
                  0, sin(angle[0])/cos(angle[1]), cos(angle[0])/cos((angle[1]));
     return ang_trans;
 }
+
 // transformation matrix
 Matrix6d Remus::TransformationMatrix(const Vector3d &angle) {
     Matrix6d trans_mat;
@@ -197,12 +253,14 @@ Matrix6d Remus::TransformationMatrix(const Vector3d &angle) {
     trans_mat << RotationMatrix(angle), zeros, zeros, AngularTransMatrix(angle);
     return trans_mat;
 }
+
 // inertia moment of the rigid body
 Matrix3d Remus::InertiaMoment() const {
     Matrix3d inertia_mat;
     inertia_mat << Ixx_, -Ixy_, -Ixz_, -Ixy_, Iyy_, -Iyz_, -Ixz_, -Iyz_, Izz_;
     return inertia_mat;
 }
+
 // inertia matrix of the rigid body
 Matrix6d Remus::RigidBodyInertiaMatrix() const {
     Matrix6d inertia_mat;
@@ -211,6 +269,7 @@ Matrix6d Remus::RigidBodyInertiaMatrix() const {
                    mass_ * CrossProductOperator(cog_), InertiaMoment();
     return inertia_mat;
 }
+
 // centripetal-coriolis matrix of rigid body
 Matrix6d Remus::RigidBodyCCMatrix(const Vector6d &vec) const {
     Vector3d angular_vel = {vec[3], vec[4], vec[5]};
@@ -221,6 +280,7 @@ Matrix6d Remus::RigidBodyCCMatrix(const Vector6d &vec) const {
              -CrossProductOperator(InertiaMoment() * angular_vel);
     return cc_mat;
 }
+
 // added mass matrix
 Matrix6d Remus::AddedMassMatrix() const {
     Matrix6d added_mass;
@@ -232,6 +292,7 @@ Matrix6d Remus::AddedMassMatrix() const {
                    0, a26_, 0, a46_, 0, a66_;
     return added_mass;
 }
+
 // centripetal-coriolis matrix of added mass
 Matrix6d Remus::AddedMassCCMatrix(const Vector6d &vec) const {
     Matrix6d temp;
@@ -241,10 +302,12 @@ Matrix6d Remus::AddedMassCCMatrix(const Vector6d &vec) const {
             CrossProductOperator(lin_vel), CrossProductOperator(ang_vel);
     return temp * AddedMassMatrix();
 }
+
 // inertia moment of the displaced fluid
 Matrix3d Remus::DisplacedMassInertiaMoment() const {
     return InertiaMoment();
 }
+
 // inertia matrix of the displaced fluid
 Matrix6d Remus::DisplacedMassInertiaMatrix() const {
     Matrix6d inertia_mat;
@@ -252,6 +315,7 @@ Matrix6d Remus::DisplacedMassInertiaMatrix() const {
                    displaced_mass_ * CrossProductOperator(cob_), DisplacedMassInertiaMoment();
     return inertia_mat;
 }
+
 // centripetal-coriolis matrix of the displaced fluid
 Matrix6d Remus::DisplacedMassCCMatrix(const Vector6d &vec) const {
     Vector3d angular_vel = {vec[3], vec[4], vec[5]};
@@ -262,6 +326,7 @@ Matrix6d Remus::DisplacedMassCCMatrix(const Vector6d &vec) const {
              -CrossProductOperator(DisplacedMassInertiaMoment() * angular_vel);
     return cc_mat;
 }
+
 // viscous hydrodynamic damping vector
 Vector6d Remus::ViscousDampingVector(const Vector6d &vec) const {
     Vector6d damping1, damping2;
@@ -279,6 +344,7 @@ Vector6d Remus::ViscousDampingVector(const Vector6d &vec) const {
                 Nuv_ * vec[0] * vec[1] + Nur_ * vec[0] * vec[5];
     return damping1 + damping2;
 }
+
 // restoring force vector
 Vector6d Remus::RestoringForceVector(const Vector6d &vec) const {
     Vector6d restoring;
@@ -290,6 +356,7 @@ Vector6d Remus::RestoringForceVector(const Vector6d &vec) const {
                 -CrossProductOperator(cob_) * RotationMatrix(angle).transpose() * vb;
     return restoring;
 }
+
 // time derivative of the system state
 Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d &position, const double) const {
     Vector12d state_derivative;
@@ -317,6 +384,7 @@ Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d &posit
     diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1;
     return diag2.asDiagonal() * state_derivative;
 }
+
 // class operator to integrate
 void Remus::operator()(const vector<double> &state, vector<double> &state_derivative, const double t) {
     Vector6d velocity, position;
@@ -356,6 +424,8 @@ void RunRemus(Remus &vehicle, const size_t &step_number = 600, const double &ste
         vehicle.time_vec_.push_back(vehicle.current_time_);
         vehicle.velocity_ << state[0], state[1], state[2], state[3], state[4], state[5];
         vehicle.position_ << state[6], state[7], state[8], state[9], state[10], state[11];
+//        vehicle.euler_ << state[9], state[10], state[11];
+//        vehicle.quaternion_ = vehicle.Euler2q(vehicle.euler_);
         vehicle.relative_velocity_ = vehicle.velocity_ - vehicle.CurrentVelocity(vehicle.position_);
         vehicle.velocity_history_.push_back(vehicle.velocity_);
         vehicle.position_history_.push_back(vehicle.position_);

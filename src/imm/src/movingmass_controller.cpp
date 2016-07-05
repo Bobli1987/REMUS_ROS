@@ -3,7 +3,7 @@
 #include <geometry_msgs/Twist.h>
 #include <eigen3/Eigen/Dense>
 #include "controller.h"
-#include "imm/euler.h"
+#include "imm/pose.h"
 #include "imm/control.h"
 #include "remus.h"
 
@@ -26,9 +26,9 @@ imm::control msg_actuation;
 Remus vehicle = Remus();
 MovingMassController controller = MovingMassController(vehicle, 0.3, 0.8, 1, 1, 1);
 
-void callback_euler(const imm::euler &msg_euler)
+void callback_pose(const imm::pose &msg_pose)
 {
-    position << 0, 0, 0, msg_euler.roll, 0, msg_euler.yaw;
+    position << 0, 0, 0, msg_pose.roll, 0, msg_pose.yaw;
 }
 
 void callback_rvel(const geometry_msgs::Twist &msg_rvel)
@@ -59,7 +59,7 @@ int main(int argc, char **argv) {
 
     // create a publisher and two subscribers
     pubPtr_control = new ros::Publisher(nh.advertise<imm::control>("actuation", 1000));
-    ros::Subscriber sub_euler = nh.subscribe("remus_euler", 1000, &callback_euler);
+    ros::Subscriber sub_pose = nh.subscribe("remus_pose", 1000, &callback_pose);
     ros::Subscriber sub_relVel = nh.subscribe("remus_relVel", 1000, &callback_rvel);
 
     ros::spin();
