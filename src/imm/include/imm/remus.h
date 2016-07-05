@@ -205,30 +205,30 @@ Vector4d Remus::Euler2q(const Vector3d &angle) {
     float p_i = std::sqrt(1 + 2*max - trace);
 
     switch (maxRow) {
-    case 0: {
+    case 0:
         p1 = p_i;
         p2 = (R(1,0) + R(0,1))/p_i;
         p3 = (R(0,2) + R(2,0))/p_i;
         p4 = (R(2,1) - R(1,2))/p_i;
-    }
-    case 1: {
+        break;
+    case 1:
         p1 = (R(1,0) + R(0,1))/p_i;
         p2 = p_i;
         p3 = (R(2,1) + R(1,2))/p_i;
         p4 = (R(0,2) - R(2,0))/p_i;
-    }
-    case 2: {
+        break;
+    case 2:
         p1 = (R(0,2) + R(2,0))/p_i;
         p2 = (R(2,1) + R(1,2))/p_i;
         p3 = p_i;
         p4 = (R(1,0) - R(0,1))/p_i;
-    }
-    case 3: {
+        break;
+    case 3:
         p1 = (R(2,1) - R(1,2))/p_i;
         p2 = (R(0,2) - R(2,0))/p_i;
         p3 = (R(1,0) - R(0,1))/p_i;
         p4 = p_i;
-    }
+        break;
     }
     q << 0.5*p1, 0.5*p2, 0.5*p3, 0.5*p4;
     q = q/q.dot(q);
@@ -424,7 +424,7 @@ void RunRemus(Remus &vehicle, const size_t &step_number = 600, const double &ste
         vehicle.time_vec_.push_back(vehicle.current_time_);
         vehicle.velocity_ << state[0], state[1], state[2], state[3], state[4], state[5];
         vehicle.position_ << state[6], state[7], state[8], state[9], state[10], state[11];
-//        vehicle.euler_ << state[9], state[10], state[11];
+        vehicle.euler_ << state[9], state[10], state[11];
 //        vehicle.quaternion_ = vehicle.Euler2q(vehicle.euler_);
         vehicle.relative_velocity_ = vehicle.velocity_ - vehicle.CurrentVelocity(vehicle.position_);
         vehicle.velocity_history_.push_back(vehicle.velocity_);

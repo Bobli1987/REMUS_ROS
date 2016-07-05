@@ -11,12 +11,15 @@ typedef Matrix<double, 6, 1> Vector6d;
 
 Vector6d rvelocity;
 Vector6d position;
+
 // actuation computed by the controller
 vector<double> actuation;
 
 // the time step of the controller
 double step_size = 0.1;
 
+// reference heading angle
+double heading_ref = std::atan(-0.1);
 
 // the publisher and message
 ros::Publisher *pubPtr_control;
@@ -39,7 +42,7 @@ void callback_rvel(const geometry_msgs::Twist &msg_rvel)
 void timerCallback(const ros::TimerEvent)
 {
     // compute the actuation
-    actuation = controller.ComputeActuation(rvelocity, position, 0, step_size);
+    actuation = controller.ComputeActuation(rvelocity, position, heading_ref, step_size);
 
     // publish the control signal
     msg_actuation.mass_position = actuation[0];

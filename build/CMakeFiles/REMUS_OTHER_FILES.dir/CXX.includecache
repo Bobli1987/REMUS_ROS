@@ -24,20 +24,6 @@ imm/control.h
 remus.h
 /home/bo/dev/REMUS/src/imm/src/remus.h
 
-/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp
-ros/ros.h
--
-geometry_msgs/Twist.h
--
-geometry_msgs/Pose.h
--
-remus.h
-/home/bo/dev/REMUS/src/imm/src/remus.h
-imm/pose.h
-/home/bo/dev/REMUS/src/imm/src/imm/pose.h
-imm/control.h
-/home/bo/dev/REMUS/src/imm/src/imm/control.h
-
 /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
 ros/ros.h
 -

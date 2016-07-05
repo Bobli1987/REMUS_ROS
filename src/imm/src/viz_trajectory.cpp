@@ -12,7 +12,7 @@ void callback_pos(const imm::pose &msg_pos)
 {
     // update the points of the line_strip
     p.x = msg_pos.x;
-    p.y = -msg_pos.y; // add the minus sign because of the transform from world to the earth frame
+    p.y = -msg_pos.y; // add the minus sign because of the transformation from world to the earth frame
     p.z = -msg_pos.z;
     trajectory.points.push_back(p);
 
@@ -41,8 +41,6 @@ int main(int argc, char **argv)
     pubPtr_trajectory = new ros::Publisher(nh.advertise<visualization_msgs::Marker>("remus_trajectory", 1000));
     ros::Subscriber sub_pos = nh.subscribe("remus_pose", 1000, &callback_pos);
 
-
-
     // define the marker as the trajectory
     trajectory.header.frame_id = "world";
     trajectory.header.stamp = ros::Time::now();
@@ -56,7 +54,7 @@ int main(int argc, char **argv)
     trajectory.color.a = 1.0;
 
     // control the publishing rate
-    ros::Rate r(5);
+    ros::Rate r(10);
 
     while (ros::ok()) {
         pubPtr_trajectory->publish(trajectory);
