@@ -178,6 +178,48 @@ _imm_generate_messages_check_deps_euler/fast:
 .PHONY : _imm_generate_messages_check_deps_euler/fast
 
 # Convenience name for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 imm/CMakeFiles/imm_gencpp.dir/rule:
 	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/imm_gencpp.dir/rule
 .PHONY : imm/CMakeFiles/imm_gencpp.dir/rule
@@ -429,6 +471,62 @@ std_msgs_generate_messages_py/fast:
 	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/std_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+# Convenience name for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_cpp: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_py: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+imm/CMakeFiles/viz_trajectory.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/viz_trajectory.dir/rule
+.PHONY : imm/CMakeFiles/viz_trajectory.dir/rule
+
+# Convenience name for target.
+viz_trajectory: imm/CMakeFiles/viz_trajectory.dir/rule
+.PHONY : viz_trajectory
+
+# fast build rule for target.
+viz_trajectory/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/build
+.PHONY : viz_trajectory/fast
+
 src/movingmass_controller.o: src/movingmass_controller.cpp.o
 .PHONY : src/movingmass_controller.o
 
@@ -477,6 +575,30 @@ src/remus_dynamics.cpp.s:
 	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/remus_dynamics.dir/build.make imm/CMakeFiles/remus_dynamics.dir/src/remus_dynamics.cpp.s
 .PHONY : src/remus_dynamics.cpp.s
 
+src/viz_trajectory.o: src/viz_trajectory.cpp.o
+.PHONY : src/viz_trajectory.o
+
+# target to build an object file
+src/viz_trajectory.cpp.o:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/src/viz_trajectory.cpp.o
+.PHONY : src/viz_trajectory.cpp.o
+
+src/viz_trajectory.i: src/viz_trajectory.cpp.i
+.PHONY : src/viz_trajectory.i
+
+# target to preprocess a source file
+src/viz_trajectory.cpp.i:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/src/viz_trajectory.cpp.i
+.PHONY : src/viz_trajectory.cpp.i
+
+src/viz_trajectory.s: src/viz_trajectory.cpp.s
+.PHONY : src/viz_trajectory.s
+
+# target to generate assembly for a file
+src/viz_trajectory.cpp.s:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/src/viz_trajectory.cpp.s
+.PHONY : src/viz_trajectory.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -486,6 +608,9 @@ help:
 	@echo "... _imm_generate_messages_check_deps_control"
 	@echo "... _imm_generate_messages_check_deps_euler"
 	@echo "... edit_cache"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... imm_gencpp"
 	@echo "... imm_generate_messages"
 	@echo "... imm_generate_messages_cpp"
@@ -510,12 +635,19 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... test"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_py"
+	@echo "... viz_trajectory"
 	@echo "... src/movingmass_controller.o"
 	@echo "... src/movingmass_controller.i"
 	@echo "... src/movingmass_controller.s"
 	@echo "... src/remus_dynamics.o"
 	@echo "... src/remus_dynamics.i"
 	@echo "... src/remus_dynamics.s"
+	@echo "... src/viz_trajectory.o"
+	@echo "... src/viz_trajectory.i"
+	@echo "... src/viz_trajectory.s"
 .PHONY : help
 
 

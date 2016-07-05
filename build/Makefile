@@ -280,6 +280,45 @@ _imm_generate_messages_check_deps_euler/fast:
 .PHONY : _imm_generate_messages_check_deps_euler/fast
 
 #=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_cpp
+
+# Build rule for target.
+geometry_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_cpp
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+.PHONY : geometry_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_lisp
+
+# Build rule for target.
+geometry_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_lisp
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# fast build rule for target.
+geometry_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+.PHONY : geometry_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named geometry_msgs_generate_messages_py
+
+# Build rule for target.
+geometry_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 geometry_msgs_generate_messages_py
+.PHONY : geometry_msgs_generate_messages_py
+
+# fast build rule for target.
+geometry_msgs_generate_messages_py/fast:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+.PHONY : geometry_msgs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named imm_gencpp
 
 # Build rule for target.
@@ -513,6 +552,58 @@ std_msgs_generate_messages_py/fast:
 	$(MAKE) -f imm/CMakeFiles/std_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named visualization_msgs_generate_messages_cpp
+
+# Build rule for target.
+visualization_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization_msgs_generate_messages_cpp
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+.PHONY : visualization_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named visualization_msgs_generate_messages_lisp
+
+# Build rule for target.
+visualization_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization_msgs_generate_messages_lisp
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named visualization_msgs_generate_messages_py
+
+# Build rule for target.
+visualization_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 visualization_msgs_generate_messages_py
+.PHONY : visualization_msgs_generate_messages_py
+
+# fast build rule for target.
+visualization_msgs_generate_messages_py/fast:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+.PHONY : visualization_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named viz_trajectory
+
+# Build rule for target.
+viz_trajectory: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 viz_trajectory
+.PHONY : viz_trajectory
+
+# fast build rule for target.
+viz_trajectory/fast:
+	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/build
+.PHONY : viz_trajectory/fast
+
 imm/src/movingmass_controller.o: imm/src/movingmass_controller.cpp.o
 .PHONY : imm/src/movingmass_controller.o
 
@@ -561,6 +652,30 @@ imm/src/remus_dynamics.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.s
 .PHONY : imm/src/remus_dynamics.cpp.s
 
+imm/src/viz_trajectory.o: imm/src/viz_trajectory.cpp.o
+.PHONY : imm/src/viz_trajectory.o
+
+# target to build an object file
+imm/src/viz_trajectory.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o
+.PHONY : imm/src/viz_trajectory.cpp.o
+
+imm/src/viz_trajectory.i: imm/src/viz_trajectory.cpp.i
+.PHONY : imm/src/viz_trajectory.i
+
+# target to preprocess a source file
+imm/src/viz_trajectory.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.i
+.PHONY : imm/src/viz_trajectory.cpp.i
+
+imm/src/viz_trajectory.s: imm/src/viz_trajectory.cpp.s
+.PHONY : imm/src/viz_trajectory.s
+
+# target to generate assembly for a file
+imm/src/viz_trajectory.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.s
+.PHONY : imm/src/viz_trajectory.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -584,6 +699,9 @@ help:
 	@echo "... gtest_main"
 	@echo "... _imm_generate_messages_check_deps_control"
 	@echo "... _imm_generate_messages_check_deps_euler"
+	@echo "... geometry_msgs_generate_messages_cpp"
+	@echo "... geometry_msgs_generate_messages_lisp"
+	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... imm_gencpp"
 	@echo "... imm_generate_messages"
 	@echo "... imm_generate_messages_cpp"
@@ -602,12 +720,19 @@ help:
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... visualization_msgs_generate_messages_cpp"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... visualization_msgs_generate_messages_py"
+	@echo "... viz_trajectory"
 	@echo "... imm/src/movingmass_controller.o"
 	@echo "... imm/src/movingmass_controller.i"
 	@echo "... imm/src/movingmass_controller.s"
 	@echo "... imm/src/remus_dynamics.o"
 	@echo "... imm/src/remus_dynamics.i"
 	@echo "... imm/src/remus_dynamics.s"
+	@echo "... imm/src/viz_trajectory.o"
+	@echo "... imm/src/viz_trajectory.i"
+	@echo "... imm/src/viz_trajectory.s"
 .PHONY : help
 
 

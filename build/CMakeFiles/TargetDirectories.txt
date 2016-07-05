@@ -4,6 +4,9 @@
 /home/bo/dev/REMUS/build/CMakeFiles/clean_test_results.dir
 /home/bo/dev/REMUS/build/CMakeFiles/download_extra_data.dir
 /home/bo/dev/REMUS/build/CMakeFiles/doxygen.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/geometry_msgs_generate_messages_py.dir
 /home/bo/dev/REMUS/build/gtest/CMakeFiles/gtest.dir
 /home/bo/dev/REMUS/build/gtest/CMakeFiles/gtest_main.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_gencpp.dir
@@ -26,3 +29,7 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/bo/dev/REMUS/build/CMakeFiles/tests.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/visualization_msgs_generate_messages_py.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/viz_trajectory.dir

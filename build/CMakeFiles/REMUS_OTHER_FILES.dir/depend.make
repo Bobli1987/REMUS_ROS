@@ -5,3 +5,5 @@ CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o: /home/bo/d
 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o: /home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp
 
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o: /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
+

@@ -5,7 +5,7 @@
       <Option title="imm" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\imm\;CMake Files\..\build\imm\catkin_generated\;CMake Files\..\build\imm\cmake\;CMake Files\..\devel\;CMake Files\..\devel\share\;CMake Files\..\devel\share\imm\;CMake Files\..\devel\share\imm\cmake\;CMake Files\imm\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\imm\;CMake Files\..\build\imm\catkin_generated\;CMake Files\..\build\imm\cmake\;CMake Files\..\devel\;CMake Files\..\devel\share\;CMake Files\..\devel\share\imm\;CMake Files\..\devel\share\imm\cmake\;CMake Files\imm\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/bo/dev/REMUS/build/imm" />
@@ -32,6 +32,36 @@
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 _imm_generate_messages_check_deps_euler" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="geometry_msgs_generate_messages_cpp">
+         <Option working_dir="/home/bo/dev/REMUS/build/imm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="geometry_msgs_generate_messages_lisp">
+         <Option working_dir="/home/bo/dev/REMUS/build/imm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="geometry_msgs_generate_messages_py">
+         <Option working_dir="/home/bo/dev/REMUS/build/imm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 geometry_msgs_generate_messages_py" />
             <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
@@ -321,10 +351,104 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="visualization_msgs_generate_messages_cpp">
+         <Option working_dir="/home/bo/dev/REMUS/build/imm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 visualization_msgs_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="visualization_msgs_generate_messages_lisp">
+         <Option working_dir="/home/bo/dev/REMUS/build/imm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 visualization_msgs_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="visualization_msgs_generate_messages_py">
+         <Option working_dir="/home/bo/dev/REMUS/build/imm" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 visualization_msgs_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="viz_trajectory">
+         <Option output="/home/bo/dev/REMUS/devel/lib/imm/viz_trajectory" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/imm" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;imm&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/imm/include/imm" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 viz_trajectory" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="viz_trajectory/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/imm/viz_trajectory" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/imm" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;imm&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/imm/include/imm" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 viz_trajectory/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       </Build>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
@@ -730,6 +854,42 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />

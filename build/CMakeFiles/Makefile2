@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/bo/dev/REMUS/build
 CMakeFiles/REMUS_OTHER_FILES.dir/all:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/depend
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  1 2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  1 2 3
 	@echo "Built target REMUS_OTHER_FILES"
 .PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/all
 
@@ -69,7 +69,7 @@ all: CMakeFiles/REMUS_OTHER_FILES.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/REMUS_OTHER_FILES.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/REMUS_OTHER_FILES.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/rule
@@ -265,7 +265,7 @@ gtest/preinstall:
 gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest.dir/build.make gtest/CMakeFiles/gtest.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  4
 	@echo "Built target gtest"
 .PHONY : gtest/CMakeFiles/gtest.dir/all
 
@@ -296,7 +296,7 @@ clean: gtest/CMakeFiles/gtest.dir/clean
 gtest/CMakeFiles/gtest_main.dir/all: gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/CMakeFiles/gtest_main.dir/build.make gtest/CMakeFiles/gtest_main.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  5
 	@echo "Built target gtest_main"
 .PHONY : gtest/CMakeFiles/gtest_main.dir/all
 
@@ -327,11 +327,15 @@ clean: gtest/CMakeFiles/gtest_main.dir/clean
 imm/all: imm/CMakeFiles/imm_generate_messages.dir/all
 imm/all: imm/CMakeFiles/movingmass_controller.dir/all
 imm/all: imm/CMakeFiles/remus_dynamics.dir/all
+imm/all: imm/CMakeFiles/viz_trajectory.dir/all
 .PHONY : imm/all
 
 # Convenience name for "clean" pass in the directory.
 imm/clean: imm/CMakeFiles/_imm_generate_messages_check_deps_control.dir/clean
 imm/clean: imm/CMakeFiles/_imm_generate_messages_check_deps_euler.dir/clean
+imm/clean: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+imm/clean: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+imm/clean: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
 imm/clean: imm/CMakeFiles/imm_gencpp.dir/clean
 imm/clean: imm/CMakeFiles/imm_generate_messages.dir/clean
 imm/clean: imm/CMakeFiles/imm_generate_messages_cpp.dir/clean
@@ -350,6 +354,10 @@ imm/clean: imm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 imm/clean: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
 imm/clean: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
 imm/clean: imm/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+imm/clean: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
+imm/clean: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
+imm/clean: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
+imm/clean: imm/CMakeFiles/viz_trajectory.dir/clean
 .PHONY : imm/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -419,6 +427,99 @@ clean: imm/CMakeFiles/_imm_generate_messages_check_deps_euler.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target geometry_msgs_generate_messages_cpp"
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_cpp: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
+.PHONY : geometry_msgs_generate_messages_cpp
+
+# clean rule for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target geometry_msgs_generate_messages_lisp"
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_lisp: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
+.PHONY : geometry_msgs_generate_messages_lisp
+
+# clean rule for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target imm/CMakeFiles/geometry_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target geometry_msgs_generate_messages_py"
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+geometry_msgs_generate_messages_py: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+.PHONY : geometry_msgs_generate_messages_py
+
+# clean rule for target.
+imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target imm/CMakeFiles/imm_gencpp.dir
 
 # All Build rule for target.
@@ -453,8 +554,8 @@ clean: imm/CMakeFiles/imm_gencpp.dir/clean
 # Target rules for target imm/CMakeFiles/imm_generate_messages.dir
 
 # All Build rule for target.
-imm/CMakeFiles/imm_generate_messages.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
 imm/CMakeFiles/imm_generate_messages.dir/all: imm/CMakeFiles/imm_generate_messages_cpp.dir/all
+imm/CMakeFiles/imm_generate_messages.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
 imm/CMakeFiles/imm_generate_messages.dir/all: imm/CMakeFiles/imm_generate_messages_py.dir/all
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages.dir/build.make imm/CMakeFiles/imm_generate_messages.dir/depend
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages.dir/build.make imm/CMakeFiles/imm_generate_messages.dir/build
@@ -495,7 +596,7 @@ imm/CMakeFiles/imm_generate_messages_cpp.dir/all: imm/CMakeFiles/std_msgs_genera
 imm/CMakeFiles/imm_generate_messages_cpp.dir/all: imm/CMakeFiles/_imm_generate_messages_check_deps_control.dir/all
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages_cpp.dir/build.make imm/CMakeFiles/imm_generate_messages_cpp.dir/depend
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages_cpp.dir/build.make imm/CMakeFiles/imm_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  5 6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  6 7
 	@echo "Built target imm_generate_messages_cpp"
 .PHONY : imm/CMakeFiles/imm_generate_messages_cpp.dir/all
 
@@ -528,7 +629,7 @@ imm/CMakeFiles/imm_generate_messages_lisp.dir/all: imm/CMakeFiles/std_msgs_gener
 imm/CMakeFiles/imm_generate_messages_lisp.dir/all: imm/CMakeFiles/_imm_generate_messages_check_deps_control.dir/all
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages_lisp.dir/build.make imm/CMakeFiles/imm_generate_messages_lisp.dir/depend
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages_lisp.dir/build.make imm/CMakeFiles/imm_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  7 8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  8 9
 	@echo "Built target imm_generate_messages_lisp"
 .PHONY : imm/CMakeFiles/imm_generate_messages_lisp.dir/all
 
@@ -561,7 +662,7 @@ imm/CMakeFiles/imm_generate_messages_py.dir/all: imm/CMakeFiles/std_msgs_generat
 imm/CMakeFiles/imm_generate_messages_py.dir/all: imm/CMakeFiles/_imm_generate_messages_check_deps_control.dir/all
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages_py.dir/build.make imm/CMakeFiles/imm_generate_messages_py.dir/depend
 	$(MAKE) -f imm/CMakeFiles/imm_generate_messages_py.dir/build.make imm/CMakeFiles/imm_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  9 10 11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  10 11 12
 	@echo "Built target imm_generate_messages_py"
 .PHONY : imm/CMakeFiles/imm_generate_messages_py.dir/all
 
@@ -651,21 +752,27 @@ clean: imm/CMakeFiles/imm_genpy.dir/clean
 # Target rules for target imm/CMakeFiles/movingmass_controller.dir
 
 # All Build rule for target.
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/imm_generate_messages_cpp.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_py.dir/all
 imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/std_msgs_generate_messages_py.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_py.dir/all
 imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/std_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/imm_generate_messages_cpp.dir/all
+imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
 imm/CMakeFiles/movingmass_controller.dir/all: imm/CMakeFiles/imm_generate_messages_py.dir/all
 	$(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/depend
 	$(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  12
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  13
 	@echo "Built target movingmass_controller"
 .PHONY : imm/CMakeFiles/movingmass_controller.dir/all
 
@@ -697,21 +804,27 @@ clean: imm/CMakeFiles/movingmass_controller.dir/clean
 # Target rules for target imm/CMakeFiles/remus_dynamics.dir
 
 # All Build rule for target.
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/imm_generate_messages_cpp.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_py.dir/all
 imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/std_msgs_generate_messages_py.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_py.dir/all
 imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/std_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/imm_generate_messages_cpp.dir/all
+imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
 imm/CMakeFiles/remus_dynamics.dir/all: imm/CMakeFiles/imm_generate_messages_py.dir/all
 	$(MAKE) -f imm/CMakeFiles/remus_dynamics.dir/build.make imm/CMakeFiles/remus_dynamics.dir/depend
 	$(MAKE) -f imm/CMakeFiles/remus_dynamics.dir/build.make imm/CMakeFiles/remus_dynamics.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  13
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  14
 	@echo "Built target remus_dynamics"
 .PHONY : imm/CMakeFiles/remus_dynamics.dir/all
 
@@ -1016,6 +1129,151 @@ imm/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
 
 # clean rule for target.
 clean: imm/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target visualization_msgs_generate_messages_cpp"
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_cpp: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule
+.PHONY : visualization_msgs_generate_messages_cpp
+
+# clean rule for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target visualization_msgs_generate_messages_lisp"
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# clean rule for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target imm/CMakeFiles/visualization_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target visualization_msgs_generate_messages_py"
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_py: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/rule
+.PHONY : visualization_msgs_generate_messages_py
+
+# clean rule for target.
+imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/build.make imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
+.PHONY : imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target imm/CMakeFiles/viz_trajectory.dir
+
+# All Build rule for target.
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/roscpp_generate_messages_py.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/std_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/imm_generate_messages_cpp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/imm_generate_messages_lisp.dir/all
+imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/imm_generate_messages_py.dir/all
+	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/depend
+	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  15
+	@echo "Built target viz_trajectory"
+.PHONY : imm/CMakeFiles/viz_trajectory.dir/all
+
+# Include target in all.
+all: imm/CMakeFiles/viz_trajectory.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+imm/CMakeFiles/viz_trajectory.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/viz_trajectory.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : imm/CMakeFiles/viz_trajectory.dir/rule
+
+# Convenience name for target.
+viz_trajectory: imm/CMakeFiles/viz_trajectory.dir/rule
+.PHONY : viz_trajectory
+
+# clean rule for target.
+imm/CMakeFiles/viz_trajectory.dir/clean:
+	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/clean
+.PHONY : imm/CMakeFiles/viz_trajectory.dir/clean
+
+# clean rule for target.
+clean: imm/CMakeFiles/viz_trajectory.dir/clean
 .PHONY : clean
 
 #=============================================================================

@@ -6,6 +6,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
 SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o"
   "/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o"
+  "/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

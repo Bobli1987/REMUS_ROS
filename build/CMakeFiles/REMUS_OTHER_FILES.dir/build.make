@@ -93,6 +93,29 @@ CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o.provides: CMakeFil
 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o
 
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o: 
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o: /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o -c /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp > CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.i
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.s
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.requires:
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.requires
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.requires
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides.build
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o
+
 REMUS_OTHER_FILES: CMakeFiles/REMUS_OTHER_FILES
 REMUS_OTHER_FILES: CMakeFiles/REMUS_OTHER_FILES.dir/build.make
 .PHONY : REMUS_OTHER_FILES
