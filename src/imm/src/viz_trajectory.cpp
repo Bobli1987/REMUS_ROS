@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     trajectory.color.r = 1.0;
     trajectory.color.a = 1.0;
 
-    ros::Rate r(5);
+    ros::Rate r(10);
 
     while (ros::ok()) {
         pubPtr_trajectory->publish(trajectory);
