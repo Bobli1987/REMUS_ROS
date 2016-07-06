@@ -799,6 +799,162 @@ viz_trajectory/fast:
 	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/build
 .PHONY : viz_trajectory/fast
 
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_control
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_control: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_control
+.PHONY : _ship_los_generate_messages_check_deps_control
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_control/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_control/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_pose
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_pose: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_pose
+.PHONY : _ship_los_generate_messages_check_deps_pose
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_pose/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_pose/fast
+
+#=============================================================================
+# Target rules for targets named los_guidance
+
+# Build rule for target.
+los_guidance: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 los_guidance
+.PHONY : los_guidance
+
+# fast build rule for target.
+los_guidance/fast:
+	$(MAKE) -f ship_los/CMakeFiles/los_guidance.dir/build.make ship_los/CMakeFiles/los_guidance.dir/build
+.PHONY : los_guidance/fast
+
+#=============================================================================
+# Target rules for targets named ship_dynamics
+
+# Build rule for target.
+ship_dynamics: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_dynamics
+.PHONY : ship_dynamics
+
+# fast build rule for target.
+ship_dynamics/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_dynamics.dir/build.make ship_los/CMakeFiles/ship_dynamics.dir/build
+.PHONY : ship_dynamics/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_gencpp
+
+# Build rule for target.
+ship_los_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_gencpp
+.PHONY : ship_los_gencpp
+
+# fast build rule for target.
+ship_los_gencpp/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_gencpp.dir/build.make ship_los/CMakeFiles/ship_los_gencpp.dir/build
+.PHONY : ship_los_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_generate_messages
+
+# Build rule for target.
+ship_los_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_generate_messages
+.PHONY : ship_los_generate_messages
+
+# fast build rule for target.
+ship_los_generate_messages/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages.dir/build
+.PHONY : ship_los_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_generate_messages_cpp
+
+# Build rule for target.
+ship_los_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_generate_messages_cpp
+.PHONY : ship_los_generate_messages_cpp
+
+# fast build rule for target.
+ship_los_generate_messages_cpp/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/build
+.PHONY : ship_los_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_generate_messages_lisp
+
+# Build rule for target.
+ship_los_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_generate_messages_lisp
+.PHONY : ship_los_generate_messages_lisp
+
+# fast build rule for target.
+ship_los_generate_messages_lisp/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/build
+.PHONY : ship_los_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_generate_messages_py
+
+# Build rule for target.
+ship_los_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_generate_messages_py
+.PHONY : ship_los_generate_messages_py
+
+# fast build rule for target.
+ship_los_generate_messages_py/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_py.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_py.dir/build
+.PHONY : ship_los_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_genlisp
+
+# Build rule for target.
+ship_los_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_genlisp
+.PHONY : ship_los_genlisp
+
+# fast build rule for target.
+ship_los_genlisp/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_genlisp.dir/build.make ship_los/CMakeFiles/ship_los_genlisp.dir/build
+.PHONY : ship_los_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named ship_los_genpy
+
+# Build rule for target.
+ship_los_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los_genpy
+.PHONY : ship_los_genpy
+
+# fast build rule for target.
+ship_los_genpy/fast:
+	$(MAKE) -f ship_los/CMakeFiles/ship_los_genpy.dir/build.make ship_los/CMakeFiles/ship_los_genpy.dir/build
+.PHONY : ship_los_genpy/fast
+
+#=============================================================================
+# Target rules for targets named viz_ship
+
+# Build rule for target.
+viz_ship: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 viz_ship
+.PHONY : viz_ship
+
+# fast build rule for target.
+viz_ship/fast:
+	$(MAKE) -f ship_los/CMakeFiles/viz_ship.dir/build.make ship_los/CMakeFiles/viz_ship.dir/build
+.PHONY : viz_ship/fast
+
 imm/src/movingmass_controller.o: imm/src/movingmass_controller.cpp.o
 .PHONY : imm/src/movingmass_controller.o
 
@@ -871,6 +1027,78 @@ imm/src/viz_trajectory.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.s
 .PHONY : imm/src/viz_trajectory.cpp.s
 
+ship_los/src/los_guidance.o: ship_los/src/los_guidance.cpp.o
+.PHONY : ship_los/src/los_guidance.o
+
+# target to build an object file
+ship_los/src/los_guidance.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o
+.PHONY : ship_los/src/los_guidance.cpp.o
+
+ship_los/src/los_guidance.i: ship_los/src/los_guidance.cpp.i
+.PHONY : ship_los/src/los_guidance.i
+
+# target to preprocess a source file
+ship_los/src/los_guidance.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.i
+.PHONY : ship_los/src/los_guidance.cpp.i
+
+ship_los/src/los_guidance.s: ship_los/src/los_guidance.cpp.s
+.PHONY : ship_los/src/los_guidance.s
+
+# target to generate assembly for a file
+ship_los/src/los_guidance.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.s
+.PHONY : ship_los/src/los_guidance.cpp.s
+
+ship_los/src/ship_dynamics.o: ship_los/src/ship_dynamics.cpp.o
+.PHONY : ship_los/src/ship_dynamics.o
+
+# target to build an object file
+ship_los/src/ship_dynamics.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o
+.PHONY : ship_los/src/ship_dynamics.cpp.o
+
+ship_los/src/ship_dynamics.i: ship_los/src/ship_dynamics.cpp.i
+.PHONY : ship_los/src/ship_dynamics.i
+
+# target to preprocess a source file
+ship_los/src/ship_dynamics.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.i
+.PHONY : ship_los/src/ship_dynamics.cpp.i
+
+ship_los/src/ship_dynamics.s: ship_los/src/ship_dynamics.cpp.s
+.PHONY : ship_los/src/ship_dynamics.s
+
+# target to generate assembly for a file
+ship_los/src/ship_dynamics.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.s
+.PHONY : ship_los/src/ship_dynamics.cpp.s
+
+ship_los/src/viz_trajectory.o: ship_los/src/viz_trajectory.cpp.o
+.PHONY : ship_los/src/viz_trajectory.o
+
+# target to build an object file
+ship_los/src/viz_trajectory.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o
+.PHONY : ship_los/src/viz_trajectory.cpp.o
+
+ship_los/src/viz_trajectory.i: ship_los/src/viz_trajectory.cpp.i
+.PHONY : ship_los/src/viz_trajectory.i
+
+# target to preprocess a source file
+ship_los/src/viz_trajectory.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.i
+.PHONY : ship_los/src/viz_trajectory.cpp.i
+
+ship_los/src/viz_trajectory.s: ship_los/src/viz_trajectory.cpp.s
+.PHONY : ship_los/src/viz_trajectory.s
+
+# target to generate assembly for a file
+ship_los/src/viz_trajectory.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.s
+.PHONY : ship_los/src/viz_trajectory.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -934,6 +1162,18 @@ help:
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... viz_trajectory"
+	@echo "... _ship_los_generate_messages_check_deps_control"
+	@echo "... _ship_los_generate_messages_check_deps_pose"
+	@echo "... los_guidance"
+	@echo "... ship_dynamics"
+	@echo "... ship_los_gencpp"
+	@echo "... ship_los_generate_messages"
+	@echo "... ship_los_generate_messages_cpp"
+	@echo "... ship_los_generate_messages_lisp"
+	@echo "... ship_los_generate_messages_py"
+	@echo "... ship_los_genlisp"
+	@echo "... ship_los_genpy"
+	@echo "... viz_ship"
 	@echo "... imm/src/movingmass_controller.o"
 	@echo "... imm/src/movingmass_controller.i"
 	@echo "... imm/src/movingmass_controller.s"
@@ -943,6 +1183,15 @@ help:
 	@echo "... imm/src/viz_trajectory.o"
 	@echo "... imm/src/viz_trajectory.i"
 	@echo "... imm/src/viz_trajectory.s"
+	@echo "... ship_los/src/los_guidance.o"
+	@echo "... ship_los/src/los_guidance.i"
+	@echo "... ship_los/src/los_guidance.s"
+	@echo "... ship_los/src/ship_dynamics.o"
+	@echo "... ship_los/src/ship_dynamics.i"
+	@echo "... ship_los/src/ship_dynamics.s"
+	@echo "... ship_los/src/viz_trajectory.o"
+	@echo "... ship_los/src/viz_trajectory.i"
+	@echo "... ship_los/src/viz_trajectory.s"
 .PHONY : help
 
 

@@ -1,0 +1,69 @@
+#include <ros/ros.h>
+#include <geometry_msgs/Twist.h>
+#include "ship.h"
+#include "ship_los/pose.h"
+#include "ship_los/control.h"
+
+// the publishers and messages
+ros::Publisher *pubPtr_vel;
+ros::Publisher *pubPtr_pos;
+geometry_msgs::Twist msg_vel;
+ship_los::pose msg_pos;
+
+// the vehicle for the simulation
+Ship vehicle = Ship({0.15, 0.02, 0});
+
+// the time step of the ode solver and message publishing
+double step_size = 0.05;
+
+void timerCallback(const ros::TimerEvent&)
+{
+    // publish the motion information of the vehicle
+    ROS_INFO("Time: %5.2f s, Main thrust: %5.2f N, Yaw moment: %5.2f Nm",
+             vehicle.current_time_, vehicle.actuation_[0], vehicle.actuation_[2]);
+    msg_vel.linear.x = vehicle.velocity_[0];
+    msg_vel.linear.y = vehicle.velocity_[1];
+    msg_vel.linear.z = 0;
+    msg_vel.angular.x = 0;
+    msg_vel.angular.y = 0;
+    msg_vel.angular.z = vehicle.velocity_[2];
+
+    msg_pos.x = vehicle.position_[0];
+    msg_pos.y = vehicle.position_[1];
+    msg_pos.heading = vehicle.position_[2];
+
+    pubPtr_vel->publish(msg_vel);
+    pubPtr_pos->publish(msg_pos);
+
+    // run a one-step simulation
+    RunShip(vehicle, 1, step_size);
+}
+
+void callback_sub(const ship_los::control &msg_ctrl)
+{
+    vehicle.actuation_[0] = msg_ctrl.surge;
+    vehicle.actuation_[2] = msg_ctrl.yaw;
+    vehicle.actuation_[1] = msg_ctrl.yaw/0.6;
+}
+
+int main(int argc, char **argv) {
+    ros::init(argc, argv, "ship_dynamics");
+    ros::NodeHandle nh;
+
+    // create a timer to run a one-step simulation and publish messages
+    ros::Timer timer = nh.createTimer(ros::Duration(step_size), &timerCallback);
+
+    // the publishing rate is controlled by the timer
+    pubPtr_vel = new ros::Publisher(nh.advertise<geometry_msgs::Twist>("ship/vel", 1000));
+    pubPtr_pos = new ros::Publisher(nh.advertise<ship_los::pose>("ship/pose", 1000));
+
+    // create a subscriber to the control signal
+    ros::Subscriber sub_ctrl = nh.subscribe("ship/actuation", 1000, &callback_sub);
+
+    ros::spin();
+
+    delete pubPtr_vel;
+    delete pubPtr_pos;
+
+    return 0;
+}

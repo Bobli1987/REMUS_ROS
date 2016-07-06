@@ -1,2 +1,2 @@
-imm
+imm:ship_los
 -DCATKIN_DEVEL_PREFIX=/home/bo/dev/REMUS/devel -DCMAKE_INSTALL_PREFIX=/home/bo/dev/REMUS/install -G Unix Makefiles

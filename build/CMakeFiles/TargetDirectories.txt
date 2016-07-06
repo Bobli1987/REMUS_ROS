@@ -1,6 +1,8 @@
 /home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/_imm_generate_messages_check_deps_control.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/_imm_generate_messages_check_deps_pose.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_generate_messages_py.dir
@@ -22,6 +24,7 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_generate_messages_py.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_genlisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_genpy.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/los_guidance.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/movingmass_controller.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/remus_dynamics.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/roscpp_generate_messages_cpp.dir
@@ -34,6 +37,14 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/sensor_msgs_generate_messages_py.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_dynamics.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_gencpp.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_generate_messages.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_generate_messages_py.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_genlisp.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/ship_los_genpy.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_py.dir
@@ -47,4 +58,5 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/visualization_msgs_generate_messages_py.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/viz_ship.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/viz_trajectory.dir

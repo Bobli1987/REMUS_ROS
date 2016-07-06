@@ -116,6 +116,75 @@ CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides: CMakeFil
 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o
 
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o: 
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o: /home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o -c /home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp > CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.i
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp -o CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.s
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.requires:
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.requires
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.provides: CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.requires
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.provides.build
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.provides
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o: 
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o: /home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o -c /home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp > CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.i
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp -o CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.s
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.requires:
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.requires
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.provides: CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.requires
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.provides.build
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.provides
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o: 
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o: /home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_6)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o -c /home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp > CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.i
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp -o CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.s
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.requires:
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.requires
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.provides: CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.requires
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.provides.build
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.provides
+
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o
+
 REMUS_OTHER_FILES: CMakeFiles/REMUS_OTHER_FILES
 REMUS_OTHER_FILES: CMakeFiles/REMUS_OTHER_FILES.dir/build.make
 .PHONY : REMUS_OTHER_FILES

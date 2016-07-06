@@ -5,7 +5,7 @@
       <Option title="REMUS" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\imm\;CMake Files\..\build\imm\catkin_generated\;CMake Files\..\build\imm\cmake\;CMake Files\..\devel\;CMake Files\..\devel\share\;CMake Files\..\devel\share\imm\;CMake Files\..\devel\share\imm\cmake\;CMake Files\imm\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\imm\;CMake Files\..\build\imm\catkin_generated\;CMake Files\..\build\imm\cmake\;CMake Files\..\build\ship_los\;CMake Files\..\build\ship_los\catkin_generated\;CMake Files\..\build\ship_los\cmake\;CMake Files\..\devel\;CMake Files\..\devel\share\;CMake Files\..\devel\share\imm\;CMake Files\..\devel\share\imm\cmake\;CMake Files\..\devel\share\ship_los\;CMake Files\..\devel\share\ship_los\cmake\;CMake Files\imm\;CMake Files\ship_los\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/bo/dev/REMUS/build" />
@@ -825,12 +825,294 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="_ship_los_generate_messages_check_deps_control">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_control" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_pose">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_pose" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="los_guidance">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/los_guidance" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 los_guidance" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="los_guidance/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/los_guidance" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 los_guidance/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_dynamics">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/ship_dynamics" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_dynamics" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_dynamics/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/ship_dynamics" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_dynamics/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_gencpp">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_gencpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_generate_messages">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_generate_messages" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_generate_messages_cpp">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_generate_messages_cpp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_generate_messages_lisp">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_generate_messages_lisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_generate_messages_py">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_generate_messages_py" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_genlisp">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_genlisp" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="ship_los_genpy">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 ship_los_genpy" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="viz_ship">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/viz_ship" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 viz_ship" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="viz_ship/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/viz_ship" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 viz_ship/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       </Build>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp">
       </Unit>
       <Unit filename="/usr/src/gtest/src/gtest-all.cc">
       </Unit>
@@ -859,6 +1141,20 @@
       <Unit filename="/home/bo/dev/REMUS/src/imm/msg/pose.msg~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/package.xml">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/CMakeLists.txt">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/config/rviz.rviz">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/ship.h">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg~">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/pose.msg">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/package.xml">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />
@@ -948,6 +1244,30 @@
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/interrogate_setup_dot_py.py">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/catkinConfig-version.cmake">
@@ -1088,6 +1408,42 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig-version.cmake.in">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkg.context.pc.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig-version.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkg.context.pc.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig-version.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkg.context.pc.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig-version.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkg.context.pc.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/templates/pkgConfig-version.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/em/order_packages.cmake.em">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\" />
       </Unit>
@@ -1103,6 +1459,36 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/em/pkg.pc.em">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/em/pkg.pc.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/em/pkg.pc.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/em/pkg.pc.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/catkin/cmake/em/pkg.pc.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscpp-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscpp-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp/cmake/roscppConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\" />
       </Unit>
@@ -1133,6 +1519,30 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cpp_common/cmake/cpp_commonConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cpp_common/cmake/cpp_commonConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cpp_common/cmake/cpp_commonConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cpp_common/cmake/cpp_commonConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cpp_common/cmake/cpp_commonConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_runtime/cmake/message_runtimeConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_runtime/cmake/message_runtimeConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_runtime/cmake/message_runtimeConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_runtime/cmake/message_runtimeConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_runtime/cmake/message_runtimeConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\" />
       </Unit>
@@ -1157,6 +1567,18 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_serialization/cmake/roscpp_serializationConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_serialization/cmake/roscpp_serializationConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_serialization/cmake/roscpp_serializationConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_traits/cmake/roscpp_traitsConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\" />
       </Unit>
@@ -1168,6 +1590,30 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_traits/cmake/roscpp_traitsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_traits/cmake/roscpp_traitsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/roscpp_traits/cmake/roscpp_traitsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rostime/cmake/rostimeConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rostime/cmake/rostimeConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rostime/cmake/rostimeConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rostime/cmake/rostimeConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rostime/cmake/rostimeConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\" />
@@ -1198,6 +1644,42 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsole-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsoleConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsoleConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsole-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsoleConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsoleConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosconsole/cmake/rosconsole-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph_msgs/cmake/rosgraph_msgsConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\" />
@@ -1253,6 +1735,42 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-paths.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/std_msgs/cmake/std_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
       </Unit>
@@ -1264,6 +1782,36 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/xmlrpcpp/cmake/xmlrpcppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tfConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tfConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tf-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tfConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tfConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tf-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf/cmake/tfConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\" />
@@ -1301,6 +1849,42 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/geometry_msgs/cmake/geometry_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_filters/cmake/message_filtersConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_filters/cmake/message_filtersConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_filters/cmake/message_filtersConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_filters/cmake/message_filtersConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_filters/cmake/message_filtersConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\" />
       </Unit>
@@ -1331,6 +1915,24 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgs-msg-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/sensor_msgs/cmake/sensor_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_ros/cmake/tf2_rosConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\" />
       </Unit>
@@ -1342,6 +1944,36 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_ros/cmake/tf2_rosConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_ros/cmake/tf2_rosConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_ros/cmake/tf2_rosConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_ros/cmake/tf2_rosConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_ros/cmake/tf2_rosConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlibConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlibConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlib-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlibConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlibConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlib-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib/cmake/actionlibConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\" />
@@ -1384,6 +2016,96 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.develspace.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.installspace.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-genmsg.context.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-genmsg.cmake.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.develspace.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-paths.cmake.installspace.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-msg-extras.cmake.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-genmsg.context.in">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/pkg-genmsg.cmake.em">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\" />
@@ -1481,6 +2203,66 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencpp-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencpp-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/gencpp/cmake/gencppConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlisp-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlisp-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genlisp/cmake/genlispConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\" />
       </Unit>
@@ -1541,6 +2323,48 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpy-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpy-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genpy/cmake/genpyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph/cmake/rosgraphConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph/cmake/rosgraphConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph/cmake/rosgraphConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph/cmake/rosgraphConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rosgraph/cmake/rosgraphConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\" />
       </Unit>
@@ -1564,6 +2388,36 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2/cmake/tf2Config.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2/cmake/tf2Config-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2/cmake/tf2Config.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2/cmake/tf2Config-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2/cmake/tf2Config.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_msgs/cmake/tf2_msgsConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\" />
@@ -1607,6 +2461,30 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/message_generation/cmake/message_generationConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
       </Unit>
@@ -1618,6 +2496,30 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/tf2_py/cmake/tf2_pyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/rospy/cmake/rospyConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\" />
@@ -1649,6 +2551,30 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/visualization_msgs/cmake/visualization_msgs-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modulesConfig-version.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
       </Unit>
@@ -1666,6 +2592,30 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modules-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modulesConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modulesConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modules-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modulesConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modulesConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/cmake_modules-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/Modules/FindEigen.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/Modules/FindEigen.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/cmake_modules/cmake/Modules/FindEigen.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\" />
@@ -1730,11 +2680,53 @@
       <Unit filename="/home/bo/dev/REMUS/src/../build/imm/cmake/imm-genmsg.cmake">
           <Option virtualFolder="CMake Files\..\build\imm\cmake\" />
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ordered_paths.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ordered_paths.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/package.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ship_los-msg-extras.cmake.develspace.in">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ship_los-msg-extras.cmake.installspace.in">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ordered_paths.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ordered_paths.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/package.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ship_los-msg-extras.cmake.develspace.in">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/catkin_generated/ship_los-msg-extras.cmake.installspace.in">
+          <Option virtualFolder="CMake Files\..\build\ship_los\catkin_generated\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/cmake/ship_los-genmsg.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../build/ship_los/cmake/ship_los-genmsg.cmake">
+          <Option virtualFolder="CMake Files\..\build\ship_los\cmake\" />
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../devel/share/imm/cmake/imm-msg-paths.cmake">
           <Option virtualFolder="CMake Files\..\devel\share\imm\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../devel/share/imm/cmake/imm-msg-paths.cmake">
           <Option virtualFolder="CMake Files\..\devel\share\imm\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../devel/share/ship_los/cmake/ship_los-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\devel\share\ship_los\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../devel/share/ship_los/cmake/ship_los-msg-paths.cmake">
+          <Option virtualFolder="CMake Files\..\devel\share\ship_los\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/CMakeLists.txt">
           <Option virtualFolder="CMake Files\imm\" />
@@ -1747,6 +2739,18 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/package.xml">
           <Option virtualFolder="CMake Files\imm\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\ship_los\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/package.xml">
+          <Option virtualFolder="CMake Files\ship_los\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\ship_los\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/package.xml">
+          <Option virtualFolder="CMake Files\ship_los\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>
