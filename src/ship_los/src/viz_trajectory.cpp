@@ -52,6 +52,8 @@ int main(int argc, char **argv)
     trajectory.type = visualization_msgs::Marker::LINE_STRIP;
     trajectory.scale.x = 0.05; // line width
     trajectory.color.r = 1.0;
+    trajectory.color.g = 0.0;
+    trajectory.color.b = 1.0;
     trajectory.color.a = 1.0;
 
     // control the publishing rate
