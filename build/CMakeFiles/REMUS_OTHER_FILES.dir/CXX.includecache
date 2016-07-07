@@ -6,15 +6,41 @@
 
 #IncludeRegexTransform: 
 
-/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
+/home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp
 ros/ros.h
+-
+vector
 -
 visualization_msgs/Marker.h
 -
-tf/transform_broadcaster.h
+geometry_msgs/Point.h
+-
+ship_los/pose.h
+-
+ship_los/course.h
 -
 cmath
 -
-imm/pose.h
+boost/numeric/odeint.hpp
 -
+
+/home/bo/dev/REMUS/src/ship_los/src/path_controller.cpp
+ros/ros.h
+-
+vector
+-
+geometry_msgs/Twist.h
+-
+eigen3/Eigen/Dense
+-
+ship.h
+/home/bo/dev/REMUS/src/ship_los/src/ship.h
+path_controller.h
+/home/bo/dev/REMUS/src/ship_los/src/path_controller.h
+ship_los/course.h
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/course.h
+ship_los/control.h
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/control.h
+ship_los/pose.h
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/pose.h
 

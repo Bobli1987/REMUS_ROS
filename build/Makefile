@@ -852,6 +852,19 @@ los_guidance/fast:
 .PHONY : los_guidance/fast
 
 #=============================================================================
+# Target rules for targets named path_controller
+
+# Build rule for target.
+path_controller: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 path_controller
+.PHONY : path_controller
+
+# fast build rule for target.
+path_controller/fast:
+	$(MAKE) -f ship_los/CMakeFiles/path_controller.dir/build.make ship_los/CMakeFiles/path_controller.dir/build
+.PHONY : path_controller/fast
+
+#=============================================================================
 # Target rules for targets named ship_dynamics
 
 # Build rule for target.
@@ -1064,6 +1077,30 @@ ship_los/src/los_guidance.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.s
 .PHONY : ship_los/src/los_guidance.cpp.s
 
+ship_los/src/path_controller.o: ship_los/src/path_controller.cpp.o
+.PHONY : ship_los/src/path_controller.o
+
+# target to build an object file
+ship_los/src/path_controller.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/path_controller.cpp.o
+.PHONY : ship_los/src/path_controller.cpp.o
+
+ship_los/src/path_controller.i: ship_los/src/path_controller.cpp.i
+.PHONY : ship_los/src/path_controller.i
+
+# target to preprocess a source file
+ship_los/src/path_controller.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/path_controller.cpp.i
+.PHONY : ship_los/src/path_controller.cpp.i
+
+ship_los/src/path_controller.s: ship_los/src/path_controller.cpp.s
+.PHONY : ship_los/src/path_controller.s
+
+# target to generate assembly for a file
+ship_los/src/path_controller.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/path_controller.cpp.s
+.PHONY : ship_los/src/path_controller.cpp.s
+
 ship_los/src/ship_dynamics.o: ship_los/src/ship_dynamics.cpp.o
 .PHONY : ship_los/src/ship_dynamics.o
 
@@ -1179,6 +1216,7 @@ help:
 	@echo "... _ship_los_generate_messages_check_deps_course"
 	@echo "... _ship_los_generate_messages_check_deps_pose"
 	@echo "... los_guidance"
+	@echo "... path_controller"
 	@echo "... ship_dynamics"
 	@echo "... ship_los_gencpp"
 	@echo "... ship_los_generate_messages"
@@ -1200,6 +1238,9 @@ help:
 	@echo "... ship_los/src/los_guidance.o"
 	@echo "... ship_los/src/los_guidance.i"
 	@echo "... ship_los/src/los_guidance.s"
+	@echo "... ship_los/src/path_controller.o"
+	@echo "... ship_los/src/path_controller.i"
+	@echo "... ship_los/src/path_controller.s"
 	@echo "... ship_los/src/ship_dynamics.o"
 	@echo "... ship_los/src/ship_dynamics.i"
 	@echo "... ship_los/src/ship_dynamics.s"

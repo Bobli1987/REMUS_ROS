@@ -27,6 +27,7 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_genpy.dir
 /home/bo/dev/REMUS/build/ship_los/CMakeFiles/los_guidance.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/movingmass_controller.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/path_controller.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/remus_dynamics.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/roscpp_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/roscpp_generate_messages_lisp.dir

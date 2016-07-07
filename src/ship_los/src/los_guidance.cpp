@@ -30,14 +30,41 @@ uint32_t wpt_num = 1;
 double course_angle;
 
 // the reference model for trajectory generation
-const double omega = 0.2;
-const double zeta = 0.1;
+const double omega = 0.5;
+const double zeta = 0.8;
 void reference_model(const vector<double> &x, vector<double> &dxdt, const double /* t */)
 {
     dxdt[0] = x[1];
     dxdt[1] = x[2];
     dxdt[2] = -pow(omega,3)*x[0] - (2*zeta+1)*pow(omega,2)*x[1] - (2*zeta+1)*omega*x[2] + \
             pow(omega,3)*course_angle;
+}
+
+// callback of the subscriber, where desired course is computed and published
+void callback_pos(const ship_los::pose &msg_pos)
+{
+    double distance = sqrt(pow(msg_pos.x - waypoints[wpt_num+1][0], 2) +
+                           pow(msg_pos.y - waypoints[wpt_num+1][1], 2));
+    ROS_INFO("Current: wpt%u, Distance to wpt%u: %5.2f m", wpt_num, wpt_num+1, distance);
+
+    // change the waypoint
+    if ( distance <= 2 )
+    {
+        ++ wpt_num;
+        ROS_INFO("Change the waypoint to: wpt%u", wpt_num);
+    }
+
+    // compute the desired course angle using the current waypoint
+    course_angle = atan2(waypoints[wpt_num][1] - msg_pos.y, waypoints[wpt_num][0] - msg_pos.x);
+    // low-pass filter the course angle, and obtain rate and acceleration
+    static vector<double> x = {1.78, 0, 0};
+    // the end time of the integration should be the publising rate of ship/pose
+    size_t steps = integrate(reference_model, x, 0.0, 0.05, 0.01);
+    // publish the desired course message
+    msg_course.angle = x[0];
+    msg_course.rate = x[1];
+    msg_course.acceleration = x[2];
+    pubPtr_course->publish(msg_course);
 }
 
 // callback of the timer used to publish the markers to rviz
@@ -49,33 +76,6 @@ void timerCallback(const ros::TimerEvent&)
 
     pub_markers->publish(marker_wpt);
     pub_markers->publish(marker_bulb);
-}
-
-// callback of the subscriber, where desired course is computed and published
-void callback_pos(const ship_los::pose &msg_pos)
-{
-    double distance = sqrt(pow(msg_pos.x - waypoints[wpt_num+1][0], 2) +
-                           pow(msg_pos.y - waypoints[wpt_num+1][1], 2));
-    ROS_INFO("Current: wpt%u, Distance to wpt%u: %5.2f m", wpt_num, wpt_num+1, distance);
-
-    // change the waypoint
-    if ( distance <= 2.5 )
-    {
-        ++ wpt_num;
-        ROS_INFO("Change the waypoint to: wpt%u", wpt_num);
-    }
-
-    // compute the desired course angle using the current waypoint
-    course_angle = atan2(waypoints[wpt_num][1] - msg_pos.y, waypoints[wpt_num][0] - msg_pos.x);
-    // low-pass filter the course angle, and obtain rate and acceleration
-    static vector<double> x = {0, 0, 0};
-    // the end time of the integration should be the publising rate of ship/pose
-    size_t steps = integrate(reference_model, x , 0.0 , 0.05 , 0.01);
-    // publish the desired course message
-    msg_course.angle = x[0];
-    msg_course.rate = x[1];
-    msg_course.acceleration = x[2];
-    pubPtr_course->publish(msg_course);
 }
 
 int main(int argc, char **argv)

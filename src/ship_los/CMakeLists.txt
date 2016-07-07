@@ -138,17 +138,20 @@ include_directories( include/ship_los
 add_executable(ship_dynamics src/ship_dynamics.cpp)
 add_executable(viz_ship src/viz_trajectory.cpp)
 add_executable(los_guidance src/los_guidance.cpp)
+add_executable(path_controller src/path_controller.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(ship_dynamics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(viz_ship ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(los_guidance ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(path_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(ship_dynamics ${catkin_LIBRARIES})
 target_link_libraries(viz_ship ${catkin_LIBRARIES})
 target_link_libraries(los_guidance ${catkin_LIBRARIES})
+target_link_libraries(path_controller ${catkin_LIBRARIES})
 
 #############
 ## Install ##

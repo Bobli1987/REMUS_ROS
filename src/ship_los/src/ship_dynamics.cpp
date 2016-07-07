@@ -42,8 +42,8 @@ void timerCallback(const ros::TimerEvent&)
 void callback_sub(const ship_los::control &msg_ctrl)
 {
     vehicle.actuation_[0] = msg_ctrl.surge;
+    vehicle.actuation_[1] = msg_ctrl.sway;
     vehicle.actuation_[2] = msg_ctrl.yaw;
-    vehicle.actuation_[1] = msg_ctrl.yaw/0.6;
 }
 
 int main(int argc, char **argv) {

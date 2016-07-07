@@ -44,6 +44,7 @@ private:
     const double n22_ = 7.0;
     const double n23_ = 0.1;
     const double n33_ = 0.5;
+    const double arm_ = 0.6; // N_{delta}/Y_{delta}
 
     // parameters of the simulation
     // step size of the current simulation

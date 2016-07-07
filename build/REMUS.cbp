@@ -917,6 +917,68 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="path_controller">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/path_controller" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 path_controller" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="path_controller/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/path_controller" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 path_controller/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="ship_dynamics">
          <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/ship_dynamics" prefix_auto="0" extension_auto="0" />
          <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
@@ -1120,6 +1182,8 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/path_controller.cpp">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp">
@@ -1156,11 +1220,11 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/config/rviz.rviz">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/path_controller.h">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/ship.h">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg">
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/course.msg">
       </Unit>
