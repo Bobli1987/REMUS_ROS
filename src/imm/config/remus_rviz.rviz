@@ -9,7 +9,9 @@ Panels:
         - /Grid1
         - /Marker1
         - /Marker1/Namespaces1
-        - /Axes1
+        - /TF1
+        - /TF1/Frames1
+        - /TF1/Tree1/world1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection
@@ -60,12 +62,28 @@ Visualization Manager:
         remus_viz: true
       Queue Size: 100
       Value: true
-    - Class: rviz/Axes
+    - Class: rviz/TF
       Enabled: true
-      Length: 10
-      Name: Axes
-      Radius: 0.1
-      Reference Frame: <Fixed Frame>
+      Frame Timeout: 15
+      Frames:
+        All Enabled: false
+        Earth-fixed frame:
+          Value: true
+        REMUS:
+          Value: true
+        world:
+          Value: false
+      Marker Scale: 10
+      Name: TF
+      Show Arrows: false
+      Show Axes: true
+      Show Names: true
+      Tree:
+        world:
+          Earth-fixed frame:
+            REMUS:
+              {}
+      Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
@@ -91,22 +109,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 54.3448
+      Distance: 62.3192
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.52275
-        Y: 16.5722
-        Z: -8.55542
+        X: 10.1704
+        Y: -4.95715
+        Z: -18.184
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.1952
+      Pitch: 0.9302
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.20176
+      Yaw: 3.72175
     Saved: ~
 Window Geometry:
   Displays:

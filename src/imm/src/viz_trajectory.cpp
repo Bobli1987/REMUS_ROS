@@ -52,6 +52,7 @@ int main(int argc, char **argv)
     trajectory.scale.x = 0.1; // line width
     trajectory.color.r = 1.0;
     trajectory.color.a = 1.0;
+    trajectory.lifetime = ros::Duration();
 
     // control the publishing rate
     ros::Rate r(10);

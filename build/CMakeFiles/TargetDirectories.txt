@@ -2,6 +2,7 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/_imm_generate_messages_check_deps_control.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/_imm_generate_messages_check_deps_pose.dir
 /home/bo/dev/REMUS/build/ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir
 /home/bo/dev/REMUS/build/ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_generate_messages_lisp.dir

@@ -424,7 +424,11 @@ void RunRemus(Remus &vehicle, const size_t &step_number = 600, const double &ste
         vehicle.time_vec_.push_back(vehicle.current_time_);
         vehicle.velocity_ << state[0], state[1], state[2], state[3], state[4], state[5];
         vehicle.position_ << state[6], state[7], state[8], state[9], state[10], state[11];
-        vehicle.euler_ << state[9], state[10], state[11];
+        // wrap the euler angle into [-pi, pi)
+        vehicle.position_[3] = remainder(vehicle.position_[3], 2*M_PI);
+        vehicle.position_[4] = remainder(vehicle.position_[4], 2*M_PI);
+        vehicle.position_[5] = remainder(vehicle.position_[5], 2*M_PI);
+        vehicle.euler_ << vehicle.position_[3], vehicle.position_[4], vehicle.position_[5];
 //        vehicle.quaternion_ = vehicle.Euler2q(vehicle.euler_);
         vehicle.relative_velocity_ = vehicle.velocity_ - vehicle.CurrentVelocity(vehicle.position_);
         vehicle.velocity_history_.push_back(vehicle.velocity_);

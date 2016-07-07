@@ -11,7 +11,7 @@ geometry_msgs::Twist msg_vel;
 ship_los::pose msg_pos;
 
 // the vehicle for the simulation
-Ship vehicle = Ship({0.15, 0.02, 0});
+Ship vehicle = Ship({0.1, 0, 0}, {-0.2, -1.25, 1.78});
 
 // the time step of the ode solver and message publishing
 double step_size = 0.05;

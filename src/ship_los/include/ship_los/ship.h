@@ -7,6 +7,7 @@
 #include <Eigen/Dense>
 #include <boost/math/constants/constants.hpp>
 #include <boost/numeric/odeint.hpp>
+#include <cmath>
 
 using namespace std;
 using namespace Eigen;
@@ -166,6 +167,8 @@ void RunShip(Ship &vehicle, const size_t &step_number = 600, const double &step_
         vehicle.time_vec_.push_back(vehicle.current_time_);
         vehicle.velocity_ << state[0], state[1], state[2];
         vehicle.position_ << state[3], state[4], state[5];
+        // wrap the heading angle
+        vehicle.position_(2) = remainder(vehicle.position_[2], 2*M_PI);
         vehicle.velocity_history_.push_back(vehicle.velocity_);
         vehicle.position_history_.push_back(vehicle.position_);
     }

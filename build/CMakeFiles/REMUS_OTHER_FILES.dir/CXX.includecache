@@ -6,27 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp
-ros/ros.h
--
-vector
--
-visualization_msgs/Marker.h
--
-geometry_msgs/Point.h
--
-
-/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp
+/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
 ros/ros.h
 -
 visualization_msgs/Marker.h
--
-geometry_msgs/Point.h
 -
 tf/transform_broadcaster.h
 -
 cmath
 -
-ship_los/pose.h
+imm/pose.h
 -
 

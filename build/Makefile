@@ -813,6 +813,19 @@ _ship_los_generate_messages_check_deps_control/fast:
 .PHONY : _ship_los_generate_messages_check_deps_control/fast
 
 #=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_course
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_course: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_course
+.PHONY : _ship_los_generate_messages_check_deps_course
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_course/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_course/fast
+
+#=============================================================================
 # Target rules for targets named _ship_los_generate_messages_check_deps_pose
 
 # Build rule for target.
@@ -1163,6 +1176,7 @@ help:
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... viz_trajectory"
 	@echo "... _ship_los_generate_messages_check_deps_control"
+	@echo "... _ship_los_generate_messages_check_deps_course"
 	@echo "... _ship_los_generate_messages_check_deps_pose"
 	@echo "... los_guidance"
 	@echo "... ship_dynamics"

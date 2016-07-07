@@ -53,6 +53,7 @@ add_message_files(
   FILES
   pose.msg
   control.msg
+  course.msg
 )
 
 ## Generate services in the 'srv' folder

@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "ship_los: 2 messages, 0 services")
+message(STATUS "ship_los: 3 messages, 0 services")
 
 set(MSG_I_FLAGS "-Iship_los:/home/bo/dev/REMUS/src/ship_los/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg;-Ivisualization_msgs:/opt/ros/indigo/share/visualization_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg")
 
@@ -20,6 +20,11 @@ add_custom_target(_ship_los_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ship_los" "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" ""
 )
 
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)
+add_custom_target(_ship_los_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ship_los" "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" ""
+)
+
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/control.msg" NAME_WE)
 add_custom_target(_ship_los_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ship_los" "/home/bo/dev/REMUS/src/ship_los/msg/control.msg" ""
@@ -33,6 +38,12 @@ add_custom_target(_ship_los_generate_messages_check_deps_${_filename}
 ### Generating Messages
 _generate_msg_cpp(ship_los
   "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ship_los
+)
+_generate_msg_cpp(ship_los
+  "/home/bo/dev/REMUS/src/ship_los/msg/course.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ship_los
@@ -60,6 +71,8 @@ add_dependencies(ship_los_generate_messages ship_los_generate_messages_cpp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_cpp _ship_los_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)
+add_dependencies(ship_los_generate_messages_cpp _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/control.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_cpp _ship_los_generate_messages_check_deps_${_filename})
 
@@ -74,6 +87,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ship_los_generate_messages_cpp)
 ### Generating Messages
 _generate_msg_lisp(ship_los
   "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ship_los
+)
+_generate_msg_lisp(ship_los
+  "/home/bo/dev/REMUS/src/ship_los/msg/course.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ship_los
@@ -101,6 +120,8 @@ add_dependencies(ship_los_generate_messages ship_los_generate_messages_lisp)
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_lisp _ship_los_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)
+add_dependencies(ship_los_generate_messages_lisp _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/control.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_lisp _ship_los_generate_messages_check_deps_${_filename})
 
@@ -115,6 +136,12 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS ship_los_generate_messages_lisp)
 ### Generating Messages
 _generate_msg_py(ship_los
   "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ship_los
+)
+_generate_msg_py(ship_los
+  "/home/bo/dev/REMUS/src/ship_los/msg/course.msg"
   "${MSG_I_FLAGS}"
   ""
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ship_los
@@ -141,6 +168,8 @@ add_dependencies(ship_los_generate_messages ship_los_generate_messages_py)
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
+add_dependencies(ship_los_generate_messages_py _ship_los_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_py _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/control.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_py _ship_los_generate_messages_check_deps_${_filename})

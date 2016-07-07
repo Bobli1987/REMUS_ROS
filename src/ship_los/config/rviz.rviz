@@ -8,6 +8,7 @@ Panels:
         - /Status1
         - /Marker1
         - /Marker1/Namespaces1
+        - /Marker2
         - /TF1
         - /TF1/Frames1
       Splitter Ratio: 0.5
@@ -60,6 +61,14 @@ Visualization Manager:
         ship/viz: true
       Queue Size: 100
       Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /ship/waypoints
+      Name: Marker
+      Namespaces:
+        waypoints/viz: true
+      Queue Size: 100
+      Value: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
@@ -107,22 +116,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 112.533
+      Distance: 100.204
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 52.737
-        Y: 1.2336
-        Z: -57.4753
+        X: 34.2805
+        Y: 7.10888
+        Z: -69.0605
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.869798
+      Pitch: 1.1398
       Target Frame: Earth-fixed frame
       Value: Orbit (rviz)
-      Yaw: 3.21777
+      Yaw: 3.38277
     Saved: ~
 Window Geometry:
   Displays:
