@@ -10,7 +10,6 @@
 using namespace std;
 using namespace boost::numeric::odeint;
 
-// control the position of the internal moving mass to achieve heading stabilization
 class PathController
 {
     friend vector<double> ComputeActuation(PathController&, const double&, const double&, const double&, const double&,

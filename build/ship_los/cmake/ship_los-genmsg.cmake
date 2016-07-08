@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "ship_los: 3 messages, 0 services")
+message(STATUS "ship_los: 3 messages, 1 services")
 
 set(MSG_I_FLAGS "-Iship_los:/home/bo/dev/REMUS/src/ship_los/msg;-Istd_msgs:/opt/ros/indigo/share/std_msgs/cmake/../msg;-Ivisualization_msgs:/opt/ros/indigo/share/visualization_msgs/cmake/../msg;-Igeometry_msgs:/opt/ros/indigo/share/geometry_msgs/cmake/../msg")
 
@@ -14,6 +14,11 @@ add_custom_target(ship_los_generate_messages ALL)
 # verify that message/service dependencies have not changed since configure
 
 
+
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv" NAME_WE)
+add_custom_target(_ship_los_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "ship_los" "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv" ""
+)
 
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
 add_custom_target(_ship_los_generate_messages_check_deps_${_filename}
@@ -56,6 +61,12 @@ _generate_msg_cpp(ship_los
 )
 
 ### Generating Services
+_generate_srv_cpp(ship_los
+  "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/ship_los
+)
 
 ### Generating Module File
 _generate_module_cpp(ship_los
@@ -69,6 +80,8 @@ add_custom_target(ship_los_generate_messages_cpp
 add_dependencies(ship_los_generate_messages ship_los_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv" NAME_WE)
+add_dependencies(ship_los_generate_messages_cpp _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_cpp _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)
@@ -105,6 +118,12 @@ _generate_msg_lisp(ship_los
 )
 
 ### Generating Services
+_generate_srv_lisp(ship_los
+  "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/ship_los
+)
 
 ### Generating Module File
 _generate_module_lisp(ship_los
@@ -118,6 +137,8 @@ add_custom_target(ship_los_generate_messages_lisp
 add_dependencies(ship_los_generate_messages ship_los_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv" NAME_WE)
+add_dependencies(ship_los_generate_messages_lisp _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_lisp _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)
@@ -154,6 +175,12 @@ _generate_msg_py(ship_los
 )
 
 ### Generating Services
+_generate_srv_py(ship_los
+  "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/ship_los
+)
 
 ### Generating Module File
 _generate_module_py(ship_los
@@ -167,6 +194,8 @@ add_custom_target(ship_los_generate_messages_py
 add_dependencies(ship_los_generate_messages ship_los_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv" NAME_WE)
+add_dependencies(ship_los_generate_messages_py _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/pose.msg" NAME_WE)
 add_dependencies(ship_los_generate_messages_py _ship_los_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/bo/dev/REMUS/src/ship_los/msg/course.msg" NAME_WE)

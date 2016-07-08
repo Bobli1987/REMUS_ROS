@@ -1,0 +1,26 @@
+<launch>
+  <node
+    pkg="rviz"
+    type="rviz"
+    name="rviz_node"
+    args="-d $(find imm)/config/remus_rviz.rviz"
+  />
+  <node
+    pkg="imm"
+    type="viz_trajectory"
+    name="visualization_node"
+  />
+  <node
+    pkg="imm"
+    type="movingmass_controller"
+    name="control_node"
+    launch-prefix="xterm -e"
+  />
+  <node
+    pkg="imm"
+    type="remus_dynamics"
+    name="dynamics_node"
+    required="true"
+    launch-prefix="xterm -e"
+  />
+</launch>

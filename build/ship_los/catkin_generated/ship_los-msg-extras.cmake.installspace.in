@@ -1,2 +1,2 @@
 set(ship_los_MESSAGE_FILES "msg/pose.msg;msg/control.msg;msg/course.msg")
-set(ship_los_SERVICE_FILES "")
+set(ship_los_SERVICE_FILES "srv/waypoint.srv")

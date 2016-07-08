@@ -1,0 +1,31 @@
+<launch>
+  <node
+    pkg="rviz"
+    type="rviz"
+    name="rviz_node"
+    args="-d $(find imm)/config/remus_rviz.rviz"
+  />
+  <node
+    pkg="imm"
+    type="viz_trajectory"
+    name="visualization_node"
+  />
+  <node
+    pkg="ship_los"
+    type="los_guidance"
+    name="guidance_node"
+    launch-prefix="xterm -e"
+  />
+  <node
+    pkg="ship_los"
+    type="path_controller"
+    name="control_node"
+  />
+  <node
+    pkg="ship_los"
+    type="ship_dynamics"
+    name="dynamics_node"
+    required="true"
+    launch-prefix="xterm -e"
+  />
+</launch>

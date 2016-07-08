@@ -2,8 +2,9 @@
 #include <vector>
 #include <visualization_msgs/Marker.h>
 #include <geometry_msgs/Point.h>
-#include <ship_los/pose.h>
-#include <ship_los/course.h>
+#include "ship_los/pose.h"
+#include "ship_los/course.h"
+#include "ship_los/waypoint.h"
 #include <cmath>
 #include <boost/numeric/odeint.hpp>
 
@@ -11,7 +12,14 @@ using namespace std;
 using namespace boost::numeric::odeint;
 
 // the waypoints
-vector<vector<double>> waypoints;
+vector<array<double, 2>> waypoints = { {0.372, -1.50},
+                                       {-0.628, 0.00},
+                                       {0.372, 1.50},
+                                       {1.872, 2.00},
+                                       {6.872, -2.00},
+                                       {8.372, -1.50},
+                                       {9.372, 0.00},
+                                       {8.372, 1.50} };
 
 // the publishers
 ros::Publisher *pubPtr_course;
@@ -22,9 +30,9 @@ visualization_msgs::Marker marker_wpt;
 visualization_msgs::Marker marker_bulb;
 ship_los::course msg_course;
 
-
 // the number of the waypoint which the ship just passed
 uint32_t wpt_num = 0;
+auto iter = ++waypoints.begin();
 
 // desired course angle
 double course_angle;
@@ -40,6 +48,25 @@ void reference_model(const vector<double> &x, vector<double> &dxdt, const double
             pow(omega,3)*course_angle;
 }
 
+// callback of the service server
+bool insertCallback(ship_los::waypoint::Request &req, ship_los::waypoint::Response &resp)
+{
+    iter = waypoints.insert(iter, {req.x, req.y});
+    string feedback = "The waypoint is inserted as wpt";
+    resp.feedback =  feedback + to_string(wpt_num+1);
+
+    // send the new waypoint to rviz
+    geometry_msgs::Point p;
+    p.x = req.x;
+    p.y = -req.y;
+    p.z = 0;
+    marker_wpt.points.push_back(p);
+    p.z += 1.5;
+    marker_wpt.points.push_back(p);
+
+    return true;
+}
+
 // callback of the subscriber, where desired course is computed and published
 void callback_pos(const ship_los::pose &msg_pos)
 {
@@ -50,10 +77,13 @@ void callback_pos(const ship_los::pose &msg_pos)
     vector<double> los_point(2, 0);
 
     // filtered course infomation
-    static vector<double> x = {1.78, 0, 0};
+    static vector<double> course_state = {1.78, 0, 0};
 
     if (wpt_num < waypoints.size()-1)
     {
+        // intersection feasibility
+        bool feasible = true;
+
         // solve the intersection point
         double dx = waypoints[wpt_num+1][0] - waypoints[wpt_num][0];
         double dy = waypoints[wpt_num+1][1] - waypoints[wpt_num][1];
@@ -69,31 +99,49 @@ void callback_pos(const ship_los::pose &msg_pos)
             double b = 2*(d*g - d*y - x);
             double c = pow(x,2) + pow(y,2) + pow(g,2) - 2*g*y - pow(radius,2);
 
-            if (dx > 0) {
-                los_point[0] = (-b + sqrt(pow(b,2) - 4*a*c))/(2*a);
+            if (pow(b,2) - 4*a*c >= 0) {
+                if (dx > 0) {
+                    los_point[0] = (-b + sqrt(pow(b,2) - 4*a*c))/(2*a);
+                }
+                if (dx <0) {
+                    los_point[0] = (-b - sqrt(pow(b,2) - 4*a*c))/(2*a);
+                }
+                los_point[1] = d*(los_point[0] - waypoints[wpt_num][0]) + waypoints[wpt_num][1];
             }
-            if (dx <0) {
-                los_point[0] = (-b - sqrt(pow(b,2) - 4*a*c))/(2*a);
+            else
+            {
+                ROS_WARN_STREAM("There are no intersections");
+                feasible = false;
             }
-            los_point[1] = d*(los_point[0] - waypoints[wpt_num][0]) + waypoints[wpt_num][1];
         }
         else
         {
-            los_point[0] = waypoints[wpt_num+1][0];
-            if (dy > 0) {
-                los_point[1] = msg_pos.y + sqrt(pow(radius,2) - pow((los_point[0] - msg_pos.x),2));
+            if (pow(radius,2) - pow((waypoints[wpt_num+1][0] - msg_pos.x),2) >=0 )
+            {
+                los_point[0] = waypoints[wpt_num+1][0];
+                if (dy > 0) {
+                    los_point[1] = msg_pos.y + sqrt(pow(radius,2) - pow((los_point[0] - msg_pos.x),2));
+                }
+                if (dy < 0) {
+                    los_point[1] = msg_pos.y - sqrt(pow(radius,2) - pow((los_point[0] - msg_pos.x),2));
+                }
             }
-            if (dy < 0) {
-                los_point[1] = msg_pos.y - sqrt(pow(radius,2) - pow((los_point[0] - msg_pos.x),2));
+            else
+            {
+                ROS_WARN_STREAM("There are no intersections");
+                feasible = false;
             }
         }
 
         // compute the desired course angle using the intersection point
-        course_angle = atan2(los_point[1] - msg_pos.y, los_point[0] - msg_pos.x);
+        if (feasible)
+        {
+            course_angle = atan2(los_point[1] - msg_pos.y, los_point[0] - msg_pos.x);
+        }
 
         // low-pass filter the obtained course angle, yielding rate and acceleration
         // the end time of the integration should be the publising rate of ship/pose
-        size_t steps = integrate(reference_model, x, 0.0, 0.05, 0.01);
+        size_t steps = integrate(reference_model, course_state, 0.0, 0.05, 0.01);
 
         // the distance between the ship and the waypoint to which it points
         double distance = sqrt(pow(msg_pos.x - waypoints[wpt_num+1][0], 2) +
@@ -104,6 +152,7 @@ void callback_pos(const ship_los::pose &msg_pos)
         if ( distance <= radius)
         {
             ++ wpt_num;
+            ++ iter;
             ROS_INFO("Change the current waypoint to: wpt%u", wpt_num);
         }
     }
@@ -113,9 +162,9 @@ void callback_pos(const ship_los::pose &msg_pos)
     }
 
     // publish the desired course message
-    msg_course.angle = x[0];
-    msg_course.rate = x[1];
-    msg_course.acceleration = x[2];
+    msg_course.angle = course_state[0];
+    msg_course.rate = course_state[1];
+    msg_course.acceleration = course_state[2];
     pubPtr_course->publish(msg_course);
 
     // publish the markers to rviz
@@ -123,10 +172,10 @@ void callback_pos(const ship_los::pose &msg_pos)
         marker_bulb.pose.position.x = waypoints[wpt_num+1][0];
         marker_bulb.pose.position.y = -waypoints[wpt_num+1][1];
         marker_bulb.pose.position.z = 1.5;
-
-        pub_markers->publish(marker_wpt);
-        pub_markers->publish(marker_bulb);
     }
+
+    pub_markers->publish(marker_wpt);
+    pub_markers->publish(marker_bulb);
 }
 
 int main(int argc, char **argv)
@@ -137,17 +186,10 @@ int main(int argc, char **argv)
     pub_markers = new ros::Publisher(nh.advertise<visualization_msgs::Marker>("ship/waypoints", 1000));
     pubPtr_course = new ros::Publisher(nh.advertise<ship_los::course>("ship/course", 1000));
 
-    ros::Subscriber sub_pos = nh.subscribe("ship/pose", 1000, &callback_pos);
+    // define the service used to add waypoints
+    ros::ServiceServer srv_insert = nh.advertiseService("insert_waypoint", &insertCallback);
 
-    // define the waypoints
-    waypoints = { {0.372, -1.50},
-                  {-0.628, 0.00},
-                  {0.372, 1.50},
-                  {1.872, 2.00},
-                  {6.872, -2.00},
-                  {8.372, -1.50},
-                  {9.372, 0.00},
-                  {8.372, 1.50} };
+    ros::Subscriber sub_pos = nh.subscribe("ship/pose", 1000, &callback_pos);
 
     // define the marker as the waypoints
     marker_wpt.header.frame_id = "world";

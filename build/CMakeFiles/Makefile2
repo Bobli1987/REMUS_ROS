@@ -1773,7 +1773,7 @@ imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/tf2_msgs_generate_messages
 imm/CMakeFiles/viz_trajectory.dir/all: imm/CMakeFiles/imm_generate_messages_py.dir/all
 	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/depend
 	$(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  33
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  37
 	@echo "Built target viz_trajectory"
 .PHONY : imm/CMakeFiles/viz_trajectory.dir/all
 
@@ -1816,6 +1816,7 @@ ship_los/all: ship_los/CMakeFiles/viz_ship.dir/all
 ship_los/clean: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/clean
 ship_los/clean: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir/clean
 ship_los/clean: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/clean
+ship_los/clean: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/clean
 ship_los/clean: ship_los/CMakeFiles/los_guidance.dir/clean
 ship_los/clean: ship_los/CMakeFiles/path_controller.dir/clean
 ship_los/clean: ship_los/CMakeFiles/ship_dynamics.dir/clean
@@ -1927,12 +1928,42 @@ clean: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir
+
+# All Build rule for target.
+ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/all:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/depend
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles 
+	@echo "Built target _ship_los_generate_messages_check_deps_waypoint"
+.PHONY : ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/all
+
+# Build rule for subdir invocation for target.
+ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
+.PHONY : ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/rule
+
+# Convenience name for target.
+_ship_los_generate_messages_check_deps_waypoint: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/rule
+.PHONY : _ship_los_generate_messages_check_deps_waypoint
+
+# clean rule for target.
+ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/clean:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/clean
+.PHONY : ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/clean
+
+# clean rule for target.
+clean: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target ship_los/CMakeFiles/los_guidance.dir
 
 # All Build rule for target.
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/tf_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-ship_los/CMakeFiles/los_guidance.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/tf_generate_messages_py.dir/all
@@ -1962,6 +1993,7 @@ ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/visualization_msgs_gene
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: imm/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
+ship_los/CMakeFiles/los_guidance.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/los_guidance.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/los_guidance.dir/build.make ship_los/CMakeFiles/los_guidance.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/los_guidance.dir/build.make ship_los/CMakeFiles/los_guidance.dir/build
@@ -1975,7 +2007,7 @@ all: ship_los/CMakeFiles/los_guidance.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/los_guidance.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/los_guidance.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/los_guidance.dir/rule
@@ -1999,7 +2031,6 @@ clean: ship_los/CMakeFiles/los_guidance.dir/clean
 # All Build rule for target.
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/tf_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-ship_los/CMakeFiles/path_controller.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/tf_generate_messages_py.dir/all
@@ -2029,6 +2060,7 @@ ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/visualization_msgs_g
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: imm/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
+ship_los/CMakeFiles/path_controller.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/path_controller.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/path_controller.dir/build.make ship_los/CMakeFiles/path_controller.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/path_controller.dir/build.make ship_los/CMakeFiles/path_controller.dir/build
@@ -2042,7 +2074,7 @@ all: ship_los/CMakeFiles/path_controller.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/path_controller.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/path_controller.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/path_controller.dir/rule
@@ -2066,7 +2098,6 @@ clean: ship_los/CMakeFiles/path_controller.dir/clean
 # All Build rule for target.
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/tf_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-ship_los/CMakeFiles/ship_dynamics.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/tf_generate_messages_py.dir/all
@@ -2096,6 +2127,7 @@ ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/visualization_msgs_gen
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: imm/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
+ship_los/CMakeFiles/ship_dynamics.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/ship_dynamics.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/ship_dynamics.dir/build.make ship_los/CMakeFiles/ship_dynamics.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/ship_dynamics.dir/build.make ship_los/CMakeFiles/ship_dynamics.dir/build
@@ -2109,7 +2141,7 @@ all: ship_los/CMakeFiles/ship_dynamics.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_dynamics.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_dynamics.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_dynamics.dir/rule
@@ -2140,7 +2172,7 @@ ship_los/CMakeFiles/ship_los_gencpp.dir/all: ship_los/CMakeFiles/ship_los_genera
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_gencpp.dir/rule
@@ -2162,8 +2194,8 @@ clean: ship_los/CMakeFiles/ship_los_gencpp.dir/clean
 # Target rules for target ship_los/CMakeFiles/ship_los_generate_messages.dir
 
 # All Build rule for target.
-ship_los/CMakeFiles/ship_los_generate_messages.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
+ship_los/CMakeFiles/ship_los_generate_messages.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages.dir/build
@@ -2177,7 +2209,7 @@ all: ship_los/CMakeFiles/ship_los_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages.dir/rule
@@ -2199,20 +2231,21 @@ clean: ship_los/CMakeFiles/ship_los_generate_messages.dir/clean
 # Target rules for target ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir
 
 # All Build rule for target.
+ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: imm/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir/all
-ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/all
+ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  22 23 24
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  22 23 24 25
 	@echo "Built target ship_los_generate_messages_cpp"
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/rule
@@ -2234,20 +2267,21 @@ clean: ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/clean
 # Target rules for target ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir
 
 # All Build rule for target.
+ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: imm/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir/all
-ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/all
+ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  25 26 27
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  26 27 28 29
 	@echo "Built target ship_los_generate_messages_lisp"
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/rule
@@ -2270,19 +2304,20 @@ clean: ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/clean
 
 # All Build rule for target.
 ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
+ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: imm/CMakeFiles/std_msgs_generate_messages_py.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course.dir/all
-ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control.dir/all
+ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint.dir/all
 ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all: ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_py.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_py.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/ship_los_generate_messages_py.dir/build.make ship_los/CMakeFiles/ship_los_generate_messages_py.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  28 29 30 31
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  30 31 32 33 34 35
 	@echo "Built target ship_los_generate_messages_py"
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_generate_messages_py.dir/rule
@@ -2313,7 +2348,7 @@ ship_los/CMakeFiles/ship_los_genlisp.dir/all: ship_los/CMakeFiles/ship_los_gener
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_genlisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_genlisp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_genlisp.dir/rule
@@ -2344,7 +2379,7 @@ ship_los/CMakeFiles/ship_los_genpy.dir/all: ship_los/CMakeFiles/ship_los_generat
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/ship_los_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/ship_los_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/ship_los_genpy.dir/rule
@@ -2368,7 +2403,6 @@ clean: ship_los/CMakeFiles/ship_los_genpy.dir/clean
 # All Build rule for target.
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/tf_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_py.dir/all
-ship_los/CMakeFiles/viz_ship.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/roscpp_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/roscpp_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/tf_generate_messages_py.dir/all
@@ -2398,10 +2432,11 @@ ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/visualization_msgs_generate
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: imm/CMakeFiles/tf2_msgs_generate_messages_lisp.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_cpp.dir/all
+ship_los/CMakeFiles/viz_ship.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_py.dir/all
 ship_los/CMakeFiles/viz_ship.dir/all: ship_los/CMakeFiles/ship_los_generate_messages_lisp.dir/all
 	$(MAKE) -f ship_los/CMakeFiles/viz_ship.dir/build.make ship_los/CMakeFiles/viz_ship.dir/depend
 	$(MAKE) -f ship_los/CMakeFiles/viz_ship.dir/build.make ship_los/CMakeFiles/viz_ship.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  32
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles  36
 	@echo "Built target viz_ship"
 .PHONY : ship_los/CMakeFiles/viz_ship.dir/all
 
@@ -2411,7 +2446,7 @@ all: ship_los/CMakeFiles/viz_ship.dir/all
 
 # Build rule for subdir invocation for target.
 ship_los/CMakeFiles/viz_ship.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 15
 	$(MAKE) -f CMakeFiles/Makefile2 ship_los/CMakeFiles/viz_ship.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/bo/dev/REMUS/build/CMakeFiles 0
 .PHONY : ship_los/CMakeFiles/viz_ship.dir/rule

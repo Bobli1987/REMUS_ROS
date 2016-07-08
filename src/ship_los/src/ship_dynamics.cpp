@@ -13,7 +13,7 @@ ship_los::pose msg_pos;
 // the vehicle for the simulation
 Ship vehicle = Ship({0.1, 0, 0}, {-0.2, -1.25, 1.78});
 
-// the time step of the ode solver and message publishing
+// the time step of message publishing
 double step_size = 0.05;
 
 void timerCallback(const ros::TimerEvent&)
@@ -36,6 +36,7 @@ void timerCallback(const ros::TimerEvent&)
     pubPtr_pos->publish(msg_pos);
 
     // run a one-step simulation
+    // the time step should be equal to the publishing rate to simulate the real time
     RunShip(vehicle, 1, step_size);
 }
 

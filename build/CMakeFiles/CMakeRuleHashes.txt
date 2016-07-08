@@ -5,6 +5,7 @@ ba5b168b721e7adf579f1738d2221bb9 /home/bo/dev/REMUS/devel/include/imm/pose.h
 df9685f10c7f80da7c9370f922555450 /home/bo/dev/REMUS/devel/include/ship_los/control.h
 f5211447005670e031fc8ea4abf01d2b /home/bo/dev/REMUS/devel/include/ship_los/course.h
 c3582729b154b89eff31e13ecb8547b7 /home/bo/dev/REMUS/devel/include/ship_los/pose.h
+b497c62a47c49d1d0e32905187e9ba67 /home/bo/dev/REMUS/devel/include/ship_los/waypoint.h
 47649953e262cb776b2d76a7af152fa0 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/__init__.py
 8a98c6595134ffb5b9ce064ac03129a6 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_control.py
 2968526f6e3ecc11a771fc19b71bd80c /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/imm/msg/_euler.py
@@ -13,12 +14,15 @@ c3a30c022b74c05cb89e3e92d33082d3 /home/bo/dev/REMUS/devel/lib/python2.7/dist-pac
 ab92fc84e3c2f4f5ffec3c84842f7a20 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/msg/_control.py
 57f1f7588a4054c19c2f51d2dac97422 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/msg/_course.py
 81baf59400f2b395e46d694b3ed1788b /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/msg/_pose.py
+21b5a1ce04f2edd44d2cfa0d95f81705 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/srv/__init__.py
+91f0e0e3179f75f49ad632bad0115ffd /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/srv/_waypoint.py
 c31712b974cd4bc40a916f21865ea8a9 /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/control.lisp
 1744d181b506eb704a8bf9e476329b83 /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/euler.lisp
 1eb9d87802bfcfbe91d8dceb6d609fbc /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/pose.lisp
 1319df5c10138d48ca77d0ffbb44066f /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/msg/control.lisp
 f0ba7a2b8f002f0419f1ae50c83348f9 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/msg/course.lisp
 71fe69aa0911e15b929591dcddf77d59 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/msg/pose.lisp
+97d41bc2ad4ecde51c62b6bead1021c2 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/srv/waypoint.lisp
 f2588ef452aee60a163926da1a9216aa CMakeFiles/REMUS_OTHER_FILES
 b51569ab1c9e378dd521abae7de65a0f CMakeFiles/clean_test_results
 294f0e284072a23db222267f6fb5e50b CMakeFiles/download_extra_data
@@ -71,6 +75,7 @@ ba0c0b4cda19bec9e198336db759e0f0 imm/CMakeFiles/_imm_generate_messages_check_dep
 b46a558506531add52afc4daa8c895b3 ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_control
 a3ee4bca003093064b168ad167e30251 ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_course
 60d6366fd63cae73ba6143337b8cc046 ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_pose
+f9c9125887b17c1c7170c2a9cce39384 ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_waypoint
 7ed9b80060d6a08e19502419752a26c8 ship_los/CMakeFiles/ship_los_gencpp
 7ed9b80060d6a08e19502419752a26c8 ship_los/CMakeFiles/ship_los_generate_messages
 7ed9b80060d6a08e19502419752a26c8 ship_los/CMakeFiles/ship_los_generate_messages_cpp

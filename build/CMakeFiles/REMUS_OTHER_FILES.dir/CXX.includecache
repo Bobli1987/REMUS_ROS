@@ -16,9 +16,11 @@ visualization_msgs/Marker.h
 geometry_msgs/Point.h
 -
 ship_los/pose.h
--
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/pose.h
 ship_los/course.h
--
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/course.h
+ship_los/waypoint.h
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/waypoint.h
 cmath
 -
 boost/numeric/odeint.hpp

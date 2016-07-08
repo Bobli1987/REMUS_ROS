@@ -3,7 +3,7 @@
 #include <geometry_msgs/Point.h>
 #include <tf/transform_broadcaster.h>
 #include <cmath>
-#include <ship_los/pose.h>
+#include "ship_los/pose.h"
 
 ros::Publisher *pubPtr_trajectory;
 visualization_msgs::Marker trajectory;
