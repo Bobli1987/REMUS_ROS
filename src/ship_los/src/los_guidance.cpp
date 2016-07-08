@@ -22,6 +22,9 @@ vector<array<double, 2>> waypoints = { {0.372, -1.50},
                                        {9.372, 0.00},
                                        {8.372, 1.50} };
 
+//vector<array<double, 2>> waypoints = { {0.372, -1.50},
+//                                       {-0.628, 0.00} };
+
 // the publishers
 ros::Publisher *pubPtr_course;
 ros::Publisher *pub_markers;
@@ -110,8 +113,7 @@ void callback_pos(const ship_los::pose &msg_pos)
                 los_point[1] = d*(los_point[0] - waypoints[wpt_num][0]) + waypoints[wpt_num][1];
             }
             else
-            {
-                ROS_WARN_STREAM("There are no intersections");
+            {                
                 feasible = false;
             }
         }
@@ -129,7 +131,6 @@ void callback_pos(const ship_los::pose &msg_pos)
             }
             else
             {
-                ROS_WARN_STREAM("There are no intersections");
                 feasible = false;
             }
         }
@@ -139,22 +140,35 @@ void callback_pos(const ship_los::pose &msg_pos)
         {
             course_angle = atan2(los_point[1] - msg_pos.y, los_point[0] - msg_pos.x);
 
-            if (fabs(msg_pos.heading - course_angle) > M_PI)
+            if (fabs(course_angle - msg_pos.heading) > M_PI)
             {
-//                course_angle += boost::math::sign(msg_pos.heading)*2*M_PI;
-                ROS_ERROR("I cannot deal with this situation right now.");
+                ROS_ERROR_STREAM("This is the probelm I haven't solved perfectly");
+                double temp_course_angle = course_angle + boost::math::sign(msg_pos.heading)*2*M_PI;
+                course_state[0] = course_angle;
+                msg_course.angle = msg_pos.heading + (temp_course_angle - msg_pos.heading) * 0.2;
+                msg_course.rate = 0;
+                msg_course.acceleration = 0;
+            }
+            else
+            {
+                // low-pass filter the obtained course angle, yielding rate and acceleration
+                // the end time of the integration should be the publising rate of ship/pose
+                size_t steps = integrate(reference_model, course_state, 0.0, 0.05, 0.01);
+
+                // publish the desired course message
+                msg_course.angle = course_state[0];
+                msg_course.rate = course_state[1];
+                msg_course.acceleration = course_state[2];
             }
 
-            // low-pass filter the obtained course angle, yielding rate and acceleration
-            // the end time of the integration should be the publising rate of ship/pose
-            size_t steps = integrate(reference_model, course_state, 0.0, 0.05, 0.01);
-
-            // publish the desired course message
-            msg_course.angle = course_state[0];
-            msg_course.rate = course_state[1];
-            msg_course.acceleration = course_state[2];
             pubPtr_course->publish(msg_course);
         }
+        else
+        {
+            // no course message published
+            ROS_WARN_STREAM("There are no intersections");
+        }
+
 
         // the distance between the ship and the waypoint to which it points
         double distance = sqrt(pow(msg_pos.x - waypoints[wpt_num+1][0], 2) +
