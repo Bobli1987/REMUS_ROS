@@ -7,6 +7,7 @@
 #include "ship_los/waypoint.h"
 #include <cmath>
 #include <boost/numeric/odeint.hpp>
+#include <boost/math/special_functions/sign.hpp>
 
 using namespace std;
 using namespace boost::numeric::odeint;
@@ -103,7 +104,7 @@ void callback_pos(const ship_los::pose &msg_pos)
                 if (dx > 0) {
                     los_point[0] = (-b + sqrt(pow(b,2) - 4*a*c))/(2*a);
                 }
-                if (dx <0) {
+                if (dx < 0) {
                     los_point[0] = (-b - sqrt(pow(b,2) - 4*a*c))/(2*a);
                 }
                 los_point[1] = d*(los_point[0] - waypoints[wpt_num][0]) + waypoints[wpt_num][1];
@@ -137,11 +138,23 @@ void callback_pos(const ship_los::pose &msg_pos)
         if (feasible)
         {
             course_angle = atan2(los_point[1] - msg_pos.y, los_point[0] - msg_pos.x);
-        }
 
-        // low-pass filter the obtained course angle, yielding rate and acceleration
-        // the end time of the integration should be the publising rate of ship/pose
-        size_t steps = integrate(reference_model, course_state, 0.0, 0.05, 0.01);
+            if (fabs(msg_pos.heading - course_angle) > M_PI)
+            {
+//                course_angle += boost::math::sign(msg_pos.heading)*2*M_PI;
+                ROS_ERROR("I cannot deal with this situation right now.");
+            }
+
+            // low-pass filter the obtained course angle, yielding rate and acceleration
+            // the end time of the integration should be the publising rate of ship/pose
+            size_t steps = integrate(reference_model, course_state, 0.0, 0.05, 0.01);
+
+            // publish the desired course message
+            msg_course.angle = course_state[0];
+            msg_course.rate = course_state[1];
+            msg_course.acceleration = course_state[2];
+            pubPtr_course->publish(msg_course);
+        }
 
         // the distance between the ship and the waypoint to which it points
         double distance = sqrt(pow(msg_pos.x - waypoints[wpt_num+1][0], 2) +
@@ -161,11 +174,6 @@ void callback_pos(const ship_los::pose &msg_pos)
         ROS_WARN("The ship has reached the last waypoint.");
     }
 
-    // publish the desired course message
-    msg_course.angle = course_state[0];
-    msg_course.rate = course_state[1];
-    msg_course.acceleration = course_state[2];
-    pubPtr_course->publish(msg_course);
 
     // publish the markers to rviz
     if (wpt_num < waypoints.size()-1) {

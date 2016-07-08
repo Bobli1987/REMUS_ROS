@@ -3,7 +3,6 @@
 
 #include <vector>
 #include <cmath>
-#include <boost/math/special_functions/sign.hpp>
 #include <boost/numeric/odeint.hpp>
 #include "ship.h"
 
