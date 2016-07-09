@@ -1,6 +1,7 @@
 #include <ros/ros.h>
 #include <vector>
 #include <visualization_msgs/Marker.h>
+#include <visualization_msgs/MarkerArray.h>
 #include <geometry_msgs/Point.h>
 #include "ship_los/pose.h"
 #include "ship_los/course.h"
@@ -22,16 +23,15 @@ vector<array<double, 2>> waypoints = { {0.372, -1.50},
                                        {9.372, 0.00},
                                        {8.372, 1.50} };
 
-//vector<array<double, 2>> waypoints = { {0.372, -1.50},
-//                                       {-0.628, 0.00} };
-
 // the publishers
 ros::Publisher *pubPtr_course;
 ros::Publisher *pub_markers;
+ros::Publisher *pub_markerArray;
 
 // the messages
 visualization_msgs::Marker marker_wpt;
 visualization_msgs::Marker marker_bulb;
+visualization_msgs::MarkerArray marker_textArray;
 ship_los::course msg_course;
 
 // the number of the waypoint which the ship just passed
@@ -142,10 +142,14 @@ void callback_pos(const ship_los::pose &msg_pos)
 
             if (fabs(course_angle - msg_pos.heading) > M_PI)
             {
-                ROS_ERROR_STREAM("This is the probelm I haven't solved perfectly");
-                double temp_course_angle = course_angle + boost::math::sign(msg_pos.heading)*2*M_PI;
                 course_state[0] = course_angle;
-                msg_course.angle = msg_pos.heading + (temp_course_angle - msg_pos.heading) * 0.2;
+                course_state[1] = 0;
+                course_state[2] = 0;
+
+                ROS_ERROR_STREAM("This is the probelm I haven't solved perfectly");
+
+                course_angle += boost::math::sign(msg_pos.heading)*2*M_PI;
+                msg_course.angle = msg_pos.heading + (course_angle - msg_pos.heading) * 0.2;
                 msg_course.rate = 0;
                 msg_course.acceleration = 0;
             }
@@ -195,9 +199,39 @@ void callback_pos(const ship_los::pose &msg_pos)
         marker_bulb.pose.position.y = -waypoints[wpt_num+1][1];
         marker_bulb.pose.position.z = 1.5;
     }
+}
+
+void timerCallback(const ros::TimerEvent)
+{
+    // define the waypoint banners
+    marker_textArray.markers.clear();
+
+    for (uint32_t i = 0; i < waypoints.size(); ++i)
+    {
+        visualization_msgs::Marker marker_text;
+        string name = "wpt";
+        marker_text.header.frame_id = "world";
+        marker_text.header.stamp = ros::Time::now();
+        marker_text.ns = "waypoints/viz";
+        marker_text.action = visualization_msgs::Marker::ADD;
+        marker_text.type = visualization_msgs::Marker::TEXT_VIEW_FACING;
+        marker_text.id = i+2;
+        marker_text.scale.z = 0.2;
+        marker_text.text = name + to_string(i);
+        marker_text.pose.position.x = waypoints[i][0];
+        marker_text.pose.position.y = -waypoints[i][1]-0.2;
+        marker_text.pose.position.z = 1.0;
+        marker_text.color.r = 1.0; // white
+        marker_text.color.b = 1.0;
+        marker_text.color.g = 1.0;
+        marker_text.color.a = 1.0;
+
+        marker_textArray.markers.push_back(marker_text);
+    }
 
     pub_markers->publish(marker_wpt);
     pub_markers->publish(marker_bulb);
+    pub_markerArray->publish(marker_textArray);
 }
 
 int main(int argc, char **argv)
@@ -206,7 +240,11 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
 
     pub_markers = new ros::Publisher(nh.advertise<visualization_msgs::Marker>("ship/waypoints", 1000));
+    pub_markerArray = new ros::Publisher(nh.advertise<visualization_msgs::MarkerArray>("ship/waypoint_banner", 1000));
     pubPtr_course = new ros::Publisher(nh.advertise<ship_los::course>("ship/course", 1000));
+
+    // create a timer to control the publishing of waypoints
+    ros::Timer timer = nh.createTimer(ros::Duration(0.1), &timerCallback);
 
     // define the service used to add waypoints
     ros::ServiceServer srv_insert = nh.advertiseService("insert_waypoint", &insertCallback);
@@ -251,9 +289,11 @@ int main(int argc, char **argv)
     marker_bulb.color.a = 1.0;
     marker_bulb.lifetime = ros::Duration();
 
+
     ros::spin();
 
     delete pub_markers;
+    delete pub_markerArray;
     delete pubPtr_course;
 
     return 0;

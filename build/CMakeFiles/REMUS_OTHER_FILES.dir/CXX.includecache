@@ -13,6 +13,8 @@ vector
 -
 visualization_msgs/Marker.h
 -
+visualization_msgs/MarkerArray.h
+-
 geometry_msgs/Point.h
 -
 ship_los/pose.h

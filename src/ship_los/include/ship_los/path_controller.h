@@ -66,7 +66,7 @@ vector<double> ComputeActuation(PathController &controller, const double &u, con
 {
     vector<double> actuation(3, 0);
 
-    double z1 = remainder(psi - psi_d, 2*M_PI);
+    double z1 = psi - psi_d;
     double alpha3 = -controller.c_ * z1 + r_d;
     double dalpha3 = -controller.c_ * (r - r_d) + dr_d;
 
