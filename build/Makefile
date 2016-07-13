@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -800,6 +790,97 @@ viz_trajectory/fast:
 .PHONY : viz_trajectory/fast
 
 #=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingAction
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingAction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingAction
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingAction
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingAction/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingAction.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingAction.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingAction/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingActionGoal
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingActionGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingActionGoal
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingActionGoal
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingActionGoal/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingActionGoal.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingActionGoal.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingActionGoal/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingActionResult
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingActionResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingActionResult
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingActionResult
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingActionResult/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingActionResult.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingActionResult.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingActionResult/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingFeedback
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingFeedback: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingFeedback
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingFeedback
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingFeedback/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingFeedback.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingFeedback.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingFeedback/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingGoal
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingGoal: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingGoal
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingGoal
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingGoal/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingGoal.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingGoal.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingGoal/fast
+
+#=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_WaypointTrackingResult
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingResult: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_WaypointTrackingResult
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingResult
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_WaypointTrackingResult/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingResult.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_WaypointTrackingResult.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_WaypointTrackingResult/fast
+
+#=============================================================================
 # Target rules for targets named _ship_los_generate_messages_check_deps_control
 
 # Build rule for target.
@@ -982,6 +1063,19 @@ ship_los_genpy/fast:
 .PHONY : ship_los_genpy/fast
 
 #=============================================================================
+# Target rules for targets named task_manager
+
+# Build rule for target.
+task_manager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 task_manager
+.PHONY : task_manager
+
+# fast build rule for target.
+task_manager/fast:
+	$(MAKE) -f ship_los/CMakeFiles/task_manager.dir/build.make ship_los/CMakeFiles/task_manager.dir/build
+.PHONY : task_manager/fast
+
+#=============================================================================
 # Target rules for targets named viz_ship
 
 # Build rule for target.
@@ -1090,6 +1184,30 @@ ship_los/src/los_guidance.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.s
 .PHONY : ship_los/src/los_guidance.cpp.s
 
+ship_los/src/los_guidance_(copy).o: ship_los/src/los_guidance_(copy).cpp.o
+.PHONY : ship_los/src/los_guidance_(copy).o
+
+# target to build an object file
+ship_los/src/los_guidance_(copy).cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance_(copy).cpp.o"
+.PHONY : ship_los/src/los_guidance_(copy).cpp.o
+
+ship_los/src/los_guidance_(copy).i: ship_los/src/los_guidance_(copy).cpp.i
+.PHONY : ship_los/src/los_guidance_(copy).i
+
+# target to preprocess a source file
+ship_los/src/los_guidance_(copy).cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance_(copy).cpp.i"
+.PHONY : ship_los/src/los_guidance_(copy).cpp.i
+
+ship_los/src/los_guidance_(copy).s: ship_los/src/los_guidance_(copy).cpp.s
+.PHONY : ship_los/src/los_guidance_(copy).s
+
+# target to generate assembly for a file
+ship_los/src/los_guidance_(copy).cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance_(copy).cpp.s"
+.PHONY : ship_los/src/los_guidance_(copy).cpp.s
+
 ship_los/src/path_controller.o: ship_los/src/path_controller.cpp.o
 .PHONY : ship_los/src/path_controller.o
 
@@ -1138,6 +1256,30 @@ ship_los/src/ship_dynamics.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.s
 .PHONY : ship_los/src/ship_dynamics.cpp.s
 
+ship_los/src/task_manager.o: ship_los/src/task_manager.cpp.o
+.PHONY : ship_los/src/task_manager.o
+
+# target to build an object file
+ship_los/src/task_manager.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o
+.PHONY : ship_los/src/task_manager.cpp.o
+
+ship_los/src/task_manager.i: ship_los/src/task_manager.cpp.i
+.PHONY : ship_los/src/task_manager.i
+
+# target to preprocess a source file
+ship_los/src/task_manager.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.i
+.PHONY : ship_los/src/task_manager.cpp.i
+
+ship_los/src/task_manager.s: ship_los/src/task_manager.cpp.s
+.PHONY : ship_los/src/task_manager.s
+
+# target to generate assembly for a file
+ship_los/src/task_manager.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.s
+.PHONY : ship_los/src/task_manager.cpp.s
+
 ship_los/src/viz_trajectory.o: ship_los/src/viz_trajectory.cpp.o
 .PHONY : ship_los/src/viz_trajectory.o
 
@@ -1175,7 +1317,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run_tests"
@@ -1225,6 +1366,13 @@ help:
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... viz_trajectory"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingAction"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingActionGoal"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingActionResult"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingFeedback"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingGoal"
+	@echo "... _ship_los_generate_messages_check_deps_WaypointTrackingResult"
 	@echo "... _ship_los_generate_messages_check_deps_control"
 	@echo "... _ship_los_generate_messages_check_deps_course"
 	@echo "... _ship_los_generate_messages_check_deps_pose"
@@ -1239,6 +1387,7 @@ help:
 	@echo "... ship_los_generate_messages_py"
 	@echo "... ship_los_genlisp"
 	@echo "... ship_los_genpy"
+	@echo "... task_manager"
 	@echo "... viz_ship"
 	@echo "... imm/src/movingmass_controller.o"
 	@echo "... imm/src/movingmass_controller.i"
@@ -1252,12 +1401,18 @@ help:
 	@echo "... ship_los/src/los_guidance.o"
 	@echo "... ship_los/src/los_guidance.i"
 	@echo "... ship_los/src/los_guidance.s"
+	@echo "... ship_los/src/los_guidance_(copy).o"
+	@echo "... ship_los/src/los_guidance_(copy).i"
+	@echo "... ship_los/src/los_guidance_(copy).s"
 	@echo "... ship_los/src/path_controller.o"
 	@echo "... ship_los/src/path_controller.i"
 	@echo "... ship_los/src/path_controller.s"
 	@echo "... ship_los/src/ship_dynamics.o"
 	@echo "... ship_los/src/ship_dynamics.i"
 	@echo "... ship_los/src/ship_dynamics.s"
+	@echo "... ship_los/src/task_manager.o"
+	@echo "... ship_los/src/task_manager.i"
+	@echo "... ship_los/src/task_manager.s"
 	@echo "... ship_los/src/viz_trajectory.o"
 	@echo "... ship_los/src/viz_trajectory.i"
 	@echo "... ship_los/src/viz_trajectory.s"

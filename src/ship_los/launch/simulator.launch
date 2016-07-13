@@ -17,6 +17,12 @@
   />
   <node
     pkg="ship_los"
+    type="task_manager"
+    name="manager_node"
+    launch-prefix="xterm -e"
+  />
+  <node
+    pkg="ship_los"
     type="path_controller"
     name="control_node"
   />
@@ -26,5 +32,9 @@
     name="dynamics_node"
     required="true"
     launch-prefix="xterm -e"
-  />
+  >
+    <param name="init_x" value="-0.5" />
+    <param name="init_y" value="-1" />
+    <param name="init_heading" value="1.78" />
+  </node>
 </launch>

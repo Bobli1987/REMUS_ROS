@@ -36,7 +36,7 @@ public:
 
     void operator()(const std::vector<double>&, std::vector<double>&, const double);
     std::vector<double> ComputeActuation(const double&, const double&, const double&, const double&,
-                                               const double&, const double&, const double&, const double&);
+                                         const double&, const double&, const double&, const double&);
 
 };
 

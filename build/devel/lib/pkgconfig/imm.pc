@@ -1,8 +1,0 @@
-prefix=/home/bo/dev/REMUS/build/devel
-
-Name: imm
-Description: Description of imm
-Version: 0.0.0
-Cflags: -I/home/bo/dev/REMUS/build/devel/include -I/home/bo/dev/REMUS/src/imm/include -I/usr/include/eigen3 -I/usr/include
-Libs: -L/home/bo/dev/REMUS/build/devel/lib 
-Requires: roscpp std_msgs message_runtime

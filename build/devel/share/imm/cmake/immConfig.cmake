@@ -68,13 +68,13 @@ set(imm_CONFIG_INCLUDED TRUE)
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
   set(imm_SOURCE_PREFIX /home/bo/dev/REMUS/src/imm)
-  set(imm_DEVEL_PREFIX /home/bo/dev/REMUS/build/devel)
+  set(imm_DEVEL_PREFIX ../devel)
   set(imm_INSTALL_PREFIX "")
   set(imm_PREFIX ${imm_DEVEL_PREFIX})
 else()
   set(imm_SOURCE_PREFIX "")
   set(imm_DEVEL_PREFIX "")
-  set(imm_INSTALL_PREFIX /usr/local)
+  set(imm_INSTALL_PREFIX ../install)
   set(imm_PREFIX ${imm_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(imm_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/bo/dev/REMUS/build/devel/include;/home/bo/dev/REMUS/src/imm/include;/usr/include/eigen3;/usr/include " STREQUAL " ")
+if(NOT "/home/bo/dev/REMUS/src/imm/../devel/include;/home/bo/dev/REMUS/src/imm/include;/usr/include/eigen3;/usr/include " STREQUAL " ")
   set(imm_INCLUDE_DIRS "")
-  set(_include_dirs "/home/bo/dev/REMUS/build/devel/include;/home/bo/dev/REMUS/src/imm/include;/usr/include/eigen3;/usr/include")
+  set(_include_dirs "/home/bo/dev/REMUS/src/imm/../devel/include;/home/bo/dev/REMUS/src/imm/include;/usr/include/eigen3;/usr/include")
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
       set(include ${idir})
@@ -122,7 +122,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/bo/dev/REMUS/build/devel/lib;/home/bo/dev/REMUS/devel/lib;/home/bo/dev/catkin_ws/devel/lib;/opt/ros/indigo/lib)
+    foreach(path ../devel/lib;/home/bo/dev/REMUS/devel/lib;/home/bo/dev/catkin_ws/devel/lib;/opt/ros/indigo/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -153,7 +153,7 @@ foreach(t ${imm_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "roscpp;std_msgs;message_runtime")
+set(depends "roscpp;std_msgs;visualization_msgs;message_runtime;tf")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls

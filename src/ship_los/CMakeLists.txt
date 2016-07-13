@@ -6,6 +6,7 @@ project(ship_los)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  actionlib
   std_msgs
   tf
   visualization_msgs
@@ -64,16 +65,16 @@ add_service_files(
 )
 
 ## Generate actions in the 'action' folder
-# add_action_files(
-#   FILES
-#   Action1.action
+add_action_files(
+  FILES
+  WaypointTracking.action
 #   Action2.action
-# )
+)
 
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
   DEPENDENCIES
-  std_msgs visualization_msgs
+  std_msgs visualization_msgs actionlib_msgs
 )
 
 ################################################
@@ -108,7 +109,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES ship_los
-  CATKIN_DEPENDS roscpp std_msgs tf visualization_msgs message_runtime
+  CATKIN_DEPENDS roscpp std_msgs tf visualization_msgs message_runtime actionlib_msgs
   DEPENDS Eigen Boost
 )
 
@@ -139,6 +140,7 @@ add_executable(ship_dynamics src/ship_dynamics.cpp)
 add_executable(viz_ship src/viz_trajectory.cpp)
 add_executable(los_guidance src/los_guidance.cpp)
 add_executable(path_controller src/path_controller.cpp)
+add_executable(task_manager src/task_manager.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
@@ -146,12 +148,14 @@ add_dependencies(ship_dynamics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPO
 add_dependencies(viz_ship ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(los_guidance ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(path_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(task_manager ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(ship_dynamics ${catkin_LIBRARIES})
 target_link_libraries(viz_ship ${catkin_LIBRARIES})
 target_link_libraries(los_guidance ${catkin_LIBRARIES})
 target_link_libraries(path_controller ${catkin_LIBRARIES})
+target_link_libraries(task_manager ${catkin_LIBRARIES})
 
 #############
 ## Install ##

@@ -5,7 +5,7 @@
       <Option title="REMUS" />
       <Option makefile_is_custom="1" />
       <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\imm\;CMake Files\..\build\imm\catkin_generated\;CMake Files\..\build\imm\cmake\;CMake Files\..\build\ship_los\;CMake Files\..\build\ship_los\catkin_generated\;CMake Files\..\build\ship_los\cmake\;CMake Files\..\devel\;CMake Files\..\devel\share\;CMake Files\..\devel\share\imm\;CMake Files\..\devel\share\imm\cmake\;CMake Files\..\devel\share\ship_los\;CMake Files\..\devel\share\ship_los\cmake\;CMake Files\imm\;CMake Files\ship_los\;" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\opt\ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\platform\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\test\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\tools\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\..\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\templates\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\catkin\cmake\em\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cpp_common\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_runtime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_serialization\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\roscpp_traits\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rostime\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosconsole\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\std_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\xmlrpcpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\geometry_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_filters\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\sensor_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_ros\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genmsg\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\gencpp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genlisp\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\genpy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rosgraph\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\message_generation\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\tf2_py\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\rospy\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\visualization_msgs\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\;CMake Files\..\..\..\..\..\opt\ros\indigo\share\cmake_modules\cmake\Modules\;CMake Files\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\usr\src\;CMake Files\..\..\..\..\..\usr\src\gtest\;CMake Files\..\..\..\..\..\usr\src\gtest\cmake\;CMake Files\..\build\;CMake Files\..\build\catkin\;CMake Files\..\build\catkin\catkin_generated\;CMake Files\..\build\catkin\catkin_generated\version\;CMake Files\..\build\catkin_generated\;CMake Files\..\build\catkin_generated\installspace\;CMake Files\..\build\imm\;CMake Files\..\build\imm\catkin_generated\;CMake Files\..\build\imm\cmake\;CMake Files\..\build\ship_los\;CMake Files\..\build\ship_los\catkin_generated\;CMake Files\..\build\ship_los\cmake\;CMake Files\..\devel\;CMake Files\..\devel\share\;CMake Files\..\devel\share\imm\;CMake Files\..\devel\share\imm\cmake\;CMake Files\..\devel\share\ship_los\;CMake Files\..\devel\share\ship_los\cmake\;CMake Files\imm\;CMake Files\ship_los\;CMake Files\ship_los\action\;" />
       <Build>
       <Target title="all">
          <Option working_dir="/home/bo/dev/REMUS/build" />
@@ -77,16 +77,6 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
-      <Target title="install/strip">
-         <Option working_dir="/home/bo/dev/REMUS/build" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/Makefile&quot;  VERBOSE=1 install/strip" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
       <Target title="list_install_components">
          <Option working_dir="/home/bo/dev/REMUS/build" />
          <Option type="4" />
@@ -145,6 +135,7 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add option="-DGTEST_CREATE_SHARED_LIBRARY=1" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
             <Add directory="/home/bo/dev/catkin_ws/devel/include" />
             <Add directory="/opt/ros/indigo/include" />
             <Add directory="/usr/include" />
@@ -173,6 +164,7 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add option="-DGTEST_CREATE_SHARED_LIBRARY=1" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
             <Add directory="/home/bo/dev/catkin_ws/devel/include" />
             <Add directory="/opt/ros/indigo/include" />
             <Add directory="/usr/include" />
@@ -201,6 +193,7 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add option="-DGTEST_CREATE_SHARED_LIBRARY=1" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
             <Add directory="/home/bo/dev/catkin_ws/devel/include" />
             <Add directory="/opt/ros/indigo/include" />
             <Add directory="/usr/include" />
@@ -229,6 +222,7 @@
          <Option compiler="gcc" />
          <Compiler>
             <Add option="-DGTEST_CREATE_SHARED_LIBRARY=1" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
             <Add directory="/home/bo/dev/catkin_ws/devel/include" />
             <Add directory="/opt/ros/indigo/include" />
             <Add directory="/usr/include" />
@@ -825,6 +819,76 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingAction">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingAction" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingActionFeedback" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingActionGoal">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingActionGoal" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingActionResult">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingActionResult" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingFeedback">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingFeedback" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingGoal">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingGoal" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="_ship_los_generate_messages_check_deps_WaypointTrackingResult">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_WaypointTrackingResult" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="_ship_los_generate_messages_check_deps_control">
          <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
          <Option type="4" />
@@ -1121,6 +1185,68 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="task_manager">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/task_manager" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 task_manager" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="task_manager/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/task_manager" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;ship_los&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/ship_los/include/ship_los" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 task_manager/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="viz_ship">
          <Option output="/home/bo/dev/REMUS/devel/lib/ship_los/viz_ship" prefix_auto="0" extension_auto="0" />
          <Option working_dir="/home/bo/dev/REMUS/devel/lib/ship_los" />
@@ -1190,11 +1316,15 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/los_guidance (copy).cpp">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/path_controller.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp">
       </Unit>
@@ -1232,6 +1362,10 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/CMakeLists.txt">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/action/WaypointTracking.action">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/action/WaypointTracking.action~">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/config/rviz.rviz">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/heading_controller.h">
@@ -1241,8 +1375,6 @@
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/ship.h">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/simulator.launch">
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/simulator.launch~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg">
       </Unit>
@@ -2119,16 +2251,7 @@
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-msg-extras.cmake">
-          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-msg-paths.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake">
@@ -2141,6 +2264,21 @@
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgsConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-msg-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-msg-paths.cmake">
           <Option virtualFolder="CMake Files\..\..\..\..\..\opt\ros\indigo\share\actionlib_msgs\cmake\" />
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/../../../../../opt/ros/indigo/share/genmsg/cmake/genmsgConfig-version.cmake">
@@ -2853,6 +2991,12 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/package.xml">
           <Option virtualFolder="CMake Files\ship_los\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/action/WaypointTracking.action">
+          <Option virtualFolder="CMake Files\ship_los\action\" />
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/action/WaypointTracking.action">
+          <Option virtualFolder="CMake Files\ship_los\action\" />
       </Unit>
    </Project>
 </CodeBlocks_project_file>

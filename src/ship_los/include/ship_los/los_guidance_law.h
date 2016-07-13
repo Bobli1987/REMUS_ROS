@@ -25,11 +25,11 @@ public:
         LosGuidanceLaw(course_state, radius, step_size, 0.4, 1.0) {}
 
 private:
-    // end time of the integration of the low-pass filter
-    const double step_size_;
-
     // radius of the capture circle
-    const double radius_ = 1.0;
+    double radius_ = 1.0;
+
+    // end time of the integration of the low-pass filter
+    double step_size_ = 0.05;
 
     // los vector
     std::array<double, 2> los_point_;
@@ -67,7 +67,10 @@ std::array<double, 3> ComputeCourse(LosGuidanceLaw &law, const double &pos_x, co
 
 
     bool feasible = true;
-    std::array<double, 3> msg_course = {0, 0, 0};
+    std::array<double, 3> msg_course;
+    msg_course[0] = law.course_state_[0];
+    msg_course[1] = law.course_state_[1];
+    msg_course[2] = law.course_state_[2];
 
     double dx = x1 - x0;
     double dy = y1 - y0;

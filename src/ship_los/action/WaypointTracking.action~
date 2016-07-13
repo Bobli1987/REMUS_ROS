@@ -1,0 +1,10 @@
+# goal definition
+float64[] pos_x
+float64[] pos_y
+---
+# result definition
+int32 wpt_index
+---
+# feedback definition
+int32 previous_index
+int32 next_index
