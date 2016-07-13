@@ -3,13 +3,13 @@
 #include <geometry_msgs/Twist.h>
 #include <eigen3/Eigen/Dense>
 #include "ship.h"
-#include "path_controller.h"
+#include "heading_controller.h"
 #include "ship_los/course.h"
 #include "ship_los/control.h"
 #include "ship_los/pose.h"
 
 // actuation computed by the controller
-vector<double> actuation;
+std::vector<double> actuation;
 
 // the time step of the controller
 double step_size = 0.1;
@@ -23,7 +23,7 @@ ship_los::control msg_actuation;
 
 // the path controller
 Ship vehicle = Ship();
-PathController controller = PathController(vehicle, 0.75, 25, 10, 2.5);
+HeadingController controller = HeadingController(vehicle, 0.75, 25, 10, 2.5);
 
 void callback_pose(const ship_los::pose &msg_pose)
 {

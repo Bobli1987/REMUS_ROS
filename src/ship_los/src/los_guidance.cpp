@@ -9,6 +9,7 @@
 #include <cmath>
 #include <boost/numeric/odeint.hpp>
 #include <boost/math/special_functions/sign.hpp>
+#include "los_guidance_law.h"
 
 using namespace std;
 using namespace boost::numeric::odeint;
@@ -25,8 +26,8 @@ vector<array<double, 2>> waypoints = { {0.372, -1.50},
 
 // the publishers
 ros::Publisher *pubPtr_course;
-ros::Publisher *pub_markers;
-ros::Publisher *pub_markerArray;
+ros::Publisher *pubPtr_markers;
+ros::Publisher *pubPtr_markerArray;
 
 // the messages
 visualization_msgs::Marker marker_wpt;
@@ -38,19 +39,14 @@ ship_los::course msg_course;
 uint32_t wpt_num = 0;
 auto iter = ++waypoints.begin();
 
-// desired course angle
-double course_angle;
+// filtered course infomation
+vector<double> course_state = {1.78, 0, 0};
 
-// the reference model for trajectory generation
-const double omega = 0.4;
-const double zeta = 1.0;
-void reference_model(const vector<double> &x, vector<double> &dxdt, const double /* t */)
-{
-    dxdt[0] = x[1];
-    dxdt[1] = x[2];
-    dxdt[2] = -pow(omega,3)*x[0] - (2*zeta+1)*pow(omega,2)*x[1] - (2*zeta+1)*omega*x[2] + \
-            pow(omega,3)*course_angle;
-}
+// radius of the capture circle
+const double radius = 1.0;
+
+// initialize the los guidance controlller
+los_guidance_law::LosGuidanceLaw los_controller = los_guidance_law::LosGuidanceLaw(course_state, radius, 0.05);
 
 // callback of the service server
 bool insertCallback(ship_los::waypoint::Request &req, ship_los::waypoint::Response &resp)
@@ -74,105 +70,17 @@ bool insertCallback(ship_los::waypoint::Request &req, ship_los::waypoint::Respon
 // callback of the subscriber, where desired course is computed and published
 void callback_pos(const ship_los::pose &msg_pos)
 {
-    // the radius of the circle based on enclosure-based steering
-    double radius = 1.0;
-
-    // the intersection point
-    vector<double> los_point(2, 0);
-
-    // filtered course infomation
-    static vector<double> course_state = {1.78, 0, 0};
-
     if (wpt_num < waypoints.size()-1)
     {
-        // intersection feasibility
-        bool feasible = true;
+        array<double, 3> course_info = los_guidance_law::ComputeCourse(los_controller, msg_pos.x, msg_pos.y, msg_pos.heading,
+                                                    waypoints[wpt_num][0], waypoints[wpt_num+1][0],
+                                                    waypoints[wpt_num][1], waypoints[wpt_num+1][1]);
 
-        // solve the intersection point
-        double dx = waypoints[wpt_num+1][0] - waypoints[wpt_num][0];
-        double dy = waypoints[wpt_num+1][1] - waypoints[wpt_num][1];
-        if (fabs(dx) > numeric_limits<double>::epsilon())
-        {
-            double x = msg_pos.x;
-            double y = msg_pos.y;
-            double d = dy/dx;
-            double e = waypoints[wpt_num][0];
-            double f = waypoints[wpt_num][1];
-            double g = f - d*e;
-            double a = 1 + pow(d,2);
-            double b = 2*(d*g - d*y - x);
-            double c = pow(x,2) + pow(y,2) + pow(g,2) - 2*g*y - pow(radius,2);
-
-            if (pow(b,2) - 4*a*c >= 0) {
-                if (dx > 0) {
-                    los_point[0] = (-b + sqrt(pow(b,2) - 4*a*c))/(2*a);
-                }
-                if (dx < 0) {
-                    los_point[0] = (-b - sqrt(pow(b,2) - 4*a*c))/(2*a);
-                }
-                los_point[1] = d*(los_point[0] - waypoints[wpt_num][0]) + waypoints[wpt_num][1];
-            }
-            else
-            {                
-                feasible = false;
-            }
-        }
-        else
-        {
-            if (pow(radius,2) - pow((waypoints[wpt_num+1][0] - msg_pos.x),2) >=0 )
-            {
-                los_point[0] = waypoints[wpt_num+1][0];
-                if (dy > 0) {
-                    los_point[1] = msg_pos.y + sqrt(pow(radius,2) - pow((los_point[0] - msg_pos.x),2));
-                }
-                if (dy < 0) {
-                    los_point[1] = msg_pos.y - sqrt(pow(radius,2) - pow((los_point[0] - msg_pos.x),2));
-                }
-            }
-            else
-            {
-                feasible = false;
-            }
-        }
-
-        // compute the desired course angle using the intersection point
-        if (feasible)
-        {
-            course_angle = atan2(los_point[1] - msg_pos.y, los_point[0] - msg_pos.x);
-
-            if (fabs(course_angle - msg_pos.heading) > M_PI)
-            {
-                course_state[0] = course_angle;
-                course_state[1] = 0;
-                course_state[2] = 0;
-
-                ROS_ERROR_STREAM("This is the probelm I haven't solved perfectly");
-
-                course_angle += boost::math::sign(msg_pos.heading)*2*M_PI;
-                msg_course.angle = msg_pos.heading + (course_angle - msg_pos.heading) * 0.2;
-                msg_course.rate = 0;
-                msg_course.acceleration = 0;
-            }
-            else
-            {
-                // low-pass filter the obtained course angle, yielding rate and acceleration
-                // the end time of the integration should be the publising rate of ship/pose
-                size_t steps = integrate(reference_model, course_state, 0.0, 0.05, 0.01);
-
-                // publish the desired course message
-                msg_course.angle = course_state[0];
-                msg_course.rate = course_state[1];
-                msg_course.acceleration = course_state[2];
-            }
-
-            pubPtr_course->publish(msg_course);
-        }
-        else
-        {
-            // no course message published
-            ROS_WARN_STREAM("There are no intersections");
-        }
-
+        // publish the course info
+        msg_course.angle = course_info[0];
+        msg_course.rate = course_info[1];
+        msg_course.acceleration = course_info[2];
+        pubPtr_course->publish(msg_course);
 
         // the distance between the ship and the waypoint to which it points
         double distance = sqrt(pow(msg_pos.x - waypoints[wpt_num+1][0], 2) +
@@ -203,7 +111,7 @@ void callback_pos(const ship_los::pose &msg_pos)
 
 void timerCallback(const ros::TimerEvent)
 {
-    // define the waypoint banners
+    // define the waypoint labels
     marker_textArray.markers.clear();
 
     for (uint32_t i = 0; i < waypoints.size(); ++i)
@@ -229,9 +137,9 @@ void timerCallback(const ros::TimerEvent)
         marker_textArray.markers.push_back(marker_text);
     }
 
-    pub_markers->publish(marker_wpt);
-    pub_markers->publish(marker_bulb);
-    pub_markerArray->publish(marker_textArray);
+    pubPtr_markers->publish(marker_wpt);
+    pubPtr_markers->publish(marker_bulb);
+    pubPtr_markerArray->publish(marker_textArray);
 }
 
 int main(int argc, char **argv)
@@ -239,8 +147,8 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "los_guidance");
     ros::NodeHandle nh;
 
-    pub_markers = new ros::Publisher(nh.advertise<visualization_msgs::Marker>("ship/waypoints", 1000));
-    pub_markerArray = new ros::Publisher(nh.advertise<visualization_msgs::MarkerArray>("ship/waypoint_banner", 1000));
+    pubPtr_markers = new ros::Publisher(nh.advertise<visualization_msgs::Marker>("ship/waypoints", 1000));
+    pubPtr_markerArray = new ros::Publisher(nh.advertise<visualization_msgs::MarkerArray>("ship/waypoint_label", 1000));
     pubPtr_course = new ros::Publisher(nh.advertise<ship_los::course>("ship/course", 1000));
 
     // create a timer to control the publishing of waypoints
@@ -292,8 +200,8 @@ int main(int argc, char **argv)
 
     ros::spin();
 
-    delete pub_markers;
-    delete pub_markerArray;
+    delete pubPtr_markers;
+    delete pubPtr_markerArray;
     delete pubPtr_course;
 
     return 0;

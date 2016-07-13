@@ -1234,7 +1234,9 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/config/rviz.rviz">
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/path_controller.h">
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/heading_controller.h">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/los_guidance_law.h">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/ship.h">
       </Unit>

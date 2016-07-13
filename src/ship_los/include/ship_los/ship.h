@@ -7,30 +7,25 @@
 #include <Eigen/Dense>
 #include <boost/math/constants/constants.hpp>
 #include <boost/numeric/odeint.hpp>
-#include <cmath>
-
-using namespace std;
-using namespace Eigen;
-using namespace boost::numeric::odeint;
 
 // constant pi
 const double pi = boost::math::constants::pi<double>();
 // new matrix types
-typedef Matrix<double, 6, 1> Vector6d;
-typedef Matrix<double, 6, 6> Matrix6d;
+typedef Eigen::Matrix<double, 6, 1> Vector6d;
+typedef Eigen::Matrix<double, 6, 6> Matrix6d;
 
 // Class Remus
 class Ship
 {
-    friend class PathController;
+    friend class HeadingController;
     friend void RunShip(Ship&, const size_t&, const double&);
 
 public:
     // constructors
-    Ship(const vector<double> &init_velocity, const vector<double> &init_position, const double &main_thrust);
+    Ship(const std::vector<double> &init_velocity, const std::vector<double> &init_position, const double &main_thrust);
     Ship(): Ship({0.1, 0, 0}, {0, 0, 0}, 0.2) {}
-    Ship(const vector<double> &init_velocity): Ship(init_velocity, {0, 0, 0}, 0.2) {}
-    Ship(const vector<double> &init_velocity, const vector<double> &init_position):
+    Ship(const std::vector<double> &init_velocity): Ship(init_velocity, {0, 0, 0}, 0.2) {}
+    Ship(const std::vector<double> &init_velocity, const std::vector<double> &init_position):
             Ship(init_velocity, init_position, 0.2) {}
 
 private:
@@ -58,32 +53,33 @@ public:
     // elapsed time since current simulation starts
     double current_time_ = 0.0;
     // initial velocity and position(and orientation) of the vehicle
-    vector<double> init_velocity_, init_position_;
+    std::vector<double> init_velocity_, init_position_;
     // current velocity and position of the vehicle
-    Vector3d velocity_, position_;
+    Eigen::Vector3d velocity_, position_;
     // time vector of the simulation
-    vector<double> time_vec_ = {0};
+    std::vector<double> time_vec_ = {0};
     // array of velocity and position vectors during the simulation
-    vector<Vector3d> velocity_history_, position_history_;
+    std::vector<Eigen::Vector3d> velocity_history_, position_history_;
     // actuation acting on the vehicle
-    Vector3d actuation_;
+    Eigen::Vector3d actuation_;
 
     // rotation matrix declaration
-    static Matrix3d RotationMatrix(const Vector3d &pose);
+    static Eigen::Matrix3d RotationMatrix(const Eigen::Vector3d &pose);
 
     // inertia matrix of the ship
-    Matrix3d InertiaMatrix() const;
+    Eigen::Matrix3d InertiaMatrix() const;
 
     // damping matrix of the ship
-    Matrix3d DampingMatrix() const;
+    Eigen::Matrix3d DampingMatrix() const;
 
     // time derivative of the system state
-    Vector6d StateDerivative(const Vector3d &velocity, const Vector3d &position, const double /* t */) const;
+    Vector6d StateDerivative(const Eigen::Vector3d &velocity, const Eigen::Vector3d &position, const double /* t */) const;
     // operator function to integrate
-    void operator() (const vector<double> &state, vector<double> &state_derivative, const double);
+    void operator() (const std::vector<double> &state, std::vector<double> &state_derivative, const double);
 };
+
 // constructor definition
-Ship::Ship(const vector<double> &init_velocity, const vector<double> &init_position, const double &main_thrust):
+Ship::Ship(const std::vector<double> &init_velocity, const std::vector<double> &init_position, const double &main_thrust):
         init_velocity_(init_velocity), init_position_(init_position) {
     velocity_ << init_velocity[0], init_velocity[1], init_velocity[2];
     position_ << init_position[0], init_position[1], init_position[2];
@@ -93,8 +89,8 @@ Ship::Ship(const vector<double> &init_velocity, const vector<double> &init_posit
 }
 
 // rotation matrix definition
-Matrix3d Ship::RotationMatrix(const Vector3d &pose) {
-    Matrix3d rz;
+Eigen::Matrix3d Ship::RotationMatrix(const Eigen::Vector3d &pose) {
+    Eigen::Matrix3d rz;
     rz << cos(pose[2]), -sin(pose[2]), 0,
           sin(pose[2]), cos(pose[2]), 0,
           0, 0, 1;
@@ -102,8 +98,8 @@ Matrix3d Ship::RotationMatrix(const Vector3d &pose) {
 }
 
 // inertia matrix of the ship
-Matrix3d Ship::InertiaMatrix() const {
-    Matrix3d inertia_mat;
+Eigen::Matrix3d Ship::InertiaMatrix() const {
+    Eigen::Matrix3d inertia_mat;
     inertia_mat << m11_, 0, 0,
                    0, m22_, m23_,
                    0, m23_, m33_;
@@ -111,8 +107,8 @@ Matrix3d Ship::InertiaMatrix() const {
 }
 
 // damping matrix of the ship
-Matrix3d Ship::DampingMatrix() const {
-    Matrix3d damping_mat;
+Eigen::Matrix3d Ship::DampingMatrix() const {
+    Eigen::Matrix3d damping_mat;
     damping_mat << n11_, 0, 0,
                    0, n22_, n23_,
                    0, n23_, n33_;
@@ -120,9 +116,9 @@ Matrix3d Ship::DampingMatrix() const {
 }
 
 // time derivative of the system state
-Vector6d Ship::StateDerivative(const Vector3d &velocity, const Vector3d &position, const double) const {
+Vector6d Ship::StateDerivative(const Eigen::Vector3d &velocity, const Eigen::Vector3d &position, const double) const {
     Vector6d state_derivative;
-    Vector3d vec1, vec2;
+    Eigen::Vector3d vec1, vec2;
 
     vec1 = InertiaMatrix().inverse() *
            (actuation_ - DampingMatrix() * velocity);
@@ -132,8 +128,8 @@ Vector6d Ship::StateDerivative(const Vector3d &velocity, const Vector3d &positio
 }
 
 // class operator to integrate
-void Ship::operator()(const vector<double> &state, vector<double> &state_derivative, const double t) {
-    Vector3d velocity, position;
+void Ship::operator()(const std::vector<double> &state, std::vector<double> &state_derivative, const double t) {
+    Eigen::Vector3d velocity, position;
     Vector6d dy;
     velocity << state[0], state[1], state[2];
     position << state[3], state[4], state[5];
@@ -148,9 +144,9 @@ void RunShip(Ship &vehicle, const size_t &step_number = 600, const double &step_
     vehicle.step_number_ = step_number;
     vehicle.step_size_ = step_size;
     // ode solver
-    runge_kutta_dopri5 <vector<double>> stepper;
+    boost::numeric::odeint::runge_kutta_dopri5 <std::vector<double>> stepper;
 
-    vector<double> state;
+    std::vector<double> state;
 
     for (size_t index = 0; index < 3; ++index) {
         state.push_back(vehicle.velocity_[index]);
