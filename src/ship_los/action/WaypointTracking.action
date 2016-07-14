@@ -3,8 +3,7 @@ float64[] pos_x
 float64[] pos_y
 ---
 # result definition
-int32 final_index
+int32 final_wpt
 ---
 # feedback definition
-int32 previous_index
-int32 next_index
+int32 base_wpt
