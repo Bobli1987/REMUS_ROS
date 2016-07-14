@@ -920,6 +920,19 @@ _ship_los_generate_messages_check_deps_pose/fast:
 .PHONY : _ship_los_generate_messages_check_deps_pose/fast
 
 #=============================================================================
+# Target rules for targets named _ship_los_generate_messages_check_deps_task_input
+
+# Build rule for target.
+_ship_los_generate_messages_check_deps_task_input: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _ship_los_generate_messages_check_deps_task_input
+.PHONY : _ship_los_generate_messages_check_deps_task_input
+
+# fast build rule for target.
+_ship_los_generate_messages_check_deps_task_input/fast:
+	$(MAKE) -f ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_task_input.dir/build.make ship_los/CMakeFiles/_ship_los_generate_messages_check_deps_task_input.dir/build
+.PHONY : _ship_los_generate_messages_check_deps_task_input/fast
+
+#=============================================================================
 # Target rules for targets named _ship_los_generate_messages_check_deps_waypoint
 
 # Build rule for target.
@@ -1400,6 +1413,7 @@ help:
 	@echo "... _ship_los_generate_messages_check_deps_control"
 	@echo "... _ship_los_generate_messages_check_deps_course"
 	@echo "... _ship_los_generate_messages_check_deps_pose"
+	@echo "... _ship_los_generate_messages_check_deps_task_input"
 	@echo "... _ship_los_generate_messages_check_deps_waypoint"
 	@echo "... los_guidance"
 	@echo "... path_controller"

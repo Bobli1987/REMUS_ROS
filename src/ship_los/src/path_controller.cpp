@@ -52,7 +52,6 @@ void callback_course(const ship_los::course &msg_course)
 
 void timerCallback(const ros::TimerEvent)
 {
-    // do not compuate actuation and publish if no signal from ship/course
     if (received_courseinfo)
     {
         // compute the actuation
@@ -69,6 +68,20 @@ void timerCallback(const ros::TimerEvent)
 
         pubPtr_control->publish(msg_actuation);
     }
+    else
+    {
+        msg_actuation.surge = 0.2;
+        msg_actuation.sway = 0;
+        msg_actuation.yaw = 0;
+        msg_actuation.z1 = 0;
+        msg_actuation.z21 = 0;
+        msg_actuation.z22 = 0;
+        msg_actuation.z23 = 0;
+
+        pubPtr_control->publish(msg_actuation);
+    }
+
+    received_courseinfo = false;
 }
 
 int main(int argc, char **argv) {

@@ -919,6 +919,16 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="_ship_los_generate_messages_check_deps_task_input">
+         <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 _ship_los_generate_messages_check_deps_task_input" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/ship_los/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="_ship_los_generate_messages_check_deps_waypoint">
          <Option working_dir="/home/bo/dev/REMUS/build/ship_los" />
          <Option type="4" />
@@ -1374,6 +1384,10 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/include/ship_los/ship.h">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/included.launch">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/included.launch~">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/simulator.launch">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg">
@@ -1385,6 +1399,8 @@
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/pose.msg">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/package.xml">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/task_input.srv">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv">
       </Unit>

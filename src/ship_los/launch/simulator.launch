@@ -1,4 +1,11 @@
 <launch>
+  <include file="$(find ship_los)/launch/included.launch" >
+    <!-- all vars that included.launch requires must be set -->
+    <arg name="init_x" default="4" />
+    <arg name="init_y" default="-5" />
+    <arg name="init_heading" default="1.78" />
+  </include>
+  
   <node
     pkg="rviz"
     type="rviz"
@@ -17,24 +24,8 @@
   />
   <node
     pkg="ship_los"
-    type="task_manager"
-    name="manager_node"
-    launch-prefix="xterm -e"
-  />
-  <node
-    pkg="ship_los"
     type="path_controller"
     name="control_node"
   />
-  <node
-    pkg="ship_los"
-    type="ship_dynamics"
-    name="dynamics_node"
-    required="true"
-    launch-prefix="xterm -e"
-  >
-    <param name="init_x" value="-0.5" />
-    <param name="init_y" value="-1" />
-    <param name="init_heading" value="1.78" />
-  </node>
+
 </launch>

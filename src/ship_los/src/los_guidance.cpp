@@ -54,10 +54,10 @@ protected:
     vector<double>::iterator iter_y_;
 
     // generated course infomation
-    vector<double> course_state_ ;
+    vector<double> course_state_ = {0, 0, 0};
 
     // radius of the capture circle
-    double radius_;
+    double radius_ = 1.0;
 
     // los guidance controlller
     los_guidance_law::LosGuidanceLaw los_controller_;
@@ -115,11 +115,6 @@ public:
         marker_bulb_.color.a = 1.0;
         marker_bulb_.lifetime = ros::Duration();
 
-        // initialize the los guidance controlller
-        course_state_ = {1.78, 0, 0};
-        radius_ = 1.0;
-        los_controller_ = los_guidance_law::LosGuidanceLaw(course_state_, radius_, 0.05);
-
         // start the action server
         as_.start();
         ROS_INFO("Server starts, waiting for a goal.");
@@ -129,14 +124,22 @@ public:
 
     void goalCB()
     {
+        // reset the waypoints
         waypoints_xcoor_.clear();
         waypoints_ycoor_.clear();
+        marker_wpt_.points.clear();
 
         auto ptr_goal = as_.acceptNewGoal();
 
         waypoints_xcoor_ = ptr_goal->pos_x;
         waypoints_ycoor_ = ptr_goal->pos_y;
+        course_state_[0] = ptr_goal->init_heading;
 
+        // initialize the controller
+        los_controller_ = los_guidance_law::LosGuidanceLaw(course_state_, radius_, 0.05);
+
+        // reset the iterators
+        wpt_num_ = 0;
         iter_x_ = ++waypoints_xcoor_.begin();
         iter_y_ = ++waypoints_ycoor_.begin();
 

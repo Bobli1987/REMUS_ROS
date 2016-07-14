@@ -2,6 +2,8 @@
 #include <actionlib/client/simple_action_client.h>
 #include <actionlib/client/terminal_state.h>
 #include "ship_los/WaypointTrackingAction.h"
+#include "ship_los/pose.h"
+#include "ship_los/task_input.h"
 
 class WaypointTrackingClient
 {
@@ -17,12 +19,19 @@ public:
         ROS_INFO("Action server started.");
     }
 
-    void send_goal(const std::vector<double> &wpt_x, const std::vector<double> &wpt_y) {
+    void send_goal(std::array<double, 3> &ship_pos, const std::vector<double> &wpt_x, const std::vector<double> &wpt_y) {
 
         // define the waypoints
         ship_los::WaypointTrackingGoal goal;
         goal.pos_x = wpt_x;
         goal.pos_y = wpt_y;
+
+        // insert the ship position as the fisrt waypoint
+        goal.pos_x.insert(goal.pos_x.begin(), ship_pos[0]);
+        goal.pos_y.insert(goal.pos_y.begin(), ship_pos[1]);
+
+        // send the initial heading to initialze the los guidance controller
+        goal.init_heading = ship_pos[2];
 
         if (goal.pos_x.size() != goal.pos_y.size())
         {
@@ -73,17 +82,72 @@ public:
     }
 };
 
+// waypoints database
+std::vector<double> wpt_xcoor = {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372};
+std::vector<double> wpt_ycoor = {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50};
+
+// store the current position of the ship
+std::array<double ,3> ship_pos;
+
+void callback_pos(const ship_los::pose &msg_pos)
+{
+    ship_pos[0] = msg_pos.x;
+    ship_pos[1] = msg_pos.y;
+    ship_pos[2] = msg_pos.heading;
+}
+
+bool received_command = false;
+bool userCallback(ship_los::task_input::Request &req, ship_los::task_input::Response &resp)
+{
+    if (req.command == "overwrite" )
+        received_command = true;
+
+    ROS_INFO("Received command from the user.");
+    resp.feedback = "command received";
+    return true;
+}
+
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "task_manager");
+    ros::NodeHandle nh;
 
-    std::vector<double> wpt_xcoor = {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372};
-    std::vector<double> wpt_ycoor = {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50};
+    // define parameters for the ship's initial position
+    const std::string PARAM_1 = "~init_x";
+    const std::string PARAM_2 = "~init_y";
+    const std::string PARAM_3 = "~init_heading";
+    double init_x, init_y, init_heading;
+    bool ok_1 = ros::param::get(PARAM_1, init_x);
+    bool ok_2 = ros::param::get(PARAM_2, init_y);
+    bool ok_3 = ros::param::get(PARAM_3, init_heading);
 
+    if ( ok_1 && ok_2 && ok_3 )
+    {
+        ship_pos[0] = init_x;
+        ship_pos[1] = init_y;
+        ship_pos[2] = init_heading;
+    }
+
+    // subscriber to ship/pos
+    ros::Subscriber sub_pos = nh.subscribe("ship/pose", 1000, &callback_pos);
+
+    // service responding to user inputs
+    ros::ServiceServer srv_user = nh.advertiseService("task_command", &userCallback);
+
+    // create an actionlib client and send goals
     WaypointTrackingClient client;
-    client.send_goal(wpt_xcoor, wpt_ycoor);
 
-    ros::spin();
+    ros::Rate r(10);
+
+    while (ros::ok()) {
+        if (received_command) {
+            client.send_goal(ship_pos, wpt_xcoor, wpt_ycoor);
+            received_command = false;
+        }
+
+        ros::spinOnce();
+        r.sleep();
+    }
 
     return 0;
 }

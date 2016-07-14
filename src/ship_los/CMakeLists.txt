@@ -61,7 +61,7 @@ add_message_files(
 add_service_files(
   FILES
   waypoint.srv
-#   Service2.srv
+  task_input.srv
 )
 
 ## Generate actions in the 'action' folder
