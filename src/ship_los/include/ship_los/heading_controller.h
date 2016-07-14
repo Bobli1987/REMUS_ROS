@@ -80,13 +80,18 @@ std::vector<double> ComputeActuation(HeadingController &controller, const double
     actuation[0] = controller.n11_*u - controller.k1_*(u-controller.ud_);
     actuation[2] = controller.m32_*dalpha2 + controller.m33_*dalpha3 +
             controller.n32_*v + controller.n33_*r - controller.k3_*(r-alpha3) - z1;
-    actuation[1] = actuation[2]/controller.arm_;
 
     controller.alpha2_ = x[0];
     controller.z1_ = z1;
     controller.z21_ = u - controller.ud_;
     controller.z22_ = v - controller.alpha2_;
     controller.z23_ = r - alpha3;
+
+    // set saturation
+    actuation[0] = (actuation[0] > 2) ? 2 : actuation[0];
+    actuation[2] = (actuation[2] > 1.5) ? 1.5 : actuation[2];
+
+    actuation[1] = actuation[2]/controller.arm_;
 
     return actuation;
 }

@@ -17,5 +17,7 @@ CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o: /home/bo/dev/
 
 CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o: /home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp
 
+CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager_(copy).cpp.o: /home/bo/dev/REMUS/src/ship_los/src/task_manager\ (copy).cpp
+
 CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o: /home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp
 

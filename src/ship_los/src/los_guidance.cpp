@@ -17,14 +17,14 @@ using namespace std;
 using namespace boost::numeric::odeint;
 
 
-class WaypointTracking
+class WaypointTrackingServer
 {
 protected:
 
     ros::NodeHandle nh_;
     actionlib::SimpleActionServer<ship_los::WaypointTrackingAction> as_;
 
-    // the timer
+    // the timer which controls the publication of markers to rviz
     ros::Timer timer_;
 
     // the publishers
@@ -67,18 +67,18 @@ protected:
     ship_los::WaypointTrackingResult result_;
 
 public:
-    WaypointTracking(std::string name):
+    WaypointTrackingServer(std::string name):
         as_(nh_, name, false)
     {
         // register the goal and feedback callbacks
-        as_.registerGoalCallback(boost::bind(&WaypointTracking::goalCB, this));
-        as_.registerPreemptCallback(boost::bind(&WaypointTracking::preemptCB, this));
+        as_.registerGoalCallback(boost::bind(&WaypointTrackingServer::goalCB, this));
+        as_.registerPreemptCallback(boost::bind(&WaypointTrackingServer::preemptCB, this));
 
-        // the timer to control the publish to rviz
-        timer_ = nh_.createTimer(ros::Duration(0.1), &WaypointTracking::timerCallback, this);
+        // the timer to control the publishing to rviz
+        timer_ = nh_.createTimer(ros::Duration(0.1), &WaypointTrackingServer::timerCallback, this);
 
         // subscriber
-        sub_pos_ = nh_.subscribe("ship/pose", 1000, &WaypointTracking::callback_pos, this);
+        sub_pos_ = nh_.subscribe("ship/pose", 1000, &WaypointTrackingServer::callback_pos, this);
 
         // publishers
         pub_course_ = nh_.advertise<ship_los::course>("ship/course", 1000);
@@ -86,7 +86,7 @@ public:
         pub_markerArray_ = nh_.advertise<visualization_msgs::MarkerArray>("ship/waypoint_label", 1000);
 
         // define the service used to add waypoints
-        srv_insert_ = nh_.advertiseService("insert_waypoint", &WaypointTracking::insertCallback, this);
+        srv_insert_ = nh_.advertiseService("insert_waypoint", &WaypointTrackingServer::insertCallback, this);
 
         // define the marker as the waypoints
         marker_wpt_.header.frame_id = "world";
@@ -125,13 +125,10 @@ public:
         ROS_INFO("Server starts, waiting for a goal.");
     }
 
-    ~WaypointTracking(void) {}
+    ~WaypointTrackingServer(void) {}
 
     void goalCB()
     {
-        iter_x_ = ++waypoints_xcoor_.begin();
-        iter_y_ = ++waypoints_ycoor_.begin();
-
         waypoints_xcoor_.clear();
         waypoints_ycoor_.clear();
 
@@ -140,6 +137,10 @@ public:
         waypoints_xcoor_ = ptr_goal->pos_x;
         waypoints_ycoor_ = ptr_goal->pos_y;
 
+        iter_x_ = ++waypoints_xcoor_.begin();
+        iter_y_ = ++waypoints_ycoor_.begin();
+
+        // define the markers of waypoints using the new coordinates
         for (uint32_t i = 0; i < waypoints_xcoor_.size(); ++i)
         {
             geometry_msgs::Point p;
@@ -151,7 +152,7 @@ public:
             marker_wpt_.points.push_back(p);
         }
 
-        ROS_INFO("Waypoints received. The coordinates of the waypoints are");
+        ROS_INFO("Waypoints received. The coordinates of the waypoints are:");
         ROS_INFO("wpt ----- x (m) ------- y (m)");
 
         for (uint32_t i = 0; i < waypoints_xcoor_.size(); ++i)
@@ -177,7 +178,7 @@ public:
 };
 
 // callback of the subscriber, where desired course is computed and published
-void WaypointTracking::callback_pos(const ship_los::pose &msg_pos)
+void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
 {
     if (!as_.isActive()) {
         ROS_INFO_ONCE("The action server is not active.");
@@ -200,7 +201,7 @@ void WaypointTracking::callback_pos(const ship_los::pose &msg_pos)
         // the distance between the ship and the waypoint to which it points
         double distance = sqrt(pow(msg_pos.x - waypoints_xcoor_[wpt_num_+1], 2) +
                                pow(msg_pos.y - waypoints_ycoor_[wpt_num_+1], 2));
-        ROS_INFO("Base: wpt%u, Distance to wpt%u: %5.2f m", wpt_num_, wpt_num_+1, distance);
+//        ROS_INFO("Base: wpt%u, Distance to wpt%u: %5.2f m", wpt_num_, wpt_num_+1, distance);
 
         // change the waypoint if necessary
         if ( distance <= radius_)
@@ -214,12 +215,14 @@ void WaypointTracking::callback_pos(const ship_los::pose &msg_pos)
             as_.publishFeedback(feedback_);
 
 
-            ROS_INFO("Change the base waypoint to: wpt%u", wpt_num_);
+            ROS_INFO("Change the base waypoint to wpt%u.", wpt_num_);
         }
     }
     else
     {
         ROS_WARN_ONCE("The ship has reached the last waypoint.");
+        result_.final_wpt = wpt_num_;
+        as_.setSucceeded(result_);
     }
 
 
@@ -232,10 +235,26 @@ void WaypointTracking::callback_pos(const ship_los::pose &msg_pos)
 }
 
 // callback of the service server
-bool WaypointTracking::insertCallback(ship_los::waypoint::Request &req, ship_los::waypoint::Response &resp)
+bool WaypointTrackingServer::insertCallback(ship_los::waypoint::Request &req, ship_los::waypoint::Response &resp)
 {
+    if (!as_.isActive()) {
+        ROS_ERROR("The action server is not active. NO waypoint added.");
+        return false; }
+
+    // insert the new coordinates into the vectors
     iter_x_ = waypoints_xcoor_.insert(iter_x_, req.x);
-    iter_y_ = waypoints_xcoor_.insert(iter_y_, req.y);
+    iter_y_ = waypoints_ycoor_.insert(iter_y_, req.y);
+
+    ROS_INFO("Waypoint inserted as wpt%u. The coordinates of the waypoints are:", wpt_num_+1);
+    ROS_INFO("wpt ----- x (m) ------- y (m)");
+
+    for (uint32_t i = 0; i < waypoints_xcoor_.size(); ++i)
+    {
+        ROS_INFO("%2u ------ %5.2f ------- %5.2f",
+                 i, waypoints_xcoor_[i],  waypoints_ycoor_[i]);
+    }
+
+    // define the response
     string feedback = "The waypoint is inserted as wpt";
     resp.feedback =  feedback + to_string(wpt_num_+1);
 
@@ -252,7 +271,7 @@ bool WaypointTracking::insertCallback(ship_los::waypoint::Request &req, ship_los
 }
 
 // callback of the timer
-void WaypointTracking::timerCallback(const ros::TimerEvent &event)
+void WaypointTrackingServer::timerCallback(const ros::TimerEvent &event)
 {
     // define the waypoint labels
     marker_textArray_.markers.clear();
@@ -289,7 +308,7 @@ int main(int argc, char **argv)
 {
     ros::init(argc, argv, "guidance_node");
 
-    WaypointTracking waypoint_tracking(ros::this_node::getName());
+    WaypointTrackingServer waypoint_tracking(ros::this_node::getName());
 
     ros::spin();
 

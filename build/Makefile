@@ -1280,6 +1280,30 @@ ship_los/src/task_manager.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.s
 .PHONY : ship_los/src/task_manager.cpp.s
 
+ship_los/src/task_manager_(copy).o: ship_los/src/task_manager_(copy).cpp.o
+.PHONY : ship_los/src/task_manager_(copy).o
+
+# target to build an object file
+ship_los/src/task_manager_(copy).cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager_(copy).cpp.o"
+.PHONY : ship_los/src/task_manager_(copy).cpp.o
+
+ship_los/src/task_manager_(copy).i: ship_los/src/task_manager_(copy).cpp.i
+.PHONY : ship_los/src/task_manager_(copy).i
+
+# target to preprocess a source file
+ship_los/src/task_manager_(copy).cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager_(copy).cpp.i"
+.PHONY : ship_los/src/task_manager_(copy).cpp.i
+
+ship_los/src/task_manager_(copy).s: ship_los/src/task_manager_(copy).cpp.s
+.PHONY : ship_los/src/task_manager_(copy).s
+
+# target to generate assembly for a file
+ship_los/src/task_manager_(copy).cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager_(copy).cpp.s"
+.PHONY : ship_los/src/task_manager_(copy).cpp.s
+
 ship_los/src/viz_trajectory.o: ship_los/src/viz_trajectory.cpp.o
 .PHONY : ship_los/src/viz_trajectory.o
 
@@ -1413,6 +1437,9 @@ help:
 	@echo "... ship_los/src/task_manager.o"
 	@echo "... ship_los/src/task_manager.i"
 	@echo "... ship_los/src/task_manager.s"
+	@echo "... ship_los/src/task_manager_(copy).o"
+	@echo "... ship_los/src/task_manager_(copy).i"
+	@echo "... ship_los/src/task_manager_(copy).s"
 	@echo "... ship_los/src/viz_trajectory.o"
 	@echo "... ship_los/src/viz_trajectory.i"
 	@echo "... ship_los/src/viz_trajectory.s"

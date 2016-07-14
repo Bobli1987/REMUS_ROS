@@ -6,6 +6,7 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o"
   "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance_(copy).cpp.o"
   "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/path_controller.cpp.o"
+  "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager_(copy).cpp.o"
   "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o"
   "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o"
   "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o"

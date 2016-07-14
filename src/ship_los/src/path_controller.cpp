@@ -15,7 +15,11 @@ std::vector<double> actuation;
 double step_size = 0.1;
 
 // variables used for the controller
-double u, v, r, r_d, dr_d, psi, psi_d;
+double u, v, r, psi;
+double r_d, dr_d, psi_d;
+
+// helper variable
+bool received_courseinfo = false;
 
 // the publisher and message
 ros::Publisher *pubPtr_control;
@@ -39,26 +43,32 @@ void callback_vel(const geometry_msgs::Twist &msg_vel)
 
 void callback_course(const ship_los::course &msg_course)
 {
+    psi_d = msg_course.angle;
     r_d = msg_course.rate;
     dr_d = msg_course.acceleration;
-    psi_d = msg_course.angle;
+
+    received_courseinfo = true;
 }
 
 void timerCallback(const ros::TimerEvent)
 {
-    // compute the actuation
-    actuation = ComputeActuation(controller, u, v, r, psi, psi_d, r_d, dr_d, step_size);
+    // do not compuate actuation and publish if no signal from ship/course
+    if (received_courseinfo)
+    {
+        // compute the actuation
+        actuation = ComputeActuation(controller, u, v, r, psi, psi_d, r_d, dr_d, step_size);
 
-    // publish the control signal
-    msg_actuation.surge = actuation[0];
-    msg_actuation.sway = actuation[1];
-    msg_actuation.yaw = actuation[2];
-    msg_actuation.z1 = controller.z1_;
-    msg_actuation.z21 = controller.z21_;
-    msg_actuation.z22 = controller.z22_;
-    msg_actuation.z23 = controller.z23_;
+        // publish the control signal
+        msg_actuation.surge = actuation[0];
+        msg_actuation.sway = actuation[1];
+        msg_actuation.yaw = actuation[2];
+        msg_actuation.z1 = controller.z1_;
+        msg_actuation.z21 = controller.z21_;
+        msg_actuation.z22 = controller.z22_;
+        msg_actuation.z23 = controller.z23_;
 
-    pubPtr_control->publish(msg_actuation);
+        pubPtr_control->publish(msg_actuation);
+    }
 }
 
 int main(int argc, char **argv) {

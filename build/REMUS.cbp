@@ -1324,6 +1324,8 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/task_manager (copy).cpp">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp">

@@ -36,3 +36,13 @@ los_guidance_law.h
 ship_los/WaypointTrackingAction.h
 /home/bo/dev/REMUS/src/ship_los/src/ship_los/WaypointTrackingAction.h
 
+/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp
+ros/ros.h
+-
+actionlib/client/simple_action_client.h
+-
+actionlib/client/terminal_state.h
+-
+ship_los/WaypointTrackingAction.h
+/home/bo/dev/REMUS/src/ship_los/src/ship_los/WaypointTrackingAction.h
+
