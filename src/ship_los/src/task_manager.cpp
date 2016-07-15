@@ -5,12 +5,42 @@
 #include "ship_los/pose.h"
 #include "ship_los/task_input.h"
 
-class WaypointTrackingClient
+// forward declaration
+class WaypointTrackingClient;
+class WaypointTrackingMissionManager;
+
+class WaypointTrackingMission
 {
+    friend class WaypointTrackingClient;
+    friend class WaypointTrackingMissionManager;
+
 private:
-    actionlib::SimpleActionClient<ship_los::WaypointTrackingAction> ac;
+    // waypoints
+    std::vector<double> wpt_xcoor_;
+    std::vector<double> wpt_ycoor_;
+
+    // ID
+    std::string id_;
+
+    // mission progress
+    uint32_t progress_;
 
 public:
+    // constructor
+    WaypointTrackingMission() = default;
+    WaypointTrackingMission(const std::vector<double> &wpt_xcoor, const std::vector<double> &wpt_ycoor,
+                            const std::string &mission_name):
+        wpt_xcoor_(wpt_xcoor), wpt_ycoor_(wpt_ycoor), id_(mission_name) {
+        progress_ = 0;
+    }
+};
+
+class WaypointTrackingClient
+{
+public:
+    actionlib::SimpleActionClient<ship_los::WaypointTrackingAction> ac;
+    WaypointTrackingMission *ptr_mission_ = nullptr;
+
     // constructor
     WaypointTrackingClient(): ac("guidance_node", true)
     {
@@ -19,12 +49,12 @@ public:
         ROS_INFO("Action server started.");
     }
 
-    void send_goal(std::array<double, 3> &ship_pos, const std::vector<double> &wpt_x, const std::vector<double> &wpt_y) {
-
+    void send_goal(std::array<double, 3> &ship_pos, WaypointTrackingMission *mission)
+    {
         // define the waypoints
         ship_los::WaypointTrackingGoal goal;
-        goal.pos_x = wpt_x;
-        goal.pos_y = wpt_y;
+        goal.pos_x = mission->wpt_xcoor_;
+        goal.pos_y = mission->wpt_ycoor_;
 
         // insert the ship position as the fisrt waypoint
         goal.pos_x.insert(goal.pos_x.begin(), ship_pos[0]);
@@ -50,7 +80,18 @@ public:
                     boost::bind(&WaypointTrackingClient::activeCb, this),
                     boost::bind(&WaypointTrackingClient::feedbackCb, this, _1));
 
-        ROS_INFO("The goal with %lu waypoints were sent.", goal.pos_x.size());
+        if (ptr_mission_ != nullptr)
+        {
+            ROS_WARN("------ Previous mission ended (%u/%lu) -------",
+                     ptr_mission_->progress_, ptr_mission_->wpt_xcoor_.size());
+        }
+
+        // link the pointer to the current mission
+        ptr_mission_ = mission;
+
+        ROS_INFO("----- New mission sent to the server -----");
+        ROS_INFO("Mission name: %s", ptr_mission_->id_.c_str());
+        ROS_INFO("Number of waypoints: %lu", goal.pos_x.size()-1);
         ROS_INFO("The coordinates of the waypoints are:");
         ROS_INFO("wpt ----- x (m) ------- y (m)");
 
@@ -67,26 +108,56 @@ public:
     {
         ROS_INFO("Waypoint-tracking finished in state [%s]", state.toString().c_str());
         ROS_INFO("The last waypoint reached: wpt%i", result->final_wpt);
+        ROS_INFO("------------------------------------------");
     }
 
     // Called once when the goal becomes active
     void activeCb()
-    {
+    {      
         ROS_INFO("The goal just went active.");
+        ROS_INFO("The ship is moving towards wpt1.");
     }
 
     // Called every time feedback is received for the goal
     void feedbackCb(const ship_los::WaypointTrackingFeedbackConstPtr& feedback)
     {
-        ROS_INFO("The base waypoint is now wpt%u.", feedback->base_wpt);
+        ptr_mission_->progress_ = feedback->base_wpt;
+        ROS_INFO("The base waypoint is now wpt%u.", ptr_mission_->progress_);
     }
 };
 
-// waypoints database
-std::vector<double> wpt_xcoor = {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372};
-std::vector<double> wpt_ycoor = {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50};
+class WaypointTrackingMissionManager
+{
+public:
+    // the member data
+    std::vector<std::vector<double>> wpt_group1 = { {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372},
+                                                    {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50} };
+    std::vector<std::vector<double>> wpt_group2 = { {5.00, 7.00, 9.00, 11.00, 13.00},
+                                                    {0.00, 1.00, 1.50, 1.00, 0.00} };
+    std::vector<std::vector<double>> wpt_group3 = { {5.00}, {-2.00} };
 
-// store the current position of the ship
+    WaypointTrackingMission mission1, mission2, mission3;
+    std::map<std::string, WaypointTrackingMission> mission_database;
+    std::set<std::string> mission_set;
+    std::vector<std::string> mission_queue;
+
+    // constructor
+    WaypointTrackingMissionManager()
+    {
+        // initialize the waypoint-tracking missions
+        mission1 = WaypointTrackingMission(wpt_group1[0], wpt_group1[1], "mission1");
+        mission2 = WaypointTrackingMission(wpt_group2[0], wpt_group2[1], "mission2");
+        mission3 = WaypointTrackingMission(wpt_group3[0], wpt_group3[1], "mission3");
+
+        // initialize the associative container for the missions
+        mission_database = { {mission1.id_, mission1}, {mission2.id_, mission2}, {mission3.id_, mission3} };
+
+        // initialize the name set
+        mission_set = { mission1.id_, mission2.id_, mission3.id_ };
+    }
+};
+
+// store the real-time position of the ship
 std::array<double ,3> ship_pos;
 
 void callback_pos(const ship_los::pose &msg_pos)
@@ -97,12 +168,18 @@ void callback_pos(const ship_los::pose &msg_pos)
 }
 
 bool received_command = false;
+// mission name from the user
+std::string mission_name;
+
 bool userCallback(ship_los::task_input::Request &req, ship_los::task_input::Response &resp)
 {
     if (req.command == "overwrite" )
+    {
+        mission_name = req.groupName;
         received_command = true;
+    }
 
-    ROS_INFO("Received command from the user.");
+    ROS_WARN("Received command from the user.");
     resp.feedback = "command received";
     return true;
 }
@@ -137,12 +214,29 @@ int main(int argc, char **argv)
     // create an actionlib client and send goals
     WaypointTrackingClient client;
 
+    // create a waypoint-tracking mission manager
+    WaypointTrackingMissionManager manager;
+
     ros::Rate r(10);
 
     while (ros::ok()) {
-        if (received_command) {
-            client.send_goal(ship_pos, wpt_xcoor, wpt_ycoor);
+        if (received_command)
+        {
+            if ( manager.mission_set.find(mission_name) != manager.mission_set.end() )
+            {
+                ROS_INFO("The mission exists in the database.");
+                client.send_goal(ship_pos, &(manager.mission_database.at(mission_name)));
+                manager.mission_queue.clear();
+                manager.mission_queue.push_back(mission_name);
+            }
+            else
+            {
+                ROS_ERROR("The mission doesn't exist in the database.");
+            }
+
+            // reset the helper variables
             received_command = false;
+            mission_name = "";
         }
 
         ros::spinOnce();

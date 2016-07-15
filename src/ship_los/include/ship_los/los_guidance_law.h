@@ -126,16 +126,23 @@ std::array<double, 3> ComputeCourse(LosGuidanceLaw &law, const double &pos_x, co
 
         if (fabs(law.course_angle_ - pos_heading) > M_PI)
         {
-            law.course_state_[0] = law.course_angle_;
-            law.course_state_[1] = 0;
-            law.course_state_[2] = 0;
-
             ROS_ERROR_STREAM("This is the probelm I haven't solved perfectly");
+//            law.course_state_[0] = law.course_angle_;
+//            law.course_state_[1] = 0;
+//            law.course_state_[2] = 0;
 
-            law.course_angle_ += boost::math::sign(pos_heading)*2*M_PI;
-            msg_course[0] = pos_heading + (law.course_angle_ - pos_heading) * 0.2;
-            msg_course[1] = 0;
-            msg_course[2] = 0;
+//            law.course_angle_ += boost::math::sign(pos_heading)*2*M_PI;
+//            msg_course[0] = pos_heading + (law.course_angle_ - pos_heading) * 0.2;
+//            msg_course[1] = 0;
+//            msg_course[2] = 0;
+
+            law.course_angle_ = boost::math::sign(pos_heading)*M_PI;
+            size_t steps = boost::numeric::odeint::integrate(law, law.course_state_, 0.0, law.step_size_, law.step_size_/2);
+
+            // publish the desired course message
+            msg_course[0] = law.course_state_[0];
+            msg_course[1] = law.course_state_[1];
+            msg_course[2] = law.course_state_[2];
         }
         else
         {

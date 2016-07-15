@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PATH="/opt/ros/indigo/bin:/home/bo/Qt/5.7/gcc_64/bin:/usr/bin:~/Qt/Tools/QtCreator/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export PWD="/home/bo/dev/REMUS/build"

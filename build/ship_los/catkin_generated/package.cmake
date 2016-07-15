@@ -1,5 +1,5 @@
 set(_CATKIN_CURRENT_PACKAGE "ship_los")
-set(ship_los_VERSION "0.0.1")
+set(ship_los_VERSION "0.1.0")
 set(ship_los_MAINTAINER "bo <boli2013@fau.edu>")
 set(ship_los_PACKAGE_FORMAT "1")
 set(ship_los_BUILD_DEPENDS "roscpp" "std_msgs" "actionlib" "tf" "visualization_msgs" "actionlib_msgs" "message_generation")

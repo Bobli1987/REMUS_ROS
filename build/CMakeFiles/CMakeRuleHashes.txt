@@ -10,7 +10,6 @@ e25828ffd6a3ab7e3b5ee32cd998f5db /home/bo/dev/REMUS/devel/include/ship_los/Waypo
 186c143672aed0a7f161c1c1d9d3eb4c /home/bo/dev/REMUS/devel/include/ship_los/WaypointTrackingResult.h
 6e594df5398243d178dc54224230394f /home/bo/dev/REMUS/devel/include/ship_los/control.h
 9942b6284d556dd0450db0f40942bf38 /home/bo/dev/REMUS/devel/include/ship_los/course.h
-f8862a0d1d55d5060854b706636e4935 /home/bo/dev/REMUS/devel/include/ship_los/operator.h
 5e9f6a5c1bf8232aaf0beba80759aeb9 /home/bo/dev/REMUS/devel/include/ship_los/pose.h
 acba16154dbf9fd5d3a94247a2fcaee9 /home/bo/dev/REMUS/devel/include/ship_los/task_input.h
 404b0de4455e74a1cd933d420ba57599 /home/bo/dev/REMUS/devel/include/ship_los/waypoint.h
@@ -29,7 +28,6 @@ c3a30c022b74c05cb89e3e92d33082d3 /home/bo/dev/REMUS/devel/lib/python2.7/dist-pac
 a2d32c8c5e01a8369788a6ceeda332b7 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/msg/_course.py
 ff78ec653f873e8d276760461a4e666a /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/msg/_pose.py
 21b5a1ce04f2edd44d2cfa0d95f81705 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/srv/__init__.py
-808c25dac0ce8cd8e680568211008cec /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/srv/_operator.py
 b205d0a0ea739c1ab6fcb8bd6ae68e6d /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/srv/_task_input.py
 9defddd315c3bc904766fa65f50b8864 /home/bo/dev/REMUS/devel/lib/python2.7/dist-packages/ship_los/srv/_waypoint.py
 c31712b974cd4bc40a916f21865ea8a9 /home/bo/dev/REMUS/devel/share/common-lisp/ros/imm/msg/control.lisp
@@ -44,7 +42,6 @@ f936ca10fe8da396f47ef022a0ad3dc9 /home/bo/dev/REMUS/devel/share/common-lisp/ros/
 dd4d8b249c3819f196577b0b1ce66b76 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/msg/control.lisp
 5f3418a9478ca03d27c2a5fbd0382ff0 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/msg/course.lisp
 884fc0594411e508ad1d38b53e5d679e /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/msg/pose.lisp
-6cd933d9bbbf1fda105d861748c3a618 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/srv/operator.lisp
 aa1829afdf84aac6988d20728c452f13 /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/srv/task_input.lisp
 db77b3950903fb79092b3308c4f9f28b /home/bo/dev/REMUS/devel/share/common-lisp/ros/ship_los/srv/waypoint.lisp
 f2588ef452aee60a163926da1a9216aa CMakeFiles/REMUS_OTHER_FILES

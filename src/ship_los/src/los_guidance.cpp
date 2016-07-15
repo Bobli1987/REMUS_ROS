@@ -155,7 +155,8 @@ public:
             marker_wpt_.points.push_back(p);
         }
 
-        ROS_INFO("Waypoints received. The coordinates of the waypoints are:");
+        ROS_INFO("-------- New mission recieved --------");
+        ROS_INFO("The coordinates of the waypoints are:");
         ROS_INFO("wpt ----- x (m) ------- y (m)");
 
         for (uint32_t i = 0; i < waypoints_xcoor_.size(); ++i)
@@ -163,12 +164,11 @@ public:
             ROS_INFO("%2u ------ %5.2f ------- %5.2f",
                      i, waypoints_xcoor_[i],  waypoints_ycoor_[i]);
         }
-
     }
 
     void preemptCB()
     {
-        ROS_INFO("Preempted.");
+        ROS_WARN("----- Current mission preempted -----");
         // set the action state to preempted
         result_.final_wpt = wpt_num_;
         as_.setPreempted(result_);
@@ -186,8 +186,6 @@ void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
     if (!as_.isActive()) {
         ROS_INFO_ONCE("The action server is not active.");
         return; }
-
-    ROS_INFO_ONCE("The action server is active.");
 
     if (wpt_num_ < waypoints_xcoor_.size()-1)
     {
@@ -217,15 +215,16 @@ void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
             feedback_.base_wpt = wpt_num_;
             as_.publishFeedback(feedback_);
 
-
             ROS_INFO("Change the base waypoint to wpt%u.", wpt_num_);
         }
     }
     else
     {
-        ROS_WARN_ONCE("The ship has reached the last waypoint.");
+        ROS_WARN("The ship has reached the last waypoint.");
         result_.final_wpt = wpt_num_;
         as_.setSucceeded(result_);
+        ROS_WARN("------ Current mission completed ------");
+        ROS_INFO("The action server is not active.");
     }
 
 
