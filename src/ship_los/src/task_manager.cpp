@@ -53,12 +53,29 @@ public:
     {
         // define the waypoints
         ship_los::WaypointTrackingGoal goal;
-        goal.pos_x = mission->wpt_xcoor_;
-        goal.pos_y = mission->wpt_ycoor_;
 
-        // insert the ship position as the fisrt waypoint
-        goal.pos_x.insert(goal.pos_x.begin(), ship_pos[0]);
-        goal.pos_y.insert(goal.pos_y.begin(), ship_pos[1]);
+        goal.pos_x = { ship_pos[0] };
+        goal.pos_y = { ship_pos[1] };
+
+        if (mission->progress_ < mission->wpt_xcoor_.size())
+        {
+            for (auto p = mission->wpt_xcoor_.begin()+mission->progress_; p != mission->wpt_xcoor_.end(); ++p)
+            {
+                goal.pos_x.push_back(*p);
+            }
+
+            for (auto p = mission->wpt_ycoor_.begin()+mission->progress_; p != mission->wpt_ycoor_.end(); ++p)
+            {
+                goal.pos_y.push_back(*p);
+            }
+        }
+        else
+        {
+            ROS_ERROR_STREAM("The mission is already completed.");
+            ROS_ERROR_STREAM("Reset its progress before run it again.");
+            return;
+        }
+
 
         // send the initial heading to initialze the los guidance controller
         goal.init_heading = ship_pos[2];
@@ -75,6 +92,7 @@ public:
             return;
         }
 
+        // send the goal to the action server
         ac.sendGoal(goal,
                     boost::bind(&WaypointTrackingClient::doneCb, this, _1, _2),
                     boost::bind(&WaypointTrackingClient::activeCb, this),
@@ -92,6 +110,7 @@ public:
         ROS_INFO("----- New mission sent to the server -----");
         ROS_INFO("Mission name: %s", ptr_mission_->id_.c_str());
         ROS_INFO("Number of waypoints: %lu", goal.pos_x.size()-1);
+        ROS_INFO("Initial progress: %u/%lu", ptr_mission_->progress_, goal.pos_x.size()-1);
         ROS_INFO("The coordinates of the waypoints are:");
         ROS_INFO("wpt ----- x (m) ------- y (m)");
 
@@ -121,8 +140,8 @@ public:
     // Called every time feedback is received for the goal
     void feedbackCb(const ship_los::WaypointTrackingFeedbackConstPtr& feedback)
     {
-        ptr_mission_->progress_ = feedback->base_wpt;
-        ROS_INFO("The base waypoint is now wpt%u.", ptr_mission_->progress_);
+        ptr_mission_->progress_ = feedback->progress;
+        ROS_INFO("Progress of the mission: %u/%lu", ptr_mission_->progress_, ptr_mission_->wpt_xcoor_.size());
     }
 };
 
@@ -132,8 +151,8 @@ public:
     // the member data
     std::vector<std::vector<double>> wpt_group1 = { {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372},
                                                     {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50} };
-    std::vector<std::vector<double>> wpt_group2 = { {5.00, 7.00, 9.00, 11.00, 13.00},
-                                                    {0.00, 1.00, 1.50, 1.00, 0.00} };
+    std::vector<std::vector<double>> wpt_group2 = { {5.00, 7.00, 9.00, 11.00, 13.00, 15.00},
+                                                    {0.00, 1.00, 1.50, 1.00, 0.00, -3.00} };
     std::vector<std::vector<double>> wpt_group3 = { {5.00}, {-2.00} };
 
     WaypointTrackingMission mission1, mission2, mission3;

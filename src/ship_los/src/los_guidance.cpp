@@ -48,10 +48,17 @@ protected:
     vector<double> waypoints_xcoor_;
     vector<double> waypoints_ycoor_;
 
-    // the number of the waypoint which the ship just passed
-    uint32_t wpt_num_ = 0;
+    // the number of the base waypoint
+    uint32_t base_num_ = 0;
+
+    // the waypoint to which the ship is pointed
     vector<double>::iterator iter_x_;
     vector<double>::iterator iter_y_;
+
+    // store the position of the inserted waypoints
+    vector<int> insert_pos_;
+    // the progress of the mission (not counting inserted wpt)
+    uint32_t progress_ = 0;
 
     // generated course infomation
     vector<double> course_state_ = {0, 0, 0};
@@ -139,7 +146,8 @@ public:
         los_controller_ = los_guidance_law::LosGuidanceLaw(course_state_, radius_, 0.05);
 
         // reset the iterators
-        wpt_num_ = 0;
+        base_num_ = 0;
+        insert_pos_.clear();
         iter_x_ = ++waypoints_xcoor_.begin();
         iter_y_ = ++waypoints_ycoor_.begin();
 
@@ -170,7 +178,7 @@ public:
     {
         ROS_WARN("----- Current mission preempted -----");
         // set the action state to preempted
-        result_.final_wpt = wpt_num_;
+        result_.final_wpt = base_num_;
         as_.setPreempted(result_);
     }
 
@@ -187,11 +195,11 @@ void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
         ROS_INFO_ONCE("The action server is not active.");
         return; }
 
-    if (wpt_num_ < waypoints_xcoor_.size()-1)
+    if (base_num_ < waypoints_xcoor_.size()-1)
     {
         array<double, 3> course_info = los_guidance_law::ComputeCourse(los_controller_, msg_pos.x, msg_pos.y, msg_pos.heading,
-                                                    waypoints_xcoor_[wpt_num_], waypoints_xcoor_[wpt_num_+1],
-                                                    waypoints_ycoor_[wpt_num_], waypoints_ycoor_[wpt_num_+1]);
+                                                    waypoints_xcoor_[base_num_], waypoints_xcoor_[base_num_+1],
+                                                    waypoints_ycoor_[base_num_], waypoints_ycoor_[base_num_+1]);
 
         // publish the course info
         msg_course_.angle = course_info[0];
@@ -200,28 +208,31 @@ void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
         pub_course_.publish(msg_course_);
 
         // the distance between the ship and the waypoint to which it points
-        double distance = sqrt(pow(msg_pos.x - waypoints_xcoor_[wpt_num_+1], 2) +
-                               pow(msg_pos.y - waypoints_ycoor_[wpt_num_+1], 2));
+        double distance = sqrt(pow(msg_pos.x - waypoints_xcoor_[base_num_+1], 2) +
+                               pow(msg_pos.y - waypoints_ycoor_[base_num_+1], 2));
 //        ROS_INFO("Base: wpt%u, Distance to wpt%u: %5.2f m", wpt_num_, wpt_num_+1, distance);
 
         // change the waypoint if necessary
         if ( distance <= radius_)
         {
             // update and publish the feedback
-            ++ wpt_num_;
+            if (find(insert_pos_.begin(), insert_pos_.end(), base_num_+1) == insert_pos_.end())
+            {
+                ++ progress_;
+                feedback_.progress = progress_;
+                as_.publishFeedback(feedback_);
+            }
+            ++ base_num_;
             ++ iter_x_;
             ++ iter_y_;
 
-            feedback_.base_wpt = wpt_num_;
-            as_.publishFeedback(feedback_);
-
-            ROS_INFO("Change the base waypoint to wpt%u.", wpt_num_);
+            ROS_INFO("Change the base waypoint to wpt%u.", base_num_);
         }
     }
     else
     {
         ROS_WARN("The ship has reached the last waypoint.");
-        result_.final_wpt = wpt_num_;
+        result_.final_wpt = base_num_;
         as_.setSucceeded(result_);
         ROS_WARN("------ Current mission completed ------");
         ROS_INFO("The action server is not active.");
@@ -229,9 +240,9 @@ void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
 
 
     // publish the markers to rviz
-    if (wpt_num_ < waypoints_xcoor_.size()-1) {
-        marker_bulb_.pose.position.x = waypoints_xcoor_[wpt_num_+1];
-        marker_bulb_.pose.position.y = -waypoints_ycoor_[wpt_num_+1];
+    if (base_num_ < waypoints_xcoor_.size()-1) {
+        marker_bulb_.pose.position.x = waypoints_xcoor_[base_num_+1];
+        marker_bulb_.pose.position.y = -waypoints_ycoor_[base_num_+1];
         marker_bulb_.pose.position.z = 1.5;
     }
 }
@@ -247,7 +258,10 @@ bool WaypointTrackingServer::insertCallback(ship_los::waypoint::Request &req, sh
     iter_x_ = waypoints_xcoor_.insert(iter_x_, req.x);
     iter_y_ = waypoints_ycoor_.insert(iter_y_, req.y);
 
-    ROS_INFO("Waypoint inserted as wpt%u. The coordinates of the waypoints are:", wpt_num_+1);
+    // remember the position of the inserted wpt
+    insert_pos_.push_back(base_num_+1);
+
+    ROS_INFO("Waypoint inserted as wpt%u. The coordinates of the waypoints are:", base_num_+1);
     ROS_INFO("wpt ----- x (m) ------- y (m)");
 
     for (uint32_t i = 0; i < waypoints_xcoor_.size(); ++i)
@@ -258,7 +272,7 @@ bool WaypointTrackingServer::insertCallback(ship_los::waypoint::Request &req, sh
 
     // define the response
     string feedback = "The waypoint is inserted as wpt";
-    resp.feedback =  feedback + to_string(wpt_num_+1);
+    resp.feedback =  feedback + to_string(base_num_+1);
 
     // send the new waypoint to rviz
     geometry_msgs::Point p;

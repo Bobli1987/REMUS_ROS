@@ -4,7 +4,7 @@ float64[] pos_y
 float64 init_heading
 ---
 # result definition
-int32 final_wpt
+uint32 final_wpt
 ---
 # feedback definition
-int32 base_wpt
+uint32 progress
