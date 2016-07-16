@@ -5,15 +5,8 @@
 #include "ship_los/pose.h"
 #include "ship_los/task_input.h"
 
-// forward declaration
-class WaypointTrackingClient;
-class WaypointTrackingMissionManager;
-
 class WaypointTrackingMission
 {
-    friend class WaypointTrackingClient;
-    friend class WaypointTrackingMissionManager;
-
 private:
     // waypoints
     std::vector<double> wpt_xcoor_;
@@ -33,6 +26,20 @@ public:
         wpt_xcoor_(wpt_xcoor), wpt_ycoor_(wpt_ycoor), id_(mission_name) {
         progress_ = 0;
     }
+
+    // member function resetting the progress
+    void reset_progress()
+    {
+        progress_ = 0;
+        ROS_INFO("The progress of mission %s is reset.", id_.c_str());
+    }
+
+    void set_progress(uint32_t p) { progress_ = p; }
+    std::string get_name() { return id_; }
+    uint32_t get_progress() { return progress_; }
+    size_t get_size() { return wpt_xcoor_.size(); }
+    std::vector<double> get_xcoor() { return wpt_xcoor_; }
+    std::vector<double> get_ycoor() { return wpt_ycoor_; }
 };
 
 class WaypointTrackingClient
@@ -40,6 +47,9 @@ class WaypointTrackingClient
 public:
     actionlib::SimpleActionClient<ship_los::WaypointTrackingAction> ac;
     WaypointTrackingMission *ptr_mission_ = nullptr;
+
+    // initial progress of the mission
+    uint32_t init_progress_;
 
     // constructor
     WaypointTrackingClient(): ac("guidance_node", true)
@@ -57,22 +67,25 @@ public:
         goal.pos_x = { ship_pos[0] };
         goal.pos_y = { ship_pos[1] };
 
-        if (mission->progress_ < mission->wpt_xcoor_.size())
+        std::vector<double> xcoor = mission->get_xcoor();
+        std::vector<double> ycoor = mission->get_ycoor();
+
+        if (mission->get_progress() < mission->get_size())
         {
-            for (auto p = mission->wpt_xcoor_.begin()+mission->progress_; p != mission->wpt_xcoor_.end(); ++p)
+            for (auto p = xcoor.begin()+mission->get_progress(); p != xcoor.end(); ++p)
             {
                 goal.pos_x.push_back(*p);
             }
 
-            for (auto p = mission->wpt_ycoor_.begin()+mission->progress_; p != mission->wpt_ycoor_.end(); ++p)
+            for (auto p = ycoor.begin()+mission->get_progress(); p != ycoor.end(); ++p)
             {
                 goal.pos_y.push_back(*p);
             }
         }
         else
         {
-            ROS_ERROR_STREAM("The mission is already completed.");
-            ROS_ERROR_STREAM("Reset its progress before run it again.");
+            ROS_ERROR("%s is already completed.", mission->get_name().c_str());
+            ROS_ERROR("Reset its progress before run it again.");
             return;
         }
 
@@ -101,23 +114,34 @@ public:
         if (ptr_mission_ != nullptr)
         {
             ROS_WARN("------ Previous mission ended (%u/%lu) -------",
-                     ptr_mission_->progress_, ptr_mission_->wpt_xcoor_.size());
+                     ptr_mission_->get_progress(), ptr_mission_->get_size());
         }
 
         // link the pointer to the current mission
         ptr_mission_ = mission;
 
+        // store the initial progress
+        init_progress_ = ptr_mission_->get_progress();
+
         ROS_INFO("----- New mission sent to the server -----");
-        ROS_INFO("Mission name: %s", ptr_mission_->id_.c_str());
-        ROS_INFO("Number of waypoints: %lu", goal.pos_x.size()-1);
-        ROS_INFO("Initial progress: %u/%lu", ptr_mission_->progress_, goal.pos_x.size()-1);
+        ROS_INFO("Mission name: %s", ptr_mission_->get_name().c_str());
+        ROS_INFO("Initial progress: %u/%lu", init_progress_, ptr_mission_->get_size());
+        ROS_INFO("Number of sent waypoints: %lu", goal.pos_x.size()-1);
         ROS_INFO("The coordinates of the waypoints are:");
         ROS_INFO("wpt ----- x (m) ------- y (m)");
 
         for (uint32_t i = 0; i < goal.pos_x.size(); ++i)
         {
-            ROS_INFO("%2u ------ %5.2f ------- %5.2f",
-                     i, goal.pos_x[i],  goal.pos_y[i]);
+            if (i > 0)
+            {
+                ROS_INFO("%2u ------ %5.2f ------- %5.2f",
+                         i+ptr_mission_->get_progress(), goal.pos_x[i],  goal.pos_y[i]);
+            }
+            else
+            {
+                ROS_INFO("%2u ------ %5.2f ------- %5.2f",
+                         i, goal.pos_x[i],  goal.pos_y[i]);
+            }
         }
     }
 
@@ -134,14 +158,13 @@ public:
     void activeCb()
     {      
         ROS_INFO("The goal just went active.");
-        ROS_INFO("The ship is moving towards wpt1.");
     }
 
     // Called every time feedback is received for the goal
     void feedbackCb(const ship_los::WaypointTrackingFeedbackConstPtr& feedback)
     {
-        ptr_mission_->progress_ = feedback->progress;
-        ROS_INFO("Progress of the mission: %u/%lu", ptr_mission_->progress_, ptr_mission_->wpt_xcoor_.size());
+        ptr_mission_->set_progress(feedback->progress + init_progress_);
+        ROS_INFO("Progress of the mission: %u/%lu", ptr_mission_->get_progress(), ptr_mission_->get_size());
     }
 };
 
@@ -169,10 +192,10 @@ public:
         mission3 = WaypointTrackingMission(wpt_group3[0], wpt_group3[1], "mission3");
 
         // initialize the associative container for the missions
-        mission_database = { {mission1.id_, mission1}, {mission2.id_, mission2}, {mission3.id_, mission3} };
+        mission_database = { {mission1.get_name(), mission1}, {mission2.get_name(), mission2}, {mission3.get_name(), mission3} };
 
         // initialize the name set
-        mission_set = { mission1.id_, mission2.id_, mission3.id_ };
+        mission_set = { mission1.get_name(), mission2.get_name(), mission3.get_name() };
     }
 };
 

@@ -135,6 +135,7 @@ public:
         waypoints_xcoor_.clear();
         waypoints_ycoor_.clear();
         marker_wpt_.points.clear();
+        progress_ = 0;
 
         auto ptr_goal = as_.acceptNewGoal();
 
