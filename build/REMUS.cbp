@@ -1398,8 +1398,6 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/task_input.srv">
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/task_input.srv~">
-      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/waypoints.srv~">

@@ -20,7 +20,7 @@
     type="ship_dynamics"
     name="dynamics_node"
     required="true"
-    launch-prefix="xterm -e"
+    <!--launch-prefix="xterm -e"-->
   >
     <param name="init_x" value="$(arg init_x)" />
     <param name="init_y" value="$(arg init_y)" />

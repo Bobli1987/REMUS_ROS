@@ -38,7 +38,7 @@ public:
     {
         if (p > wpt_xcoor_.size())
         {
-            ROS_ERROR("set progress failed: the progress shouldn't be larger than the waypoint number.");
+            ROS_ERROR("set_progress failed: the progress shouldn't be larger than the waypoint number.");
             return;
         }
         progress_ = p;
@@ -240,7 +240,7 @@ std::string mission_name;
 std::string command_name;
 
 // command set
-const std::vector<std::string> command_set = {"overwrite", "append"};
+const std::vector<std::string> command_set = {"overwrite", "append", "insert"};
 
 // callback of the service for user inputs
 bool userCallback(ship_los::task_input::Request &req, ship_los::task_input::Response &resp)
@@ -316,8 +316,8 @@ int main(int argc, char **argv)
                     else
                     {
                         ROS_WARN("%s is appended to the queue.", mission_name.c_str());
+                        ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
                     }
-                    ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
                 }
                 if (command_name == "overwrite")
                 {
@@ -329,6 +329,12 @@ int main(int argc, char **argv)
                     {
                         manager.mission_queue.push_back(mission_name);
                     }
+                    ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
+                    client.send_goal(ship_pos, &(manager.mission_database.at(mission_name)));
+                }
+                if (command_name == "insert")
+                {
+                    manager.mission_queue.push_front(mission_name);
                     ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
                     client.send_goal(ship_pos, &(manager.mission_database.at(mission_name)));
                 }
@@ -357,7 +363,7 @@ int main(int argc, char **argv)
             }
             else
             {
-                ROS_WARN_THROTTLE(10, "The current mission \' %s \' is finished. No more missions in the queue.",
+                ROS_WARN_THROTTLE(10, "%s is finished. No more missions in the queue.",
                                                   client.mission_id().c_str());
             }
 

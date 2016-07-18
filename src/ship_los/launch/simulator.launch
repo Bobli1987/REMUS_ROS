@@ -2,7 +2,7 @@
   <include file="$(find ship_los)/launch/included.launch" >
     <!-- all vars that included.launch requires must be set -->
     <arg name="init_x" default="4" />
-    <arg name="init_y" default="-6" />
+    <arg name="init_y" default="-5" />
     <arg name="init_heading" default="1.78" />
   </include>
   
