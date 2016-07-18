@@ -1,4 +1,4 @@
-string command
 string groupName
+string command
 ---
 string feedback

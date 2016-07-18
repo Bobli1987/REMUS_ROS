@@ -8,11 +8,9 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o"
   "/home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/los_guidance.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance.cpp.o"
-  "/home/bo/dev/REMUS/src/ship_los/src/los_guidance (copy).cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/los_guidance_(copy).cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/path_controller.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/path_controller.cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o"
-  "/home/bo/dev/REMUS/src/ship_los/src/task_manager (copy).cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager_(copy).cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
