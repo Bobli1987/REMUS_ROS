@@ -133,12 +133,7 @@ public:
         mission_id_ = ptr_mission_->get_name();
         is_done_ = false;
 
-        // send the goal to the action server
-        ac.sendGoal(goal,
-                    boost::bind(&WaypointTrackingClient::doneCb, this, _1, _2),
-                    boost::bind(&WaypointTrackingClient::activeCb, this),
-                    boost::bind(&WaypointTrackingClient::feedbackCb, this, _1));
-
+        // display the information of the mission
         ROS_INFO("----- New mission sent to the server -----");
         ROS_INFO("Mission name: %s", ptr_mission_->get_name().c_str());
         ROS_INFO("Initial progress: %u/%lu", init_progress_, ptr_mission_->get_size());
@@ -159,6 +154,12 @@ public:
                          i, goal.pos_x[i],  goal.pos_y[i]);
             }
         }
+
+        // send the goal to the action server
+        ac.sendGoal(goal,
+                    boost::bind(&WaypointTrackingClient::doneCb, this, _1, _2),
+                    boost::bind(&WaypointTrackingClient::activeCb, this),
+                    boost::bind(&WaypointTrackingClient::feedbackCb, this, _1));
     }
 
     // Called once when the goal completes
@@ -223,7 +224,7 @@ public:
 };
 
 // store the real-time position of the ship
-std::array<double ,3> ship_pos;
+std::array<double,3> ship_pos;
 
 void callback_pos(const ship_los::pose &msg_pos)
 {
@@ -366,7 +367,6 @@ int main(int argc, char **argv)
                 ROS_WARN_THROTTLE(10, "%s is finished. No more missions in the queue.",
                                                   client.mission_id().c_str());
             }
-
         }
 
         ros::spinOnce();

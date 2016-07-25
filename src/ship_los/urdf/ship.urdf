@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<robot name="Ship">
+  <link name="Ship">
+    <visual>
+      <geometry>
+        <box size="1.0 .25 .15"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="nose">
+    <visual>
+      <geometry>
+        <cylinder length="0.15" radius="0.125"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.5 0 0"/>
+      <material name="yellow">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+  
+  <joint name="base_to_nose" type="fixed">
+    <parent link="Ship"/>
+    <child link="nose"/>
+    <origin xyz="0 0 0"/>
+  </joint>  
+</robot>

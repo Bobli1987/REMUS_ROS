@@ -1,4 +1,15 @@
 <launch>
+  <param 
+    name="robot_description" textfile='$(find imm)/urdf/remus.urdf' 
+  />
+  <param 
+    name="use_gui" value="False"
+  />
+  <node 
+    name="robot_state_publisher" 
+    pkg="robot_state_publisher" 
+    type="state_publisher" 
+  />
   <node
     pkg="rviz"
     type="rviz"
@@ -11,21 +22,23 @@
     name="visualization_node"
   />
   <node
-    pkg="ship_los"
-    type="los_guidance"
-    name="guidance_node"
+    pkg="imm"
+    type="movingmass_controller"
+    name="control_node"
     launch-prefix="xterm -e"
   />
   <node
-    pkg="ship_los"
-    type="path_controller"
-    name="control_node"
-  />
-  <node
-    pkg="ship_los"
-    type="ship_dynamics"
+    pkg="imm"
+    type="remus_dynamics"
     name="dynamics_node"
     required="true"
     launch-prefix="xterm -e"
+  />
+  <node 
+    name="rviz" 
+    pkg="rviz" 
+    type="rviz" 
+    args="-d $(find imm)/config/remus_rviz.rviz"
+    required="true" 
   />
 </launch>

@@ -6,11 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Marker1
         - /Marker1/Namespaces1
-        - /Marker2
         - /TF1
         - /TF1/Frames1
+        - /RobotModel1
       Splitter Ratio: 0.5
     Tree Height: 775
   - Class: rviz/Selection
@@ -69,29 +68,66 @@ Visualization Manager:
         waypoints/viz: true
       Queue Size: 100
       Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /ship/waypoint_label
+      Name: MarkerArray
+      Namespaces:
+        waypoints/viz: true
+      Queue Size: 100
+      Value: true
     - Class: rviz/TF
       Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: false
         Earth-fixed frame:
-          Value: true
+          Value: false
         Ship:
           Value: true
+        nose:
+          Value: false
         world:
           Value: false
-      Marker Scale: 10
+      Marker Scale: 5
       Name: TF
       Show Arrows: false
       Show Axes: true
-      Show Names: true
+      Show Names: false
       Tree:
         world:
           Earth-fixed frame:
             Ship:
-              {}
+              nose:
+                {}
       Update Interval: 0
       Value: true
+    - Alpha: 1
+      Class: rviz/RobotModel
+      Collision Enabled: false
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        Ship:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        nose:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      Robot Description: robot_description
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -116,22 +152,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 100.204
+      Distance: 10
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 34.2805
-        Y: 7.10888
-        Z: -69.0605
+        X: 2.64788
+        Y: 0.0596371
+        Z: 0.524513
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.1398
-      Target Frame: Earth-fixed frame
+      Pitch: 0.605398
+      Target Frame: world
       Value: Orbit (rviz)
-      Yaw: 3.38277
+      Yaw: 3.57359
     Saved: ~
 Window Geometry:
   Displays:

@@ -1,4 +1,15 @@
 <launch>
+  <param 
+    name="robot_description" textfile='$(find imm)/urdf/remus.urdf' 
+  />
+  <param 
+    name="use_gui" value="False"
+  />
+  <node 
+    name="robot_state_publisher" 
+    pkg="robot_state_publisher" 
+    type="state_publisher" 
+  />
   <node
     pkg="rviz"
     type="rviz"
