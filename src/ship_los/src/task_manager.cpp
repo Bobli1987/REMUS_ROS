@@ -16,16 +16,14 @@ private:
     std::string id_;
 
     // mission progress
-    uint32_t progress_;
+    uint32_t progress_ = 0;
 
 public:
     // constructor
     WaypointTrackingMission() = default;
     WaypointTrackingMission(const std::vector<double> &wpt_xcoor, const std::vector<double> &wpt_ycoor,
                             const std::string &mission_name):
-        wpt_xcoor_(wpt_xcoor), wpt_ycoor_(wpt_ycoor), id_(mission_name) {
-        progress_ = 0;
-    }
+        wpt_xcoor_(wpt_xcoor), wpt_ycoor_(wpt_ycoor), id_(mission_name) {}
 
     // member function resetting the progress
     void reset_progress()
@@ -67,14 +65,14 @@ private:
 
 public:
     // constructor
-    WaypointTrackingClient(): ac("guidance_node", true)
+    WaypointTrackingClient(const std::string &server_name): ac(server_name, true)
     {
         ROS_INFO("Waiting for an action server to start.");
         ac.waitForServer();
         ROS_INFO("Action server started.");
     }
 
-    void send_goal(std::array<double, 3> &ship_pos, WaypointTrackingMission *mission)
+    void send_goal(const std::array<double, 3> &ship_pos, WaypointTrackingMission *mission)
     {
         // define the waypoints
         ship_los::WaypointTrackingGoal goal;
@@ -198,14 +196,14 @@ public:
     // the member data
     std::vector<std::vector<double>> wpt_group1 = { {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372},
                                                     {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50} };
-    std::vector<std::vector<double>> wpt_group2 = { {5.00, 7.00, 9.00, 11.00, 12.00, 11.00},
-                                                    {0.00, 1.00, 1.50, 1.00, -1.00, -3.00} };
+    std::vector<std::vector<double>> wpt_group2 = { {6.00, 7.00, 9.00, 11.00, 12.00, 11.00},
+                                                    {4.00, 6.00, 6.50, 6.00, 5.00, 2.00} };
     std::vector<std::vector<double>> wpt_group3 = { {5.00}, {-2.00} };
 
     WaypointTrackingMission mission1, mission2, mission3;
-    std::map<std::string, WaypointTrackingMission> mission_database;
-    std::set<std::string> mission_set;
-    std::deque<std::string> mission_queue;
+    std::map<std::string, WaypointTrackingMission> mission_database_;
+    std::set<std::string> mission_set_;
+    std::deque<std::string> mission_queue_;
 
     // constructor
     WaypointTrackingMissionManager()
@@ -216,57 +214,148 @@ public:
         mission3 = WaypointTrackingMission(wpt_group3[0], wpt_group3[1], "mission3");
 
         // initialize the associative container for the missions
-        mission_database = { {mission1.get_name(), mission1}, {mission2.get_name(), mission2}, {mission3.get_name(), mission3} };
+        mission_database_ = { {mission1.get_name(), mission1}, {mission2.get_name(), mission2}, {mission3.get_name(), mission3} };
 
         // initialize the name set
-        mission_set = { mission1.get_name(), mission2.get_name(), mission3.get_name() };
+        mission_set_ = { mission1.get_name(), mission2.get_name(), mission3.get_name() };
     }
 };
 
-// store the real-time position of the ship
-std::array<double,3> ship_pos;
-
-void callback_pos(const ship_los::pose &msg_pos)
+class UserInterface
 {
-    ship_pos[0] = msg_pos.x;
-    ship_pos[1] = msg_pos.y;
-    ship_pos[2] = msg_pos.heading;
-}
+private:
+    ros::NodeHandle nh_;
+    ros::Subscriber sub_pos_;
+    ros::ServiceServer srv_user_;
 
-// helper variable
-bool received_command = false;
+    // store the real-time position of the ship
+    std::array<double,3> ship_pos_;
 
-// command inputs from the user
-std::string mission_name;
-std::string command_name;
+    // helper variable
+    bool received_command_ = false;
 
-// command set
-const std::vector<std::string> command_set = {"overwrite", "append", "insert"};
+    // command inputs from the user
+    std::string mission_name_;
+    std::string command_name_;
 
-// callback of the service for user inputs
-bool userCallback(ship_los::task_input::Request &req, ship_los::task_input::Response &resp)
-{
-    ROS_WARN("Received command from the user.");
-    resp.feedback = "User\'s command received";
+    // command set
+    const std::vector<std::string> command_set_ = {"overwrite", "append", "insert"};
 
-    if ( std::find(command_set.begin(), command_set.end(), req.command) == command_set.end() )
-    {
-        ROS_ERROR("The command is not valid.");
-    }
-    else
-    {
-        mission_name = req.groupName;
-        command_name = req.command;
-        received_command = true;
+public:
+    // constructor
+    UserInterface(){
+        // subscriber to ship/pos
+        sub_pos_ = nh_.subscribe("ship/pose", 1000, &UserInterface::callback_pos, this);
+
+        // service responding to user inputs
+        srv_user_ = nh_.advertiseService("task_command", &UserInterface::userCallback, this);
     }
 
-    return true;
-}
+    // return received_command_
+    bool command_available() { return received_command_; }
+
+    // set ship_pos_
+    void set_pose(const double &x, const double &y, const double &heading)
+    {
+        ship_pos_[0] = x;
+        ship_pos_[1] = y;
+        ship_pos_[2] = heading;
+    }
+
+    // return ship_pos_
+    const std::array<double, 3> &get_pos() const { return ship_pos_; }
+
+    // callback function of the subscriber to ship/pose
+    void callback_pos(const ship_los::poseConstPtr &msg_pos)
+    {
+        ship_pos_[0] = msg_pos->x;
+        ship_pos_[1] = msg_pos->y;
+        ship_pos_[2] = msg_pos->heading;
+    }
+
+    // callback of the service for user inputs
+    bool userCallback(ship_los::task_input::Request &req, ship_los::task_input::Response &resp)
+    {
+        ROS_WARN("Received command from the user.");
+        resp.feedback = "User\'s command received.";
+
+        if ( std::find(command_set_.begin(), command_set_.end(), req.command) == command_set_.end() )
+        {
+            ROS_ERROR("The command is not valid.");
+            resp.feedback += " Your command is not valid.";
+        }
+        else
+        {
+            mission_name_ = req.groupName;
+            command_name_ = req.command;
+            received_command_ = true;
+        }
+
+        return true;
+    }
+
+    // receive user command and manage waypoint-tracking mission
+    void CommandCallback(WaypointTrackingClient &client, WaypointTrackingMissionManager &manager)
+    {
+        if ( manager.mission_set_.find(mission_name_) != manager.mission_set_.end() )
+        {
+            ROS_WARN("%s exists in the database.", mission_name_.c_str());
+
+            if (command_name_ == "append")
+            {
+                manager.mission_queue_.push_back(mission_name_);
+                if (manager.mission_queue_.size() == 1)
+                {
+                   client.send_goal(ship_pos_, &(manager.mission_database_.at(mission_name_)));
+                }
+                else
+                {
+                    ROS_WARN("%s is appended to the queue.", mission_name_.c_str());
+                }
+            }
+            if (command_name_ == "overwrite")
+            {
+                if ( !manager.mission_queue_.empty() )
+                {
+                    manager.mission_queue_.front() = mission_name_;
+                }
+                else
+                {
+                    manager.mission_queue_.push_back(mission_name_);
+                }
+                client.send_goal(ship_pos_, &(manager.mission_database_.at(mission_name_)));
+            }
+            if (command_name_ == "insert")
+            {
+                manager.mission_queue_.push_front(mission_name_);
+                client.send_goal(ship_pos_, &(manager.mission_database_.at(mission_name_)));
+            }
+
+            std::string mission_queue;
+            for (auto iter = manager.mission_queue_.cbegin(); iter != manager.mission_queue_.cend(); ++iter)
+            {
+                mission_queue += *iter;
+                mission_queue += " -> ";
+            }
+            ROS_WARN("Mission queue: %s", mission_queue.c_str());
+        }
+        else
+        {
+            ROS_ERROR("The mission doesn't exist in the database.");
+        }
+
+        // reset the flag and mission_name_
+        received_command_ = false;
+        mission_name_.clear();
+    }
+};
 
 int main(int argc, char **argv)
 {
     ros::init(argc, argv, "task_manager");
-    ros::NodeHandle nh;
+
+    // create the user interface
+    UserInterface user_interface;
 
     // define parameters for the ship's initial position
     const std::string PARAM_1 = "~init_x";
@@ -277,89 +366,36 @@ int main(int argc, char **argv)
     bool ok_2 = ros::param::get(PARAM_2, init_y);
     bool ok_3 = ros::param::get(PARAM_3, init_heading);
 
-    if ( ok_1 && ok_2 && ok_3 )
-    {
-        ship_pos[0] = init_x;
-        ship_pos[1] = init_y;
-        ship_pos[2] = init_heading;
-    }
-
-    // subscriber to ship/pos
-    ros::Subscriber sub_pos = nh.subscribe("ship/pose", 1000, &callback_pos);
-
-    // service responding to user inputs
-    ros::ServiceServer srv_user = nh.advertiseService("task_command", &userCallback);
-
     // create an actionlib client and send goals
-    WaypointTrackingClient client;
+    WaypointTrackingClient client("guidance_node");
 
     // create a waypoint-tracking mission manager
     WaypointTrackingMissionManager manager;
+
+    // initialize the ship position
+    if ( ok_1 && ok_2 && ok_3 )
+        user_interface.set_pose(init_x, init_y, init_heading);
 
     ros::Rate r(10);
 
     while (ros::ok())
     {
         // keep checking the incoming user command
-        if (received_command)
+        if (user_interface.command_available())
         {
-            if ( manager.mission_set.find(mission_name) != manager.mission_set.end() )
-            {
-                ROS_WARN("%s exists in the database.", mission_name.c_str());
-
-                if (command_name == "append")
-                {
-                    manager.mission_queue.push_back(mission_name);
-                    if (manager.mission_queue.size() == 1)
-                    {
-                       client.send_goal(ship_pos, &(manager.mission_database.at(mission_name)));
-                    }
-                    else
-                    {
-                        ROS_WARN("%s is appended to the queue.", mission_name.c_str());
-                        ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
-                    }
-                }
-                if (command_name == "overwrite")
-                {
-                    if ( !manager.mission_queue.empty() )
-                    {
-                        manager.mission_queue.front() = mission_name;
-                    }
-                    else
-                    {
-                        manager.mission_queue.push_back(mission_name);
-                    }
-                    ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
-                    client.send_goal(ship_pos, &(manager.mission_database.at(mission_name)));
-                }
-                if (command_name == "insert")
-                {
-                    manager.mission_queue.push_front(mission_name);
-                    ROS_WARN("There are %lu missions in the queue.", manager.mission_queue.size());
-                    client.send_goal(ship_pos, &(manager.mission_database.at(mission_name)));
-                }
-            }
-            else
-            {
-                ROS_ERROR("The mission doesn't exist in the database.");
-            }
+            user_interface.CommandCallback(client, manager);
         }
-
-        // reset the helper variables
-        received_command = false;
-        mission_name.clear();
 
         // keep checking whether the current mission is done
         if (client.is_done())
         {
-            if ( !manager.mission_queue.empty() )
+            if ( !manager.mission_queue_.empty() )
             {
-                manager.mission_queue.pop_front();
-                if ( !manager.mission_queue.empty() )
+                manager.mission_queue_.pop_front();
+                if ( !manager.mission_queue_.empty() )
                 {
                     ROS_WARN("Send the next mission in the queue.");
-                    client.send_goal(ship_pos, &(manager.mission_database.at(manager.mission_queue.front())));
+                    client.send_goal(user_interface.get_pos(), &(manager.mission_database_.at(manager.mission_queue_.front())));
                 }
             }
             else

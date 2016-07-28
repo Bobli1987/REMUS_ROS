@@ -1,6 +1,6 @@
 <launch>
   <param 
-    name="robot_description" textfile='$(find imm)/urdf/remus.urdf' 
+    name="robot_description" textfile='$(find imm)/urdf/remus_stl.urdf' 
   />
   <param 
     name="use_gui" value="False"
@@ -33,12 +33,5 @@
     name="dynamics_node"
     required="true"
     launch-prefix="xterm -e"
-  />
-  <node 
-    name="rviz" 
-    pkg="rviz" 
-    type="rviz" 
-    args="-d $(find imm)/config/remus_rviz.rviz"
-    required="true" 
   />
 </launch>

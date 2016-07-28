@@ -1368,9 +1368,13 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/package.xml">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus.dae">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus.urdf">
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus.urdf~">
+      <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus_stl.urdf">
+      </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus_stl.urdf~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/CMakeLists.txt">
       </Unit>
@@ -1386,11 +1390,7 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/included.launch">
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/included.launch~">
-      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/simulator.launch">
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/launch/simulator.launch~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/msg/control.msg">
       </Unit>
@@ -1407,8 +1407,6 @@
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/waypoint.srv">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/waypoints.srv~">
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/urdf/remus.urdf~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/urdf/ship.urdf">
       </Unit>

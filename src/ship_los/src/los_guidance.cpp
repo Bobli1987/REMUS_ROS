@@ -119,7 +119,7 @@ public:
         marker_bulb_.scale.y = 0.2;
         marker_bulb_.scale.z = 0.2;
         marker_bulb_.color.r = 1.0; // red
-        marker_bulb_.color.a = 1.0;
+        marker_bulb_.color.a = 0.0; // invisible initially
         marker_bulb_.lifetime = ros::Duration();
 
         // start the action server
@@ -245,6 +245,7 @@ void WaypointTrackingServer::callback_pos(const ship_los::pose &msg_pos)
         marker_bulb_.pose.position.x = waypoints_xcoor_[base_num_+1];
         marker_bulb_.pose.position.y = -waypoints_ycoor_[base_num_+1];
         marker_bulb_.pose.position.z = 1.5;
+        marker_bulb_.color.a = 1.0;
     }
 }
 

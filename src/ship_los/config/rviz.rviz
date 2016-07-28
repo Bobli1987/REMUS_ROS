@@ -82,7 +82,7 @@ Visualization Manager:
       Frames:
         All Enabled: false
         Earth-fixed frame:
-          Value: false
+          Value: true
         Ship:
           Value: true
         nose:
