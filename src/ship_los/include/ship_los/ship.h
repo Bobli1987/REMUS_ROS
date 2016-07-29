@@ -8,17 +8,18 @@
 #include <boost/math/constants/constants.hpp>
 #include <boost/numeric/odeint.hpp>
 
-// constant pi
-const double pi = boost::math::constants::pi<double>();
-// new matrix types
-typedef Eigen::Matrix<double, 6, 1> Vector6d;
-typedef Eigen::Matrix<double, 6, 6> Matrix6d;
 
 // Class Remus
 class Ship
 {
     friend class HeadingController;
     friend void RunShip(Ship&, const size_t&, const double&);
+
+    // constant pi
+    const double pi = boost::math::constants::pi<double>();
+    // new matrix types
+    typedef Eigen::Matrix<double, 6, 1> Vector6d;
+    typedef Eigen::Matrix<double, 6, 6> Matrix6d;
 
 public:
     // constructors
@@ -116,8 +117,8 @@ Eigen::Matrix3d Ship::DampingMatrix() const {
 }
 
 // time derivative of the system state
-Vector6d Ship::StateDerivative(const Eigen::Vector3d &velocity, const Eigen::Vector3d &position, const double) const {
-    Vector6d state_derivative;
+Ship::Vector6d Ship::StateDerivative(const Eigen::Vector3d &velocity, const Eigen::Vector3d &position, const double) const {
+    Ship::Vector6d state_derivative;
     Eigen::Vector3d vec1, vec2;
 
     vec1 = InertiaMatrix().inverse() *
@@ -130,7 +131,7 @@ Vector6d Ship::StateDerivative(const Eigen::Vector3d &velocity, const Eigen::Vec
 // class operator to integrate
 void Ship::operator()(const std::vector<double> &state, std::vector<double> &state_derivative, const double t) {
     Eigen::Vector3d velocity, position;
-    Vector6d dy;
+    Ship::Vector6d dy;
     velocity << state[0], state[1], state[2];
     position << state[3], state[4], state[5];
     dy = StateDerivative(velocity, position, t);

@@ -1374,8 +1374,6 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus_stl.urdf">
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/imm/urdf/remus_stl.urdf~">
-      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/CMakeLists.txt">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/action/WaypointTracking.action">
@@ -1409,8 +1407,6 @@
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/srv/waypoints.srv~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/urdf/ship.urdf">
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/ship_los/urdf/ship.urdf~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />

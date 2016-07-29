@@ -197,7 +197,7 @@ public:
     std::vector<std::vector<double>> wpt_group1 = { {0.372, -0.628, 0.372, 1.872, 6.872, 8.372, 9.372, 8.372},
                                                     {-1.50, 0.00, 1.50, 2.00, -2.00, -1.50, 0.00, 1.50} };
     std::vector<std::vector<double>> wpt_group2 = { {6.00, 7.00, 9.00, 11.00, 12.00, 11.00},
-                                                    {4.00, 6.00, 6.50, 6.00, 5.00, 2.00} };
+                                                    {4.00, 6.00, 6.50, 6.00, 4.00, 2.00} };
     std::vector<std::vector<double>> wpt_group3 = { {5.00}, {-2.00} };
 
     WaypointTrackingMission mission1, mission2, mission3;
