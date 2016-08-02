@@ -56,11 +56,11 @@ private:
     const double a24_ = 0.0, a26_ = -1.93, a35_ = 1.93, a46_ = 0.0;
     // viscous damping coefficients
     const double Xuu_ = -3.87, Yvv_ = -1e2, Yrr_ = 6.32e-1;
-    const double Zww_ = 0.0, Zqq_ = 0.0;
+    const double Zww_ = -1e2, Zqq_ = -6.32e-1;
     const double Kp_ = -1.60e-3, Kpp_ = -1.30e-1;
-    const double Mww_ = 0.0, Mqq_ = 0.0, Nvv_ = 7.38, Nrr_ = -9.40e1;
-    const double Yuv_ = -1.79e1, Yur_ = 8.62, Zuw_ = 0.0, Zuq_ = 0.0;
-    const double Kup_ = 0, Muw_ = 0.0, Muq_ = 0.0, Nuv_ = 4.57, Nur_ = -6.4;
+    const double Mww_ = -7.38, Mqq_ = -1.88e2, Nvv_ = 7.38, Nrr_ = -9.40e1;
+    const double Yuv_ = -1.79e1, Yur_ = 8.62, Zuw_ = -1.79e1, Zuq_ = -8.62;
+    const double Kup_ = 0, Muw_ = -4.57, Muq_ = 6.4, Nuv_ = 4.57, Nur_ = -6.4;
 
     // parameters of the simulation
     // step size of the current simulation
