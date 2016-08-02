@@ -8,16 +8,17 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <Eigen/Dense>
 #include <boost/math/special_functions/sign.hpp>
 #include <boost/numeric/odeint.hpp>
 #include "remus.h"
 
-using namespace std;
-using namespace boost::numeric::odeint;
-
 // control the position of the internal moving mass to achieve heading stabilization
 class MovingMassController
 {
+    // new matrix types
+    typedef Eigen::Matrix<double, 6, 1> Vector6d;
+
 public:
     // constructor
     MovingMassController(const Remus&, const double&, const double&, const double&, const double&, const double&);
@@ -25,7 +26,7 @@ public:
 
 private:
     double mass_, Ixx_, a22_, a44_, gravity_;
-    Vector3d cog_;
+    Eigen::Vector3d cog_;
     // tunnel thruster's position in z direction
     double tunnel_pos_;
     // controller parameters
@@ -57,7 +58,7 @@ private:
 public:
     double mass_position_ = 0;
     // the member method used to compute yv
-    vector<double> ComputeActuation(const Vector6d&, const Vector6d&, const double&, const double&);
+    std::vector<double> ComputeActuation(const Vector6d&, const Vector6d&, const double&, const double&);
 };
 // constructor
 MovingMassController::MovingMassController(const Remus &vehicle, const double &k0, const double &k1, const double &k2,
@@ -114,18 +115,18 @@ MovingMassController::MovingMassController(const Remus &vehicle, const double &k
     g3_ = mv_*vehicle.gravity_/(1-M_*R1_)/(vehicle.Ixx_+vehicle.a44_);
 }
 // member methods
-double MovingMassController::f1(const double &r) const { return J2_*U0_*r + Gamma42_*r*abs(r); }
-double MovingMassController::pf1pr(const double &r) const { return J2_*U0_ + 2*Gamma42_*abs(r); }
+double MovingMassController::f1(const double &r) const { return J2_*U0_*r + Gamma42_*r*std::fabs(r); }
+double MovingMassController::pf1pr(const double &r) const { return J2_*U0_ + 2*Gamma42_*std::fabs(r); }
 double MovingMassController::ppf1prr(const double &r) const { return 2*Gamma42_*boost::math::sign(r); }
 double MovingMassController::f2(const double &v, const double &r) const { return G2_*U0_*v + H2_*U0_*r +
-            Gamma12_*v*abs(v) + Gamma22_*r*abs(r); }
-double MovingMassController::pf2pv(const double &v) const { return G2_*U0_ + 2*Gamma12_*abs(v); }
-double MovingMassController::pf2pr(const double &r) const { return H2_*U0_ + 2*Gamma22_*abs(r); }
+            Gamma12_*v*std::fabs(v) + Gamma22_*r*std::fabs(r); }
+double MovingMassController::pf2pv(const double &v) const { return G2_*U0_ + 2*Gamma12_*std::fabs(v); }
+double MovingMassController::pf2pr(const double &r) const { return H2_*U0_ + 2*Gamma22_*std::fabs(r); }
 double MovingMassController::ppf2pvv(const double &v) const { return 2*Gamma12_*boost::math::sign(v); }
 double MovingMassController::ppf2prr(const double &r) const { return 2*Gamma22_*boost::math::sign(r); }
 double MovingMassController::f3(const double &v, const double &r, const double &p, const double &phi) const {
-    return -M_*G2_*U0_*v - M_*(H2_+1)*U0_*r + N2_*p - M_*Gamma12_*v*abs(v) - M_*Gamma22_*r*abs(r) \
-            + N2q_*p*abs(p) + epsilon32_*sin(phi);
+    return -M_*G2_*U0_*v - M_*(H2_+1)*U0_*r + N2_*p - M_*Gamma12_*v*std::fabs(v) - M_*Gamma22_*r*std::fabs(r) \
+            + N2q_*p*std::fabs(p) + epsilon32_*sin(phi);
 }
 double MovingMassController::dr(const double &v, const double &r) const { return f1(r) + g1_*v; }
 double MovingMassController::ddr(const double &v, const double &r, const double &phi) const {
@@ -142,9 +143,9 @@ double MovingMassController::ddv(const double &v, const double &r, const double 
 }
 
 double MovingMassController::sat(const double &x) const {
-    return ( abs(x) <= 1 ? x : boost::math::sign(x) );
+    return ( std::fabs(x) <= 1 ? x : boost::math::sign(x) );
 }
-vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity, const Vector6d &position,
+std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity, const Vector6d &position,
                                                       const double &heading_ref, const double &step_size) {
     double v = rvelocity[1]; // sway velocity
     double r = rvelocity[5]; // yaw rate
@@ -174,19 +175,19 @@ vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity,
     double dalpha3 = -k3_*(p-dalpah2) - g2_*(dv(v,r,phi) - dalpha1) + ddalpha2;
     double z4 = p - alpha3;
 
-    vector<double> errors = {epsi, z1, z2, z3, z4};
+    std::vector<double> errors = {epsi, z1, z2, z3, z4};
     // actuation stores both the mass position, tunnel thrust and the roll torque
-    vector<double> actuation(3, 0); // initialized as {0, 0, 0}
+    std::vector<double> actuation(3, 0); // initialized as {0, 0, 0}
 
     // set saturation to the mass position
     double mass_pos = (-k4_*z4-z3-f3(v,r,p,phi)+dalpha3)/g3_;
-    mass_pos = abs(mass_pos) > 0.06 ? boost::math::sign(mass_pos)*0.06 : mass_pos;
-    mass_pos = abs(mass_pos-mass_position_) > 0.06*step_size ? (mass_position_ +
+    mass_pos = std::fabs(mass_pos) > 0.06 ? boost::math::sign(mass_pos)*0.06 : mass_pos;
+    mass_pos = std::fabs(mass_pos-mass_position_) > 0.06*step_size ? (mass_position_ +
             boost::math::sign(mass_pos-mass_position_)*0.06*step_size) : mass_pos;
     // internal moving mass position
     actuation[0] = mass_pos;
     // tunnel thrust along y axis
-    actuation[1] = - abs(epsilon42_*actuation[0])*sat(errors[2]/1e-4);
+    actuation[1] = - std::fabs(epsilon42_*actuation[0])*sat(errors[2]/1e-4);
     actuation[1] *= ((mass_+a22_)*(Ixx_+a44_)-pow(mass_*cog_[2],2))/(Ixx_+a44_-tunnel_pos_*mass_*cog_[2]);
     // roll torque due to the shift of CG
     actuation[2] = mv_ * gravity_ * mass_pos*cos(phi);

@@ -7,13 +7,13 @@
 #include "imm/control.h"
 #include "remus.h"
 
-typedef Matrix<double, 6, 1> Vector6d;
+typedef Eigen::Matrix<double, 6, 1> Vector6d;
 
 Vector6d rvelocity;
 Vector6d position;
 
 // actuation computed by the controller
-vector<double> actuation;
+std::vector<double> actuation;
 
 // the time step of the controller
 double step_size = 0.1;

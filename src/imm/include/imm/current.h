@@ -9,17 +9,15 @@
 #include <string>
 #include <Eigen/Dense>
 
-using namespace std;
-using namespace Eigen;
-
-typedef Matrix<double, 6, 1> Vector6d;
 
 // Class OceanCurrent
 class OceanCurrent
 {
+    typedef Eigen::Matrix<double, 6, 1> Vector6d;
+
 public:
     // constructor
-    OceanCurrent(const vector<double> &uniform_velocity): uniform_velocity_(uniform_velocity) {}
+    OceanCurrent(const std::vector<double> &uniform_velocity): uniform_velocity_(uniform_velocity) {}
     OceanCurrent(): OceanCurrent({0, 0, 0}) {}
     // return the uniform velocity of the current
     Vector6d GetCurrentVelocity() const {
@@ -30,7 +28,7 @@ public:
 
 private:
     // ocean current default velocity
-    vector<double> uniform_velocity_;
+    std::vector<double> uniform_velocity_;
 };
 
 #endif //REMUSIMM_CURRENT_H

@@ -6,17 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp
+/home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp
 ros/ros.h
 -
-actionlib/client/simple_action_client.h
+vector
 -
-actionlib/client/terminal_state.h
+geometry_msgs/Twist.h
 -
-ship_los/WaypointTrackingAction.h
-/home/bo/dev/REMUS/src/ship_los/src/ship_los/WaypointTrackingAction.h
-ship_los/pose.h
-/home/bo/dev/REMUS/src/ship_los/src/ship_los/pose.h
-ship_los/task_input.h
-/home/bo/dev/REMUS/src/ship_los/src/ship_los/task_input.h
+eigen3/Eigen/Dense
+-
+controller.h
+/home/bo/dev/REMUS/src/imm/src/controller.h
+imm/pose.h
+/home/bo/dev/REMUS/src/imm/src/imm/pose.h
+imm/control.h
+/home/bo/dev/REMUS/src/imm/src/imm/control.h
+remus.h
+/home/bo/dev/REMUS/src/imm/src/remus.h
 

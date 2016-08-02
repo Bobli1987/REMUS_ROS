@@ -45,6 +45,8 @@ vector
 -
 cmath
 -
+Eigen/Dense
+-
 boost/math/special_functions/sign.hpp
 -
 boost/numeric/odeint.hpp
