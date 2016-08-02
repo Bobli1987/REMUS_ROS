@@ -1089,6 +1089,19 @@ task_manager/fast:
 .PHONY : task_manager/fast
 
 #=============================================================================
+# Target rules for targets named teleop_keyboard
+
+# Build rule for target.
+teleop_keyboard: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 teleop_keyboard
+.PHONY : teleop_keyboard
+
+# fast build rule for target.
+teleop_keyboard/fast:
+	$(MAKE) -f ship_los/CMakeFiles/teleop_keyboard.dir/build.make ship_los/CMakeFiles/teleop_keyboard.dir/build
+.PHONY : teleop_keyboard/fast
+
+#=============================================================================
 # Target rules for targets named viz_ship
 
 # Build rule for target.
@@ -1269,6 +1282,30 @@ ship_los/src/task_manager.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.s
 .PHONY : ship_los/src/task_manager.cpp.s
 
+ship_los/src/teleop_keyboard.o: ship_los/src/teleop_keyboard.cpp.o
+.PHONY : ship_los/src/teleop_keyboard.o
+
+# target to build an object file
+ship_los/src/teleop_keyboard.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard.cpp.o
+.PHONY : ship_los/src/teleop_keyboard.cpp.o
+
+ship_los/src/teleop_keyboard.i: ship_los/src/teleop_keyboard.cpp.i
+.PHONY : ship_los/src/teleop_keyboard.i
+
+# target to preprocess a source file
+ship_los/src/teleop_keyboard.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard.cpp.i
+.PHONY : ship_los/src/teleop_keyboard.cpp.i
+
+ship_los/src/teleop_keyboard.s: ship_los/src/teleop_keyboard.cpp.s
+.PHONY : ship_los/src/teleop_keyboard.s
+
+# target to generate assembly for a file
+ship_los/src/teleop_keyboard.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard.cpp.s
+.PHONY : ship_los/src/teleop_keyboard.cpp.s
+
 ship_los/src/viz_trajectory.o: ship_los/src/viz_trajectory.cpp.o
 .PHONY : ship_los/src/viz_trajectory.o
 
@@ -1378,6 +1415,7 @@ help:
 	@echo "... ship_los_genlisp"
 	@echo "... ship_los_genpy"
 	@echo "... task_manager"
+	@echo "... teleop_keyboard"
 	@echo "... viz_ship"
 	@echo "... imm/src/movingmass_controller.o"
 	@echo "... imm/src/movingmass_controller.i"
@@ -1400,6 +1438,9 @@ help:
 	@echo "... ship_los/src/task_manager.o"
 	@echo "... ship_los/src/task_manager.i"
 	@echo "... ship_los/src/task_manager.s"
+	@echo "... ship_los/src/teleop_keyboard.o"
+	@echo "... ship_los/src/teleop_keyboard.i"
+	@echo "... ship_los/src/teleop_keyboard.s"
 	@echo "... ship_los/src/viz_trajectory.o"
 	@echo "... ship_los/src/viz_trajectory.i"
 	@echo "... ship_los/src/viz_trajectory.s"

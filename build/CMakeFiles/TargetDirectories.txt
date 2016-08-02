@@ -60,6 +60,7 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/std_msgs_generate_messages_py.dir
 /home/bo/dev/REMUS/build/ship_los/CMakeFiles/task_manager.dir
+/home/bo/dev/REMUS/build/ship_los/CMakeFiles/teleop_keyboard.dir
 /home/bo/dev/REMUS/build/CMakeFiles/tests.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/tf2_msgs_generate_messages_cpp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/tf2_msgs_generate_messages_lisp.dir

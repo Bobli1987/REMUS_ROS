@@ -92,7 +92,7 @@ int main(int argc, char **argv) {
     ros::Timer timer = nh.createTimer(ros::Duration(step_size), &timerCallback);
 
     // create a publisher and two subscribers
-    pubPtr_control = new ros::Publisher(nh.advertise<ship_los::control>("ship/actuation", 1000));
+    pubPtr_control = new ros::Publisher(nh.advertise<ship_los::control>("ship/auto_control", 1000));
     ros::Subscriber sub_pose = nh.subscribe("ship/pose", 1000, &callback_pose);
     ros::Subscriber sub_vel = nh.subscribe("ship/vel", 1000, &callback_vel);
     ros::Subscriber sub_course = nh.subscribe("ship/course", 1000, &callback_course);

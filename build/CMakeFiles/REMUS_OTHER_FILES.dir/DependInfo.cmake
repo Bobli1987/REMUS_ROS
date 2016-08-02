@@ -11,6 +11,7 @@ SET(CMAKE_DEPENDS_CHECK_CXX
   "/home/bo/dev/REMUS/src/ship_los/src/path_controller.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/path_controller.cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/ship_dynamics.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/ship_dynamics.cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o"
+  "/home/bo/dev/REMUS/src/ship_los/src/teleop_keyboard.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard.cpp.o"
   "/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp" "/home/bo/dev/REMUS/build/CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/viz_trajectory.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")

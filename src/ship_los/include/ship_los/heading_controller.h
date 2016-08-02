@@ -6,8 +6,6 @@
 #include <boost/numeric/odeint.hpp>
 #include "ship.h"
 
-using namespace boost::numeric::odeint;
-
 class HeadingController
 {
     friend std::vector<double> ComputeActuation(HeadingController&, const double&, const double&, const double&, const double&,
@@ -74,7 +72,7 @@ std::vector<double> ComputeActuation(HeadingController &controller, const double
             (controller.n22_-controller.n32_/controller.arm_-controller.k2_)*v - \
             (controller.n32_-controller.n33_/controller.arm_)*r - (controller.k3_*(r-alpha3)+z1)/controller.arm_;
     double dalpha2 = (controller.alpha2_input_ - controller.k2_*controller.alpha2_)/(controller.m22_ - controller.m32_/controller.arm_);
-    size_t steps = integrate(controller, x, 0.0, step_size, step_size/5);
+    size_t steps = boost::numeric::odeint::integrate(controller, x, 0.0, step_size, step_size/5);
 
     // compute the actuation
     actuation[0] = controller.n11_*u - controller.k1_*(u-controller.ud_);
@@ -89,9 +87,9 @@ std::vector<double> ComputeActuation(HeadingController &controller, const double
 
     // set saturation
     actuation[0] = (actuation[0] > 2) ? 2 : actuation[0];
-    actuation[2] = (actuation[2] > 1.5) ? 1.5 : actuation[2];
-
-    actuation[1] = actuation[2]/controller.arm_;
+    actuation[2] = (actuation[2] > 0.5) ? 0.5 : actuation[2];
+    actuation[2] = (actuation[2] < -0.5) ? -0.5 : actuation[2];
+    actuation[1] = -actuation[2]/controller.arm_;
 
     return actuation;
 }

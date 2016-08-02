@@ -126,7 +126,7 @@ std::array<double, 3> ComputeCourse(LosGuidanceLaw &law, const double &pos_x, co
 
         if (fabs(law.course_angle_ - pos_heading) > M_PI)
         {
-            ROS_ERROR_THROTTLE(5, "This is the probelm I haven't solved perfectly");
+            ROS_DEBUG_THROTTLE(5, "This is the probelm I haven't solved perfectly");
             law.course_state_[0] = law.course_angle_;
             law.course_state_[1] = 0;
             law.course_state_[2] = 0;

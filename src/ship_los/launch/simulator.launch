@@ -40,5 +40,17 @@
     type="path_controller"
     name="control_node"
   />
+  <node
+    pkg="ship_los"
+    type="teleop_keyboard"
+    name="teleop_node"
+    launch-prefix="xterm -e"
+  />
+  <node
+    pkg="topic_tools"
+    type="mux"
+    name="mux_cmd"
+    args="ship/actuation ship/manual_control ship/auto_control">
+  </node>
 
 </launch>
