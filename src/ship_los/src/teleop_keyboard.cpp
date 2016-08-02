@@ -1,83 +1,132 @@
-#include <iostream>
 #include <ros/ros.h>
-#include "ship_los/control.h"
+#include <ship_los/control.h>
+#include <signal.h>
+#include <termios.h>
+#include <stdio.h>
 
-class ShipDriver
+#define KEYCODE_R 0x43
+#define KEYCODE_L 0x44
+#define KEYCODE_U 0x41
+#define KEYCODE_D 0x42
+#define KEYCODE_Q 0x71
+
+class TeleopShip
 {
-private:
-  // The node handle
-  ros::NodeHandle nh_;
-  // publish to the "/ship/manual_control" topic to issue commands
-  ros::Publisher cmd_actuation_pub_;
-
 public:
-  // constructor
-  ShipDriver(ros::NodeHandle &nh)
-  {
-    nh_ = nh;
-    //set up the publisher for the cmd_actuation topic
-    cmd_actuation_pub_ = nh_.advertise<ship_los::control>("/ship/manual_control", 1000);
-  }
+    TeleopShip();
+    void keyLoop();
 
-  // Loop forever while sending drive commands based on keyboard input
-  bool driveKeyboard()
-  {
-    std::cout << "Type a command and then press enter.  "
-      "Use 'w' to move forward, 'a' to turn left, "
-      "'d' to turn right, 's' to stop.\n";
+private:
 
-    // the ship actuation commands
-    ship_los::control ship_cmd;
-
-    char cmd[50];
-    while(nh_.ok()){
-
-      std::cin.getline(cmd, 50);
-      if(cmd[0]!='w' && cmd[0]!='s' && cmd[0]!='d' && cmd[0]!='a')
-      {
-        std::cout << "unknown command:" << cmd << "\n";
-        continue;
-      }
-
-      ship_cmd.surge = ship_cmd.sway = ship_cmd.yaw = 0;
-
-      // move forward
-      if(cmd[0]=='w'){
-        ship_cmd.surge = 1.0;
-        ship_cmd.yaw = 0.0;
-      }
-      // turn left (yaw) and drive forward at the same time
-      else if(cmd[0]=='a'){
-        ship_cmd.surge = 0.2;
-        ship_cmd.sway = 0.1/0.6;
-        ship_cmd.yaw = -0.1;
-      }
-      // turn right (yaw) and drive forward at the same time
-      else if(cmd[0]=='d'){
-        ship_cmd.surge = 0.2;
-        ship_cmd.sway = -0.1/0.6;
-        ship_cmd.yaw = 0.1;
-      }
-      // stop the ship
-      else if(cmd[0]=='s'){
-        ship_cmd.surge = 0.0;
-        ship_cmd.yaw = 0.0;
-      }
-
-      //publish the assembled command
-      cmd_actuation_pub_.publish(ship_cmd);
-    }
-    return true;
-  }
-
+    ros::NodeHandle nh_;
+    double surge_, yaw_;
+    ros::Publisher control_pub_;
 };
+
+TeleopShip::TeleopShip():
+    surge_(0),
+    yaw_(0)
+{
+    control_pub_ = nh_.advertise<ship_los::control>("ship/manual_control", 1000);
+}
+
+int kfd = 0;
+struct termios cooked, raw;
+
+void quit(int sig)
+{
+    (void)sig;
+    tcsetattr(kfd, TCSANOW, &cooked);
+    ros::shutdown();
+    exit(0);
+}
+
 
 int main(int argc, char** argv)
 {
-  //init the ROS node
-  ros::init(argc, argv, "ship_driver");
-  ros::NodeHandle nh;
+    ros::init(argc, argv, "teleop_ship");
+    TeleopShip teleop_ship;
 
-  ShipDriver driver(nh);
-  driver.driveKeyboard();
+    signal(SIGINT,quit);
+
+    teleop_ship.keyLoop();
+
+    return(0);
+}
+
+
+void TeleopShip::keyLoop()
+{
+    char c;
+    bool dirty=false;
+
+    // get the console in raw mode
+    tcgetattr(kfd, &cooked);
+    memcpy(&raw, &cooked, sizeof(struct termios));
+    raw.c_lflag &=~ (ICANON | ECHO);
+    // Setting a new line, then end of file
+    raw.c_cc[VEOL] = 1;
+    raw.c_cc[VEOF] = 2;
+    tcsetattr(kfd, TCSANOW, &raw);
+
+    puts("Reading from keyboard");
+    puts("---------------------------");
+    puts("Use arrow keys to steer the ship.");
+    puts("     up  --  move forward");
+    puts("   left  --  turn left");
+    puts("  right  --  turn right");
+    puts("   down  --  stop");
+
+    for(;;)
+    {
+        // get the next event from the keyboard
+        if(read(kfd, &c, 1) < 0)
+        {
+            perror("read():");
+            exit(-1);
+        }
+
+        surge_= yaw_ = 0;
+        ROS_DEBUG("value: 0x%02X\n", c);
+
+        switch(c)
+        {
+        case KEYCODE_L:
+            ROS_DEBUG("LEFT");
+            surge_= 0.2;
+            yaw_ = -0.1;
+            dirty = true;
+            break;
+        case KEYCODE_R:
+            ROS_DEBUG("RIGHT");
+            surge_ = 0.2;
+            yaw_ = 0.1;
+            dirty = true;
+            break;
+        case KEYCODE_U:
+            ROS_DEBUG("UP");
+            surge_ = 0.2;
+            dirty = true;
+            break;
+        case KEYCODE_D:
+            ROS_DEBUG("DOWN");
+            surge_ = 0;
+            dirty = true;
+            break;
+        }
+
+        ship_los::control control;
+        control.surge = surge_;
+        control.yaw = yaw_;
+        control.sway = yaw_/0.6;
+
+        if(dirty ==true)
+        {
+            control_pub_.publish(control);
+            dirty=false;
+        }
+    }
+
+
+    return;
 }

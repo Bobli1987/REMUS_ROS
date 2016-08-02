@@ -7,10 +7,14 @@
 #IncludeRegexTransform: 
 
 /home/bo/dev/REMUS/src/ship_los/src/teleop_keyboard.cpp
-iostream
--
 ros/ros.h
 -
 ship_los/control.h
-/home/bo/dev/REMUS/src/ship_los/src/ship_los/control.h
+-
+signal.h
+-
+termios.h
+-
+stdio.h
+-
 
