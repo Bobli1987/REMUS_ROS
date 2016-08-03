@@ -7,15 +7,17 @@ import struct
 
 
 class control(genpy.Message):
-  _md5sum = "d50f738a140e15dd0687921edc16ae0a"
+  _md5sum = "3053511a874b6c53cc14542e24e79dc6"
   _type = "imm/control"
   _has_header = False #flag to mark the presence of a Header object
   _full_text = """float64 mass_position
 float64 thrust
+float64 heave_force
 float64 roll_torque
+float64 pitch_torque
 """
-  __slots__ = ['mass_position','thrust','roll_torque']
-  _slot_types = ['float64','float64','float64']
+  __slots__ = ['mass_position','thrust','heave_force','roll_torque','pitch_torque']
+  _slot_types = ['float64','float64','float64','float64','float64']
 
   def __init__(self, *args, **kwds):
     """
@@ -25,7 +27,7 @@ float64 roll_torque
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       mass_position,thrust,roll_torque
+       mass_position,thrust,heave_force,roll_torque,pitch_torque
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -38,12 +40,18 @@ float64 roll_torque
         self.mass_position = 0.
       if self.thrust is None:
         self.thrust = 0.
+      if self.heave_force is None:
+        self.heave_force = 0.
       if self.roll_torque is None:
         self.roll_torque = 0.
+      if self.pitch_torque is None:
+        self.pitch_torque = 0.
     else:
       self.mass_position = 0.
       self.thrust = 0.
+      self.heave_force = 0.
       self.roll_torque = 0.
+      self.pitch_torque = 0.
 
   def _get_types(self):
     """
@@ -58,7 +66,7 @@ float64 roll_torque
     """
     try:
       _x = self
-      buff.write(_struct_3d.pack(_x.mass_position, _x.thrust, _x.roll_torque))
+      buff.write(_struct_5d.pack(_x.mass_position, _x.thrust, _x.heave_force, _x.roll_torque, _x.pitch_torque))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -71,8 +79,8 @@ float64 roll_torque
       end = 0
       _x = self
       start = end
-      end += 24
-      (_x.mass_position, _x.thrust, _x.roll_torque,) = _struct_3d.unpack(str[start:end])
+      end += 40
+      (_x.mass_position, _x.thrust, _x.heave_force, _x.roll_torque, _x.pitch_torque,) = _struct_5d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -86,7 +94,7 @@ float64 roll_torque
     """
     try:
       _x = self
-      buff.write(_struct_3d.pack(_x.mass_position, _x.thrust, _x.roll_torque))
+      buff.write(_struct_5d.pack(_x.mass_position, _x.thrust, _x.heave_force, _x.roll_torque, _x.pitch_torque))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -100,11 +108,11 @@ float64 roll_torque
       end = 0
       _x = self
       start = end
-      end += 24
-      (_x.mass_position, _x.thrust, _x.roll_torque,) = _struct_3d.unpack(str[start:end])
+      end += 40
+      (_x.mass_position, _x.thrust, _x.heave_force, _x.roll_torque, _x.pitch_torque,) = _struct_5d.unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
 
 _struct_I = genpy.struct_I
-_struct_3d = struct.Struct("<3d")
+_struct_5d = struct.Struct("<5d")

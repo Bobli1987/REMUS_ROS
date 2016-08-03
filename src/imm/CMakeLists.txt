@@ -136,18 +136,18 @@ include_directories( include/imm
 
 ## Declare a C++ executable
 add_executable(remus_dynamics src/remus_dynamics.cpp)
-add_executable(movingmass_controller src/movingmass_controller.cpp)
+add_executable(controllers src/controllers.cpp)
 add_executable(viz_trajectory src/viz_trajectory.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(remus_dynamics ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(movingmass_controller ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(controllers ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(viz_trajectory ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(remus_dynamics ${catkin_LIBRARIES})
-target_link_libraries(movingmass_controller ${catkin_LIBRARIES})
+target_link_libraries(controllers ${catkin_LIBRARIES})
 target_link_libraries(viz_trajectory ${catkin_LIBRARIES})
 
 #############

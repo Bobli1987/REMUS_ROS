@@ -97,6 +97,68 @@
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
          </MakeCommands>
       </Target>
+      <Target title="controllers">
+         <Option output="/home/bo/dev/REMUS/devel/lib/imm/controllers" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/imm" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;imm&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/imm/include/imm" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 controllers" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="controllers/fast">
+         <Option output="/home/bo/dev/REMUS/devel/lib/imm/controllers" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/bo/dev/REMUS/devel/lib/imm" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
+            <Add option="-DROS_PACKAGE_NAME=&quot;imm&quot;" />
+            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
+            <Add directory="/home/bo/dev/REMUS/devel/include" />
+            <Add directory="/home/bo/dev/REMUS/src/imm/include/imm" />
+            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
+            <Add directory="/opt/ros/indigo/include" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.8" />
+            <Add directory="/usr/include/c++/4.8/backward" />
+            <Add directory="/usr/include/eigen3" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 controllers/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
       <Target title="geometry_msgs_generate_messages_cpp">
          <Option working_dir="/home/bo/dev/REMUS/build/imm" />
          <Option type="4" />
@@ -192,68 +254,6 @@
          <Option type="4" />
          <MakeCommands>
             <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 imm_genpy" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="movingmass_controller">
-         <Option output="/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/bo/dev/REMUS/devel/lib/imm" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
-            <Add option="-DROS_PACKAGE_NAME=&quot;imm&quot;" />
-            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
-            <Add directory="/home/bo/dev/REMUS/devel/include" />
-            <Add directory="/home/bo/dev/REMUS/src/imm/include/imm" />
-            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
-            <Add directory="/opt/ros/indigo/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 movingmass_controller" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="movingmass_controller/fast">
-         <Option output="/home/bo/dev/REMUS/devel/lib/imm/movingmass_controller" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/bo/dev/REMUS/devel/lib/imm" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add option="-DROS_BUILD_SHARED_LIBS=1" />
-            <Add option="-DROS_PACKAGE_NAME=&quot;imm&quot;" />
-            <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
-            <Add directory="/home/bo/dev/REMUS/devel/include" />
-            <Add directory="/home/bo/dev/REMUS/src/imm/include/imm" />
-            <Add directory="/home/bo/dev/catkin_ws/devel/include" />
-            <Add directory="/opt/ros/indigo/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/4.8" />
-            <Add directory="/usr/include/c++/4.8/backward" />
-            <Add directory="/usr/include/eigen3" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/4.8" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 movingmass_controller/fast" />
             <CompileFile command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
             <Clean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
             <DistClean command="/usr/bin/make -f &quot;/home/bo/dev/REMUS/build/imm/Makefile&quot;  VERBOSE=1 clean" />
@@ -594,7 +594,7 @@
          </MakeCommands>
       </Target>
       </Build>
-      <Unit filename="/home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp">
+      <Unit filename="/home/bo/dev/REMUS/src/imm/src/controllers.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp">
       </Unit>

@@ -14,7 +14,8 @@ geometry_msgs::Twist msg_relVel;
 imm::pose msg_pos;
 
 // the vehicle for the simulation
-Remus vehicle = Remus({1.0, 0, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0.1, 0}, 4);
+//Remus vehicle = Remus({1.0, 0, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0.1, 0}, 4);
+Remus vehicle = Remus({1.0, 0.05, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0}, 9); // 6dof simulation
 
 // the time step of the ode solver and message publishing
 double step_size = 0.05;
@@ -56,7 +57,9 @@ void timerCallback(const ros::TimerEvent&)
 void callback_sub(const imm::control &msg_ctrl)
 {
     vehicle.actuation_[1] = msg_ctrl.thrust;
+    vehicle.actuation_[2] = msg_ctrl.heave_force;
     vehicle.actuation_[3] = msg_ctrl.roll_torque;
+    vehicle.actuation_[4] = msg_ctrl.pitch_torque;
 }
 
 int main(int argc, char **argv) {

@@ -20,6 +20,7 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_msgs_generate_messages_lisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/actionlib_msgs_generate_messages_py.dir
 /home/bo/dev/REMUS/build/CMakeFiles/clean_test_results.dir
+/home/bo/dev/REMUS/build/imm/CMakeFiles/controllers.dir
 /home/bo/dev/REMUS/build/CMakeFiles/download_extra_data.dir
 /home/bo/dev/REMUS/build/CMakeFiles/doxygen.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir
@@ -35,7 +36,6 @@
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_genlisp.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/imm_genpy.dir
 /home/bo/dev/REMUS/build/ship_los/CMakeFiles/los_guidance.dir
-/home/bo/dev/REMUS/build/imm/CMakeFiles/movingmass_controller.dir
 /home/bo/dev/REMUS/build/ship_los/CMakeFiles/path_controller.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/remus_dynamics.dir
 /home/bo/dev/REMUS/build/imm/CMakeFiles/roscpp_generate_messages_cpp.dir

@@ -58,13 +58,13 @@ std::vector<double> DepthController::ComputeActuation(const double &z, const dou
     // compute the rudder angle
     double delta = -kp_*(e_theta + taud_*de_theta);
     // set the upper limit
-    delta = (delta > 15 * M_PI/180) ? 15*M_PI/180 : delta;
-    delta = (delta < -15 * M_PI/180) ? -15*M_PI/180 : delta;
+    delta = (delta > 13 * M_PI/180) ? 13*M_PI/180 : delta;
+    delta = (delta < -13 * M_PI/180) ? -13*M_PI/180 : delta;
 
     // return the actuation
     std::vector<double> actuation;
-    actuation.push_back(-50.6*delta);
-    actuation.push_back(-34.6*delta);
+    actuation.push_back(-50.6*delta); // heave force
+    actuation.push_back(-34.6*delta); // pitch moment
 
     return actuation;
 }

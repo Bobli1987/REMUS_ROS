@@ -348,6 +348,19 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named controllers
+
+# Build rule for target.
+controllers: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 controllers
+.PHONY : controllers
+
+# fast build rule for target.
+controllers/fast:
+	$(MAKE) -f imm/CMakeFiles/controllers.dir/build.make imm/CMakeFiles/controllers.dir/build
+.PHONY : controllers/fast
+
+#=============================================================================
 # Target rules for targets named geometry_msgs_generate_messages_cpp
 
 # Build rule for target.
@@ -476,19 +489,6 @@ imm_genpy: cmake_check_build_system
 imm_genpy/fast:
 	$(MAKE) -f imm/CMakeFiles/imm_genpy.dir/build.make imm/CMakeFiles/imm_genpy.dir/build
 .PHONY : imm_genpy/fast
-
-#=============================================================================
-# Target rules for targets named movingmass_controller
-
-# Build rule for target.
-movingmass_controller: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 movingmass_controller
-.PHONY : movingmass_controller
-
-# fast build rule for target.
-movingmass_controller/fast:
-	$(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/build
-.PHONY : movingmass_controller/fast
 
 #=============================================================================
 # Target rules for targets named remus_dynamics
@@ -1101,29 +1101,29 @@ viz_ship/fast:
 	$(MAKE) -f ship_los/CMakeFiles/viz_ship.dir/build.make ship_los/CMakeFiles/viz_ship.dir/build
 .PHONY : viz_ship/fast
 
-imm/src/movingmass_controller.o: imm/src/movingmass_controller.cpp.o
-.PHONY : imm/src/movingmass_controller.o
+imm/src/controllers.o: imm/src/controllers.cpp.o
+.PHONY : imm/src/controllers.o
 
 # target to build an object file
-imm/src/movingmass_controller.cpp.o:
-	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o
-.PHONY : imm/src/movingmass_controller.cpp.o
+imm/src/controllers.cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o
+.PHONY : imm/src/controllers.cpp.o
 
-imm/src/movingmass_controller.i: imm/src/movingmass_controller.cpp.i
-.PHONY : imm/src/movingmass_controller.i
+imm/src/controllers.i: imm/src/controllers.cpp.i
+.PHONY : imm/src/controllers.i
 
 # target to preprocess a source file
-imm/src/movingmass_controller.cpp.i:
-	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.i
-.PHONY : imm/src/movingmass_controller.cpp.i
+imm/src/controllers.cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.i
+.PHONY : imm/src/controllers.cpp.i
 
-imm/src/movingmass_controller.s: imm/src/movingmass_controller.cpp.s
-.PHONY : imm/src/movingmass_controller.s
+imm/src/controllers.s: imm/src/controllers.cpp.s
+.PHONY : imm/src/controllers.s
 
 # target to generate assembly for a file
-imm/src/movingmass_controller.cpp.s:
-	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.s
-.PHONY : imm/src/movingmass_controller.cpp.s
+imm/src/controllers.cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.s
+.PHONY : imm/src/controllers.cpp.s
 
 imm/src/remus_dynamics.o: imm/src/remus_dynamics.cpp.o
 .PHONY : imm/src/remus_dynamics.o
@@ -1321,6 +1321,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... controllers"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_py"
@@ -1331,7 +1332,6 @@ help:
 	@echo "... imm_generate_messages_py"
 	@echo "... imm_genlisp"
 	@echo "... imm_genpy"
-	@echo "... movingmass_controller"
 	@echo "... remus_dynamics"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... roscpp_generate_messages_lisp"
@@ -1379,9 +1379,9 @@ help:
 	@echo "... ship_los_genpy"
 	@echo "... task_manager"
 	@echo "... viz_ship"
-	@echo "... imm/src/movingmass_controller.o"
-	@echo "... imm/src/movingmass_controller.i"
-	@echo "... imm/src/movingmass_controller.s"
+	@echo "... imm/src/controllers.o"
+	@echo "... imm/src/controllers.i"
+	@echo "... imm/src/controllers.s"
 	@echo "... imm/src/remus_dynamics.o"
 	@echo "... imm/src/remus_dynamics.i"
 	@echo "... imm/src/remus_dynamics.s"

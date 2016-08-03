@@ -14,6 +14,12 @@ void callback_pos(const imm::pose &msg_pos)
     p.x = msg_pos.x;
     p.y = -msg_pos.y; // add the minus sign because of the transformation from world to the earth frame
     p.z = -msg_pos.z;
+
+    // limit the length of trajectory
+    if (trajectory.points.size() > 2000)
+    {
+        trajectory.points.erase(trajectory.points.begin());
+    }
     trajectory.points.push_back(p);
 
     tf::Transform transform;

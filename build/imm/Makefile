@@ -252,6 +252,20 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+imm/CMakeFiles/controllers.dir/rule:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/controllers.dir/rule
+.PHONY : imm/CMakeFiles/controllers.dir/rule
+
+# Convenience name for target.
+controllers: imm/CMakeFiles/controllers.dir/rule
+.PHONY : controllers
+
+# fast build rule for target.
+controllers/fast:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/controllers.dir/build.make imm/CMakeFiles/controllers.dir/build
+.PHONY : controllers/fast
+
+# Convenience name for target.
 imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
 	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
 .PHONY : imm/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
@@ -390,20 +404,6 @@ imm_genpy: imm/CMakeFiles/imm_genpy.dir/rule
 imm_genpy/fast:
 	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/imm_genpy.dir/build.make imm/CMakeFiles/imm_genpy.dir/build
 .PHONY : imm_genpy/fast
-
-# Convenience name for target.
-imm/CMakeFiles/movingmass_controller.dir/rule:
-	cd /home/bo/dev/REMUS/build && $(MAKE) -f CMakeFiles/Makefile2 imm/CMakeFiles/movingmass_controller.dir/rule
-.PHONY : imm/CMakeFiles/movingmass_controller.dir/rule
-
-# Convenience name for target.
-movingmass_controller: imm/CMakeFiles/movingmass_controller.dir/rule
-.PHONY : movingmass_controller
-
-# fast build rule for target.
-movingmass_controller/fast:
-	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/build
-.PHONY : movingmass_controller/fast
 
 # Convenience name for target.
 imm/CMakeFiles/remus_dynamics.dir/rule:
@@ -727,29 +727,29 @@ viz_trajectory/fast:
 	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/viz_trajectory.dir/build.make imm/CMakeFiles/viz_trajectory.dir/build
 .PHONY : viz_trajectory/fast
 
-src/movingmass_controller.o: src/movingmass_controller.cpp.o
-.PHONY : src/movingmass_controller.o
+src/controllers.o: src/controllers.cpp.o
+.PHONY : src/controllers.o
 
 # target to build an object file
-src/movingmass_controller.cpp.o:
-	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o
-.PHONY : src/movingmass_controller.cpp.o
+src/controllers.cpp.o:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/controllers.dir/build.make imm/CMakeFiles/controllers.dir/src/controllers.cpp.o
+.PHONY : src/controllers.cpp.o
 
-src/movingmass_controller.i: src/movingmass_controller.cpp.i
-.PHONY : src/movingmass_controller.i
+src/controllers.i: src/controllers.cpp.i
+.PHONY : src/controllers.i
 
 # target to preprocess a source file
-src/movingmass_controller.cpp.i:
-	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.i
-.PHONY : src/movingmass_controller.cpp.i
+src/controllers.cpp.i:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/controllers.dir/build.make imm/CMakeFiles/controllers.dir/src/controllers.cpp.i
+.PHONY : src/controllers.cpp.i
 
-src/movingmass_controller.s: src/movingmass_controller.cpp.s
-.PHONY : src/movingmass_controller.s
+src/controllers.s: src/controllers.cpp.s
+.PHONY : src/controllers.s
 
 # target to generate assembly for a file
-src/movingmass_controller.cpp.s:
-	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/movingmass_controller.dir/build.make imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.s
-.PHONY : src/movingmass_controller.cpp.s
+src/controllers.cpp.s:
+	cd /home/bo/dev/REMUS/build && $(MAKE) -f imm/CMakeFiles/controllers.dir/build.make imm/CMakeFiles/controllers.dir/src/controllers.cpp.s
+.PHONY : src/controllers.cpp.s
 
 src/remus_dynamics.o: src/remus_dynamics.cpp.o
 .PHONY : src/remus_dynamics.o
@@ -813,6 +813,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... controllers"
 	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"
@@ -827,7 +828,6 @@ help:
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... list_install_components"
-	@echo "... movingmass_controller"
 	@echo "... rebuild_cache"
 	@echo "... remus_dynamics"
 	@echo "... roscpp_generate_messages_cpp"
@@ -853,9 +853,9 @@ help:
 	@echo "... visualization_msgs_generate_messages_lisp"
 	@echo "... visualization_msgs_generate_messages_py"
 	@echo "... viz_trajectory"
-	@echo "... src/movingmass_controller.o"
-	@echo "... src/movingmass_controller.i"
-	@echo "... src/movingmass_controller.s"
+	@echo "... src/controllers.o"
+	@echo "... src/controllers.i"
+	@echo "... src/controllers.s"
 	@echo "... src/remus_dynamics.o"
 	@echo "... src/remus_dynamics.i"
 	@echo "... src/remus_dynamics.s"

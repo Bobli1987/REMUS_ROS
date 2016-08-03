@@ -26,12 +26,16 @@ struct control_
   control_()
     : mass_position(0.0)
     , thrust(0.0)
-    , roll_torque(0.0)  {
+    , heave_force(0.0)
+    , roll_torque(0.0)
+    , pitch_torque(0.0)  {
     }
   control_(const ContainerAllocator& _alloc)
     : mass_position(0.0)
     , thrust(0.0)
-    , roll_torque(0.0)  {
+    , heave_force(0.0)
+    , roll_torque(0.0)
+    , pitch_torque(0.0)  {
   (void)_alloc;
     }
 
@@ -43,8 +47,14 @@ struct control_
    typedef double _thrust_type;
   _thrust_type thrust;
 
+   typedef double _heave_force_type;
+  _heave_force_type heave_force;
+
    typedef double _roll_torque_type;
   _roll_torque_type roll_torque;
+
+   typedef double _pitch_torque_type;
+  _pitch_torque_type pitch_torque;
 
 
 
@@ -123,12 +133,12 @@ struct MD5Sum< ::imm::control_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "d50f738a140e15dd0687921edc16ae0a";
+    return "3053511a874b6c53cc14542e24e79dc6";
   }
 
   static const char* value(const ::imm::control_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xd50f738a140e15ddULL;
-  static const uint64_t static_value2 = 0x0687921edc16ae0aULL;
+  static const uint64_t static_value1 = 0x3053511a874b6c53ULL;
+  static const uint64_t static_value2 = 0xcc14542e24e79dc6ULL;
 };
 
 template<class ContainerAllocator>
@@ -149,7 +159,9 @@ struct Definition< ::imm::control_<ContainerAllocator> >
   {
     return "float64 mass_position\n\
 float64 thrust\n\
+float64 heave_force\n\
 float64 roll_torque\n\
+float64 pitch_torque\n\
 ";
   }
 
@@ -170,10 +182,12 @@ namespace serialization
     {
       stream.next(m.mass_position);
       stream.next(m.thrust);
+      stream.next(m.heave_force);
       stream.next(m.roll_torque);
+      stream.next(m.pitch_torque);
     }
 
-    ROS_DECLARE_ALLINONE_SERIALIZER;
+    ROS_DECLARE_ALLINONE_SERIALIZER
   }; // struct control_
 
 } // namespace serialization
@@ -193,8 +207,12 @@ struct Printer< ::imm::control_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.mass_position);
     s << indent << "thrust: ";
     Printer<double>::stream(s, indent + "  ", v.thrust);
+    s << indent << "heave_force: ";
+    Printer<double>::stream(s, indent + "  ", v.heave_force);
     s << indent << "roll_torque: ";
     Printer<double>::stream(s, indent + "  ", v.roll_torque);
+    s << indent << "pitch_torque: ";
+    Printer<double>::stream(s, indent + "  ", v.pitch_torque);
   }
 };
 

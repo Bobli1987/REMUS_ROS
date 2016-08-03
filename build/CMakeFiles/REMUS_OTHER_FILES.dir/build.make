@@ -47,32 +47,9 @@ include CMakeFiles/REMUS_OTHER_FILES.dir/progress.make
 
 CMakeFiles/REMUS_OTHER_FILES:
 
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o: 
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o"
-	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o -c /home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp
-
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.i"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp > CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.i
-
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.s"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.s
-
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.requires:
-.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.requires
-
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.provides: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.requires
-	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.provides.build
-.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.provides
-
-CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/movingmass_controller.cpp.o
-
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o: 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o: /home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o"
 	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o -c /home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp
 
@@ -95,7 +72,7 @@ CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/remus_dynamics.cpp.o.provides.build: CM
 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o: 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o: /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o"
 	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o -c /home/bo/dev/REMUS/src/imm/src/viz_trajectory.cpp
 
@@ -115,6 +92,29 @@ CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides: CMakeFil
 .PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides
 
 CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/viz_trajectory.cpp.o
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o: 
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o: /home/bo/dev/REMUS/src/imm/src/controllers.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/bo/dev/REMUS/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o"
+	/usr/bin/g++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o -c /home/bo/dev/REMUS/src/imm/src/controllers.cpp
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.i"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/bo/dev/REMUS/src/imm/src/controllers.cpp > CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.i
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.s"
+	/usr/bin/g++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/bo/dev/REMUS/src/imm/src/controllers.cpp -o CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.s
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.requires:
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.requires
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.provides: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.requires
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.provides.build
+.PHONY : CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.provides
+
+CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o.provides.build: CMakeFiles/REMUS_OTHER_FILES.dir/imm/src/controllers.cpp.o
 
 CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o: 
 CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/task_manager.cpp.o: /home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp

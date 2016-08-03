@@ -52,7 +52,7 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 100
+      Plane Cell Count: 200
       Reference Frame: <Fixed Frame>
       Value: true
     - Class: rviz/Marker
@@ -74,9 +74,13 @@ Visualization Manager:
           Value: true
         left_wing:
           Value: true
+        lower_wing:
+          Value: true
         nose:
           Value: true
         right_wing:
+          Value: true
+        upper_wing:
           Value: true
         world:
           Value: false
@@ -91,9 +95,13 @@ Visualization Manager:
             REMUS:
               left_wing:
                 {}
+              lower_wing:
+                {}
               nose:
                 {}
               right_wing:
+                {}
+              upper_wing:
                 {}
       Update Interval: 0
       Value: true
@@ -117,12 +125,22 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        lower_wing:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         nose:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
         right_wing:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        upper_wing:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -157,22 +175,22 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 33.9675
+      Distance: 85.3395
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 22.1912
-        Y: 3.69111
-        Z: -7.84623
+        X: 65.5667
+        Y: 27.3178
+        Z: -21.8319
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.5002
-      Target Frame: <Fixed Frame>
+      Pitch: 0.330001
+      Target Frame: world
       Value: Orbit (rviz)
-      Yaw: 3.50494
+      Yaw: 3.57302
     Saved: ~
 Window Geometry:
   Displays:

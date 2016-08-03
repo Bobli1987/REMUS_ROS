@@ -357,9 +357,11 @@ Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d
     Vector6d vec1, vec2;
     Eigen::Vector3d angle;
     angle << position[3], position[4], position[5];
-    // set heave and pitch relative velocity to zero
+    // ignore some dofs
     Vector6d diag1;
-    diag1 << 1, 1, 0, 1, 0, 1;
+//    diag1 << 1, 1, 0, 1, 0, 1; // ignore heave and pitch
+//    diag1 << 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
+    diag1 << 1, 1, 1, 1, 1, 1;
     Vector6d current_velocity = CurrentVelocity(position);
     Vector6d relative_velocity = diag1.asDiagonal() * (velocity - current_velocity);
     Matrix6d total_mass_matrix = RigidBodyInertiaMatrix() + AddedMassMatrix();
@@ -373,9 +375,11 @@ Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d
             + actuation_);
     vec2 = TransformationMatrix(angle) * velocity;
     state_derivative << vec1, vec2;
-    // ignore heave and pitch motion
+    // ignore some dofs
     Vector12d diag2;
-    diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1;
+//    diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1; // ignore heave and pitch
+//    diag2 << 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
+    diag2 << 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
     return diag2.asDiagonal() * state_derivative;
 }
 

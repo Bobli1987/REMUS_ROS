@@ -23,7 +23,7 @@
   />
   <node
     pkg="imm"
-    type="movingmass_controller"
+    type="controllers"
     name="control_node"
     launch-prefix="xterm -e"
   />

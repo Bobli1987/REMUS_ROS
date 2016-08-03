@@ -3,6 +3,8 @@
   (:export
    "<CONTROL>"
    "CONTROL"
+   "<EULER>"
+   "EULER"
    "<POSE>"
    "POSE"
   ))

@@ -33,9 +33,9 @@
   <link name="right_wing">
     <visual>
       <geometry>
-        <box size="0.1 .6 .01"/>
+        <box size="0.1 .3 .01"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 0.3 0"/>
+      <origin rpy="0 0 0" xyz="-0.5 0.1 0"/>
       <material name="white">
         <color rgba="1 1 1 1"/>
       </material>     
@@ -51,9 +51,9 @@
   <link name="left_wing">
     <visual>
       <geometry>
-        <box size="0.1 .6 .01"/>
+        <box size="0.1 .3 .01"/>
       </geometry>
-      <origin rpy="0 0 0" xyz="0 -0.3 0"/>
+      <origin rpy="0 0 0" xyz="-0.5 -0.1 0"/>
       <material name="white">
         <color rgba="1 1 1 1"/>
       </material>     
@@ -65,5 +65,41 @@
     <child link="left_wing"/>
     <origin xyz="0 0 0"/>
   </joint>
+
+<link name="upper_wing">
+  <visual>
+    <geometry>
+      <box size="0.1 .01 .3 "/>
+    </geometry>
+    <origin rpy="0 0 0" xyz="-0.5 0 0.1"/>
+    <material name="white">
+      <color rgba="1 1 1 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="base_to_upper_wing" type="fixed">
+  <parent link="REMUS"/>
+  <child link="upper_wing"/>
+  <origin xyz="0 0 0"/>
+</joint>
+
+<link name="lower_wing">
+  <visual>
+    <geometry>
+      <box size="0.1 .01 .3 "/>
+    </geometry>
+    <origin rpy="0 0 0" xyz="-0.5 0 -0.1"/>
+    <material name="white">
+      <color rgba="1 1 1 1"/>
+    </material>
+  </visual>
+</link>
+
+<joint name="base_to_lower_wing" type="fixed">
+  <parent link="REMUS"/>
+  <child link="lower_wing"/>
+  <origin xyz="0 0 0"/>
+</joint>
   
 </robot>
