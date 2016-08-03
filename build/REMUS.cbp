@@ -1348,6 +1348,8 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/include/imm/current.h">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/imm/include/imm/depth_controller.h">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/include/imm/remus.h">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/launch/simulator.launch">

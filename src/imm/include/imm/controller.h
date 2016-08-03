@@ -24,6 +24,9 @@ public:
     MovingMassController(const Remus&, const double&, const double&, const double&, const double&, const double&);
     MovingMassController(const Remus& vehicle): MovingMassController(vehicle, 0.5, 1.0, 1.0, 1.0, 1.0) {}
 
+    // the member functon used to compute yv
+    std::vector<double> ComputeActuation(const Vector6d&, const Vector6d&, const double&, const double&);
+
 private:
     double mass_, Ixx_, a22_, a44_, gravity_;
     Eigen::Vector3d cog_;
@@ -55,10 +58,7 @@ private:
     inline double ddv(const double&, const double&, const double&, const double&) const;
     inline double sat(const double&) const;
 
-public:
     double mass_position_ = 0;
-    // the member method used to compute yv
-    std::vector<double> ComputeActuation(const Vector6d&, const Vector6d&, const double&, const double&);
 };
 // constructor
 MovingMassController::MovingMassController(const Remus &vehicle, const double &k0, const double &k1, const double &k2,

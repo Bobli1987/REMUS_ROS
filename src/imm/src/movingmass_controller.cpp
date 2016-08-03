@@ -6,6 +6,7 @@
 #include "imm/pose.h"
 #include "imm/control.h"
 #include "remus.h"
+#include "depth_controller.h"
 
 typedef Eigen::Matrix<double, 6, 1> Vector6d;
 
@@ -27,7 +28,10 @@ imm::control msg_actuation;
 
 // the moving mass controller
 Remus vehicle = Remus();
-MovingMassController controller = MovingMassController(vehicle, 0.3, 0.8, 1, 1, 1);
+MovingMassController controller(vehicle, 0.3, 0.8, 1, 1, 1);
+
+// the depth controller
+DepthController depth_controller(-0.772, 10.345, 0.21);
 
 void callback_pose(const imm::pose &msg_pose)
 {
@@ -54,7 +58,7 @@ void timerCallback(const ros::TimerEvent)
 }
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "movingmass_controller");
+    ros::init(argc, argv, "motion_controller");
     ros::NodeHandle nh;
 
     // create a timer to control the publising

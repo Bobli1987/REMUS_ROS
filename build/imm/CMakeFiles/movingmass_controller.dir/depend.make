@@ -5,6 +5,7 @@ imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/devel/include/imm/pose.h
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/src/imm/include/imm/controller.h
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/src/imm/include/imm/current.h
+imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/src/imm/include/imm/depth_controller.h
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/src/imm/include/imm/remus.h
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /home/bo/dev/REMUS/src/imm/src/movingmass_controller.cpp
 imm/CMakeFiles/movingmass_controller.dir/src/movingmass_controller.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h

@@ -62,6 +62,14 @@ string
 Eigen/Dense
 -
 
+/home/bo/dev/REMUS/src/imm/include/imm/depth_controller.h
+vector
+-
+cmath
+-
+deque
+-
+
 /home/bo/dev/REMUS/src/imm/include/imm/remus.h
 iostream
 -
@@ -99,6 +107,8 @@ imm/control.h
 /home/bo/dev/REMUS/src/imm/src/imm/control.h
 remus.h
 /home/bo/dev/REMUS/src/imm/src/remus.h
+depth_controller.h
+/home/bo/dev/REMUS/src/imm/src/depth_controller.h
 
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h

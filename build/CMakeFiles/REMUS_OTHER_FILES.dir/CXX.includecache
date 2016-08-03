@@ -23,4 +23,6 @@ imm/control.h
 /home/bo/dev/REMUS/src/imm/src/imm/control.h
 remus.h
 /home/bo/dev/REMUS/src/imm/src/remus.h
+depth_controller.h
+/home/bo/dev/REMUS/src/imm/src/depth_controller.h
 
