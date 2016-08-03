@@ -1306,6 +1306,30 @@ ship_los/src/teleop_keyboard.cpp.s:
 	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard.cpp.s
 .PHONY : ship_los/src/teleop_keyboard.cpp.s
 
+ship_los/src/teleop_keyboard_(copy).o: ship_los/src/teleop_keyboard_(copy).cpp.o
+.PHONY : ship_los/src/teleop_keyboard_(copy).o
+
+# target to build an object file
+ship_los/src/teleop_keyboard_(copy).cpp.o:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard_(copy).cpp.o"
+.PHONY : ship_los/src/teleop_keyboard_(copy).cpp.o
+
+ship_los/src/teleop_keyboard_(copy).i: ship_los/src/teleop_keyboard_(copy).cpp.i
+.PHONY : ship_los/src/teleop_keyboard_(copy).i
+
+# target to preprocess a source file
+ship_los/src/teleop_keyboard_(copy).cpp.i:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard_(copy).cpp.i"
+.PHONY : ship_los/src/teleop_keyboard_(copy).cpp.i
+
+ship_los/src/teleop_keyboard_(copy).s: ship_los/src/teleop_keyboard_(copy).cpp.s
+.PHONY : ship_los/src/teleop_keyboard_(copy).s
+
+# target to generate assembly for a file
+ship_los/src/teleop_keyboard_(copy).cpp.s:
+	$(MAKE) -f CMakeFiles/REMUS_OTHER_FILES.dir/build.make "CMakeFiles/REMUS_OTHER_FILES.dir/ship_los/src/teleop_keyboard_(copy).cpp.s"
+.PHONY : ship_los/src/teleop_keyboard_(copy).cpp.s
+
 ship_los/src/viz_trajectory.o: ship_los/src/viz_trajectory.cpp.o
 .PHONY : ship_los/src/viz_trajectory.o
 
@@ -1441,6 +1465,9 @@ help:
 	@echo "... ship_los/src/teleop_keyboard.o"
 	@echo "... ship_los/src/teleop_keyboard.i"
 	@echo "... ship_los/src/teleop_keyboard.s"
+	@echo "... ship_los/src/teleop_keyboard_(copy).o"
+	@echo "... ship_los/src/teleop_keyboard_(copy).i"
+	@echo "... ship_los/src/teleop_keyboard_(copy).s"
 	@echo "... ship_los/src/viz_trajectory.o"
 	@echo "... ship_los/src/viz_trajectory.i"
 	@echo "... ship_los/src/viz_trajectory.s"

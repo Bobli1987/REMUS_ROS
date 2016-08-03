@@ -1396,6 +1396,8 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/task_manager.cpp">
       </Unit>
+      <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/teleop_keyboard (copy).cpp">
+      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/teleop_keyboard.cpp">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/ship_los/src/viz_trajectory.cpp">
