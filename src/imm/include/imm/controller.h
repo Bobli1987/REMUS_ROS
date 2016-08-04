@@ -59,6 +59,12 @@ private:
     inline double sat(const double&) const;
 
     double mass_position_ = 0;
+    double tunnel_thrust_ = 0;
+
+    // elapsed time since current simulation starts
+    double current_time_ = 0.0;
+    // output function
+    void OutputData(const std::string&, const std::string&);
 };
 // constructor
 MovingMassController::MovingMassController(const Remus &vehicle, const double &k0, const double &k1, const double &k2,
@@ -145,6 +151,26 @@ double MovingMassController::ddv(const double &v, const double &r, const double 
 double MovingMassController::sat(const double &x) const {
     return ( std::fabs(x) <= 1 ? x : boost::math::sign(x) );
 }
+// save control data into text files
+void MovingMassController::OutputData(const std::string &mode,
+                const std::string &control_file = "/home/bo/Documents/imm/hcontrol_file.txt")
+{
+    std::ofstream control_out;
+    if (mode == "trunc") {
+        control_out.open(control_file);
+    } else {
+        control_out.open(control_file, std::ofstream::app);
+    }
+    // velocity
+    control_out << std::fixed << std::setprecision(2) << current_time_ << '\t';     // first column is time
+    control_out << std::setprecision(5);
+    control_out << std::scientific << mass_position_*100 << '\t';
+    control_out << tunnel_thrust_ << std::endl;
+
+    // close the files
+    control_out.close();
+}
+// define the member function
 std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity, const Vector6d &position,
                                                       const double &heading_ref, const double &step_size) {
     double v = rvelocity[1]; // sway velocity
@@ -152,8 +178,8 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
     double p = rvelocity[3]; // roll rate
     double phi = position[3]; // roll angle
     double psi = position[5]; // yaw angle
-    // heading error
-    double epsi = psi - heading_ref;
+
+    double epsi = psi - heading_ref; // heading error
     double alpha0 = -k0_*epsi;
     double dalpha0 = -k0_*r;
     double ddalpha0 = -k0_*(f1(r) + g1_*v);
@@ -193,7 +219,13 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
     actuation[2] = mv_ * gravity_ * mass_pos*cos(phi);
     actuation[2] -= actuation[1] * tunnel_pos_;
 
+    // update the member data
+    current_time_ += step_size;
     mass_position_ = mass_pos;
+    tunnel_thrust_ = actuation[1];
+
+    // save the data into a file
+    MovingMassController::OutputData("app");
 
     return actuation;
 }

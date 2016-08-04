@@ -361,7 +361,7 @@ Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d
     Vector6d diag1;
 //    diag1 << 1, 1, 0, 1, 0, 1; // ignore heave and pitch
 //    diag1 << 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
-    diag1 << 1, 1, 1, 1, 1, 1;
+    diag1 << 1, 1, 1, 1, 1, 1; // full 6dof
     Vector6d current_velocity = CurrentVelocity(position);
     Vector6d relative_velocity = diag1.asDiagonal() * (velocity - current_velocity);
     Matrix6d total_mass_matrix = RigidBodyInertiaMatrix() + AddedMassMatrix();
@@ -379,7 +379,7 @@ Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d
     Vector12d diag2;
 //    diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1; // ignore heave and pitch
 //    diag2 << 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
-    diag2 << 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1;
+    diag2 << 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1; // full 6dof
     return diag2.asDiagonal() * state_derivative;
 }
 
@@ -395,6 +395,51 @@ void Remus::operator()(const std::vector<double> &state, std::vector<double> &st
     for (size_t index = 0; index < 12; ++index) {
         state_derivative[index] = dy[index];
     }
+}
+// save velocity and position data into text files
+void OutputData(const Remus &vehicle, const std::string &mode = "trunc",
+                const std::string &velocity_file = "/home/bo/Documents/imm/velocity_file.txt",
+                const std::string &position_file = "/home/bo/Documents/imm/position_file.txt",
+                const std::string &rvelocity_file = "/home/bo/Documents/imm/relative_vel_file.txt")
+{
+    std::ofstream velocity_out, position_out, rvelocity_out;
+    if (mode == "trunc") {
+        velocity_out.open(velocity_file);
+        position_out.open(position_file);
+        rvelocity_out.open(rvelocity_file);
+    } else {
+        velocity_out.open(velocity_file, std::ofstream::app);
+        position_out.open(position_file, std::ofstream::app);
+        rvelocity_out.open(rvelocity_file, std::ofstream::app);
+    }
+    // velocity
+    velocity_out << std::fixed << std::setprecision(2) << vehicle.current_time_ << '\t';     // first column is time
+    velocity_out << std::setprecision(5);
+    for (size_t index = 0; index < 6; ++index) {      // the remaining columns are data
+        velocity_out << std::scientific << vehicle.velocity_[index] << '\t';
+    }
+    velocity_out << std::endl;
+
+    // position
+    position_out << std::fixed << std::setprecision(2) << vehicle.current_time_ << '\t';
+    position_out << std::setprecision(5);
+    for (size_t index = 0; index < 6; ++index) {
+        position_out << std::scientific << vehicle.position_[index] << '\t';
+    }
+    position_out << std::endl;
+
+    // relative velocity
+    rvelocity_out << std::fixed << std::setprecision(2) << vehicle.current_time_ << '\t';
+    rvelocity_out << std::setprecision(5);
+    for (size_t index = 0; index < 6; ++index) {
+        rvelocity_out << std::scientific << vehicle.relative_velocity_[index] << '\t';
+    }
+    rvelocity_out << std::endl;
+
+    // close the files
+    velocity_out.close();
+    position_out.close();
+    rvelocity_out.close();
 }
 
 // conduct a simulation of the vehicle's motion
@@ -433,6 +478,9 @@ void RunRemus(Remus &vehicle, const size_t &step_number = 600, const double &ste
         vehicle.position_history_.push_back(vehicle.position_);
         vehicle.relative_velocity_history_.push_back(vehicle.relative_velocity_);
     }
+
+    // write the current velocity and position data into the output files
+    OutputData(vehicle, "app");
 }
 
 #endif //REMUSIMM_REMUS_H

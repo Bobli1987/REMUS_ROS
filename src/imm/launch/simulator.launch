@@ -25,13 +25,11 @@
     pkg="imm"
     type="controllers"
     name="control_node"
-    launch-prefix="xterm -e"
   />
   <node
     pkg="imm"
     type="remus_dynamics"
     name="dynamics_node"
     required="true"
-    launch-prefix="xterm -e"
   />
 </launch>

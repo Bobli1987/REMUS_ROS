@@ -22,7 +22,33 @@ private:
     // deque used to store e_{theta}
     std::deque<double> e_theta_;
 
+    // rudder angle
+    double rudder_angle_ = 0;
+
+    // elapsed time since current simulation starts
+    double current_time_ = 0.0;
+    // output function
+    void OutputData(const std::string&, const std::string&);
+
 };
+// save control data into text files
+void DepthController::OutputData(const std::string &mode,
+                const std::string &control_file = "/home/bo/Documents/imm/dcontrol_file.txt")
+{
+    std::ofstream control_out;
+    if (mode == "trunc") {
+        control_out.open(control_file);
+    } else {
+        control_out.open(control_file, std::ofstream::app);
+    }
+    // velocity
+    control_out << std::fixed << std::setprecision(2) << current_time_ << '\t';     // first column is time
+    control_out << std::setprecision(2);
+    control_out << std::scientific << rudder_angle_*180/M_PI << std::endl;
+
+    // close the files
+    control_out.close();
+}
 
 // define the member function
 std::vector<double> DepthController::ComputeActuation(const double &z, const double &theta,
@@ -65,6 +91,11 @@ std::vector<double> DepthController::ComputeActuation(const double &z, const dou
     std::vector<double> actuation;
     actuation.push_back(-50.6*delta); // heave force
     actuation.push_back(-34.6*delta); // pitch moment
+
+    // save the data
+    rudder_angle_ = delta;
+    current_time_ += step_size;
+    DepthController::OutputData("app");
 
     return actuation;
 }
