@@ -1354,11 +1354,7 @@
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/launch/simulator.launch">
       </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/imm/launch/simulator.launch~">
-      </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/msg/control.msg">
-      </Unit>
-      <Unit filename="/home/bo/dev/REMUS/src/imm/msg/control.msg~">
       </Unit>
       <Unit filename="/home/bo/dev/REMUS/src/imm/msg/euler.msg">
       </Unit>

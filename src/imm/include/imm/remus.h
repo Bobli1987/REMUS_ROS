@@ -71,6 +71,15 @@ private:
     size_t step_counter_ = 0;
 
 public:
+
+    //////////////
+    // temp     //
+    //////////////
+
+    Vector6d rigid_body_cc_;
+    Vector6d added_mass_cc_;
+
+
     // ocean current model
     OceanCurrent ocean_current_;
     // controller switch
@@ -130,6 +139,7 @@ public:
 
     // time derivative of the system state
     Vector12d StateDerivative(const Vector6d &velocity, const Vector6d &position, const double /* t */) const;
+
     // operator function to integrate
     void operator() (const std::vector<double> &state, std::vector<double> &state_derivative, const double);
 
@@ -351,36 +361,60 @@ Remus::Vector6d Remus::RestoringForceVector(const Vector6d &vec) const {
     return restoring;
 }
 
+//// time derivative of the system state
+//Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d &position, const double) const {
+//    Vector12d state_derivative;
+//    Vector6d vec1, vec2;
+//    Eigen::Vector3d angle;
+//    angle << position[3], position[4], position[5];
+//    // ignore some dofs
+//    Vector6d diag1;
+//    diag1 << 1, 1, 0, 1, 0, 1; // ignore heave and pitch
+////    diag1 << 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
+////    diag1 << 1, 1, 1, 1, 1, 1; // full 6dof
+//    Vector6d current_velocity = CurrentVelocity(position);
+//    Vector6d relative_velocity = diag1.asDiagonal() * (velocity - current_velocity);
+//    Matrix6d total_mass_matrix = RigidBodyInertiaMatrix() + AddedMassMatrix();
+//    vec1 = total_mass_matrix.inverse() *
+//           ((DisplacedMassInertiaMatrix() + AddedMassMatrix()) * CurrentAcceleration(velocity, position)
+//            + DisplacedMassCCMatrix(velocity) * current_velocity
+//            - AddedMassCCMatrix(relative_velocity) * relative_velocity
+//            - RigidBodyCCMatrix(velocity) * velocity
+//            + ViscousDampingVector(relative_velocity)
+//            + RestoringForceVector(position)
+//            + actuation_);
+//    vec2 = TransformationMatrix(angle) * velocity;
+//    state_derivative << vec1, vec2;
+//    // ignore some dofs
+//    Vector12d diag2;
+//    diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1; // ignore heave and pitch
+////    diag2 << 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
+////    diag2 << 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1; // full 6dof
+//    return diag2.asDiagonal() * state_derivative;
+//}
+
 // time derivative of the system state
 Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d &position, const double) const {
     Vector12d state_derivative;
     Vector6d vec1, vec2;
-    Eigen::Vector3d angle;
-    angle << position[3], position[4], position[5];
-    // ignore some dofs
-    Vector6d diag1;
-//    diag1 << 1, 1, 0, 1, 0, 1; // ignore heave and pitch
-//    diag1 << 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
-    diag1 << 1, 1, 1, 1, 1, 1; // full 6dof
+    Eigen::Vector3d angle(position[3], position[4], position[5]);
+
     Vector6d current_velocity = CurrentVelocity(position);
-    Vector6d relative_velocity = diag1.asDiagonal() * (velocity - current_velocity);
+    Vector6d relative_velocity = velocity - current_velocity;
     Matrix6d total_mass_matrix = RigidBodyInertiaMatrix() + AddedMassMatrix();
+
     vec1 = total_mass_matrix.inverse() *
            ((DisplacedMassInertiaMatrix() + AddedMassMatrix()) * CurrentAcceleration(velocity, position)
             + DisplacedMassCCMatrix(velocity) * current_velocity
-            - AddedMassCCMatrix(relative_velocity) * relative_velocity
             - RigidBodyCCMatrix(velocity) * velocity
+            - AddedMassCCMatrix(relative_velocity) * relative_velocity
             + ViscousDampingVector(relative_velocity)
             + RestoringForceVector(position)
             + actuation_);
     vec2 = TransformationMatrix(angle) * velocity;
     state_derivative << vec1, vec2;
-    // ignore some dofs
-    Vector12d diag2;
-//    diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1; // ignore heave and pitch
-//    diag2 << 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0; // ignore sway, roll and yaw
-    diag2 << 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1; // full 6dof
-    return diag2.asDiagonal() * state_derivative;
+
+    return state_derivative;
 }
 
 // class operator to integrate
@@ -400,17 +434,21 @@ void Remus::operator()(const std::vector<double> &state, std::vector<double> &st
 void OutputData(const Remus &vehicle, const std::string &mode = "trunc",
                 const std::string &velocity_file = "/home/bo/Documents/imm/velocity_file.txt",
                 const std::string &position_file = "/home/bo/Documents/imm/position_file.txt",
-                const std::string &rvelocity_file = "/home/bo/Documents/imm/relative_vel_file.txt")
+                const std::string &rvelocity_file = "/home/bo/Documents/imm/relative_vel_file.txt",
+                const std::string &control_file = "/home/bo/Documents/imm/actuation_file.txt")
 {
-    std::ofstream velocity_out, position_out, rvelocity_out;
+    std::ofstream velocity_out, position_out, rvelocity_out, control_out;
+    // open the files
     if (mode == "trunc") {
         velocity_out.open(velocity_file);
         position_out.open(position_file);
         rvelocity_out.open(rvelocity_file);
+        control_out.open(control_file);
     } else {
         velocity_out.open(velocity_file, std::ofstream::app);
         position_out.open(position_file, std::ofstream::app);
         rvelocity_out.open(rvelocity_file, std::ofstream::app);
+        control_out.open(control_file, std::ofstream::app);
     }
     // velocity
     velocity_out << std::fixed << std::setprecision(2) << vehicle.current_time_ << '\t';     // first column is time
@@ -436,10 +474,20 @@ void OutputData(const Remus &vehicle, const std::string &mode = "trunc",
     }
     rvelocity_out << std::endl;
 
+    // actuation
+    control_out << std::fixed << std::setprecision(2) << vehicle.current_time_ << '\t';
+    control_out << std::setprecision(5);
+    for (size_t index = 0; index < 6; ++index) {
+        control_out << std::scientific << vehicle.actuation_[index] << '\t';
+    }
+    control_out << vehicle.rigid_body_cc_[1] + vehicle.added_mass_cc_[1] << '\t';
+    control_out << std::endl;
+
     // close the files
     velocity_out.close();
     position_out.close();
     rvelocity_out.close();
+    control_out.close();
 }
 
 // conduct a simulation of the vehicle's motion
@@ -478,6 +526,9 @@ void RunRemus(Remus &vehicle, const size_t &step_number = 600, const double &ste
         vehicle.position_history_.push_back(vehicle.position_);
         vehicle.relative_velocity_history_.push_back(vehicle.relative_velocity_);
     }
+
+    vehicle.rigid_body_cc_ = -vehicle.RigidBodyCCMatrix(vehicle.velocity_) * vehicle.velocity_;
+    vehicle.added_mass_cc_ = -vehicle.AddedMassCCMatrix(vehicle.relative_velocity_) * vehicle.relative_velocity_;
 
     // write the current velocity and position data into the output files
     OutputData(vehicle, "app");

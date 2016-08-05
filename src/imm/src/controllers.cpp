@@ -37,12 +37,13 @@ DepthController depth_controller(-0.772, 10.345, 0.21);
 
 void callback_pose(const imm::pose &msg_pose)
 {
-    position << 0, 0, msg_pose.z, msg_pose.roll, msg_pose.pitch, msg_pose.yaw;
+    position << msg_pose.x, msg_pose.y, msg_pose.z, msg_pose.roll, msg_pose.pitch, msg_pose.yaw;
 }
 
 void callback_rvel(const geometry_msgs::Twist &msg_rvel)
 {
-    rvelocity << 0, msg_rvel.linear.y, 0, msg_rvel.angular.x, 0, msg_rvel.angular.z;
+    rvelocity << msg_rvel.linear.x, msg_rvel.linear.y, msg_rvel.linear.z,
+            msg_rvel.angular.x, msg_rvel.angular.y, msg_rvel.angular.z;
 }
 
 void timerCallback(const ros::TimerEvent)
