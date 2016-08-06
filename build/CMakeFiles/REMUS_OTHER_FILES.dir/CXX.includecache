@@ -6,23 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/bo/dev/REMUS/src/imm/src/controllers.cpp
+/home/bo/dev/REMUS/src/imm/src/remus_dynamics.cpp
 ros/ros.h
--
-vector
 -
 geometry_msgs/Twist.h
 -
-eigen3/Eigen/Dense
+geometry_msgs/Pose.h
 -
-controller.h
-/home/bo/dev/REMUS/src/imm/src/controller.h
+remus.h
+/home/bo/dev/REMUS/src/imm/src/remus.h
 imm/pose.h
 /home/bo/dev/REMUS/src/imm/src/imm/pose.h
 imm/control.h
 /home/bo/dev/REMUS/src/imm/src/imm/control.h
-remus.h
-/home/bo/dev/REMUS/src/imm/src/remus.h
-depth_controller.h
-/home/bo/dev/REMUS/src/imm/src/depth_controller.h
 
