@@ -15,7 +15,7 @@ imm::pose msg_pos;
 
 // the vehicle for the simulation
 //Remus vehicle = Remus({1.0, 0, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0.1, 0}, 4);
-Remus vehicle = Remus({1.2, 0.1, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0}, 9); // 6dof simulation
+Remus vehicle = Remus({1.0, 0.1, 0, 0, 0 ,0}, {0, 0, 0, 0, 0, 0}, {0, 0, 0}, 9); // 6dof simulation
 
 // the time step of the ode solver and message publishing
 double step_size = 0.05;

@@ -152,7 +152,6 @@ double MovingMassController::dv(const double &v, const double &r, const double &
 double MovingMassController::ddv(const double &v, const double &r, const double &p, const double &phi) const {
     return pf2pv(v)*dv(v,r,phi) + pf2pr(r)*dr(v,r) + g2_*p;
 }
-
 double MovingMassController::sat(const double &x) const {
     return ( std::fabs(x) <= 1 ? x : boost::math::sign(x) );
 }
@@ -180,6 +179,72 @@ void MovingMassController::OutputData(const std::string &mode,
     // close the files
     control_out.close();
 }
+//// define the member function
+//std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity, const Vector6d &position,
+//                                                      const double &heading_ref, const double &step_size) {
+//    double v = rvelocity[1]; // sway velocity
+//    double p = rvelocity[3]; // roll rate
+//    double r = rvelocity[5]; // yaw rate
+//    double phi = position[3]; // roll angle
+//    double psi = position[5]; // yaw angle
+
+//    double epsi = psi - heading_ref; // heading error
+//    double alpha0 = -k0_*epsi;
+//    double dalpha0 = -k0_*r;
+//    double ddalpha0 = -k0_*(f1(r) + g1_*v);
+//    double dddalpha0 = -k0_*pf1pr(r)*dr(v,r) - k0_*g1_*dv(v,r,phi);
+//    double ddddalpha0 = -k0_*ppf1prr(r)*pow(dr(v,r),2) - k0_*pf1pr(r)*ddr(v,r,phi) - k0_*g1_*ddv(v,r,p,phi);
+
+//    double z1 = r - alpha0;
+//    double alpha1 = (-k1_*z1-epsi-f1(r)+dalpha0)/g1_;
+//    double dalpha1 = (-r-(k1_+pf1pr(r))*dr(v,r)+k1_*dalpha0+ddalpha0)/g1_;
+//    double ddalpah1 = (-dr(v,r)-ppf1prr(r)*pow(dr(v,r),2)-(k1_+pf1pr(r))*ddr(v,r,phi)+k1_*ddalpha0+dddalpha0)/g1_;
+//    double dddalpha1 = (-ddr(v,r,phi)-2*ppf1prr(r)*dr(v,r)*ddv(v,r,p,phi)-(k1_+pf1pr(r))*dddr(v,r,p,phi)
+//                        -ppf1prr(r)*dr(v,r)*ddr(v,r,phi)+k1_*dddalpha0+ddddalpha0)/g1_;
+//    double z2 = v - alpha1;
+//    double alpha2 = (-k2_*z2-g1_*z1-f2(v,r)+dalpha1)/g2_;
+//    double dalpah2 = (-(k2_+pf2pv(v))*dv(v,r,phi)-(g1_+pf2pr(r))*dr(v,r)+g1_*dalpha0+k2_*dalpha1+ddalpah1)/g2_;
+//    double ddalpha2 = (-(k2_+pf2pv(v))*ddv(v,r,p,phi)-(g1_+pf2pr(r))*ddr(v,r,phi)+g1_*ddalpha0+k2_*ddalpah1
+//                       +dddalpha1-ppf2pvv(v)*pow(dv(v,r,phi),2)-ppf2prr(r)*pow(dr(v,r),2))/g2_;
+//    double z3 = phi - alpha2;
+//    double alpha3 = -k3_*z3 - g2_*z2 + dalpah2;
+//    double dalpha3 = -k3_*(p-dalpah2) - g2_*(dv(v,r,phi) - dalpha1) + ddalpha2;
+
+//    double z4 = p - alpha3;
+
+//    // update the errors
+//    errors_ = {epsi, z1, z2, z3, z4};
+//    // actuation stores both the mass position, tunnel thrust and the roll torque
+//    std::vector<double> actuation(3, 0); // initialized as {0, 0, 0}
+
+//    // set saturation to the mass position
+//    double mass_pos = (-k4_*z4-z3-f3(v,r,p,phi)+dalpha3)/g3_;
+//    mass_pos = std::fabs(mass_pos) > 0.06 ? boost::math::sign(mass_pos)*0.06 : mass_pos;
+//    mass_pos = std::fabs(mass_pos-mass_position_) > 0.06*step_size ? (mass_position_ +
+//            boost::math::sign(mass_pos-mass_position_)*0.06*step_size) : mass_pos;
+//    // internal moving mass position
+//    actuation[0] = mass_pos;
+//    // tunnel thrust along y axis
+//    actuation[1] = - std::fabs(epsilon42_*actuation[0])*sat(errors_[2]/1e-4);
+//    actuation[1] *= ((mass_+a22_)*(Ixx_+a44_)-pow(mass_*cog_[2],2))/(Ixx_+a44_-tunnel_pos_*mass_*cog_[2]);
+//    // set saturation to the tunnel thrust
+//    actuation[1] = std::fabs(actuation[1]) > 6 ? boost::math::sign(actuation[1])*6 : actuation[1];
+//    // roll torque due to the shift of CG
+//    actuation[2] = mv_ * gravity_ * mass_pos*cos(phi);
+//    actuation[2] -= actuation[1] * tunnel_pos_;
+
+//    // update the member data
+//    current_time_ += step_size;
+//    mass_position_ = mass_pos;
+//    tunnel_thrust_ = actuation[1];
+//    roll_torque_ = actuation[2];
+
+//    // save the data into a file
+//    MovingMassController::OutputData("app");
+
+//    return actuation;
+//}
+
 // define the member function
 std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity, const Vector6d &position,
                                                       const double &heading_ref, const double &step_size) {
@@ -195,6 +260,7 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
     double ddalpha0 = -k0_*(f1(r) + g1_*v);
     double dddalpha0 = -k0_*pf1pr(r)*dr(v,r) - k0_*g1_*dv(v,r,phi);
     double ddddalpha0 = -k0_*ppf1prr(r)*pow(dr(v,r),2) - k0_*pf1pr(r)*ddr(v,r,phi) - k0_*g1_*ddv(v,r,p,phi);
+
     double z1 = r - alpha0;
     double alpha1 = (-k1_*z1-epsi-f1(r)+dalpha0)/g1_;
     double dalpha1 = (-r-(k1_+pf1pr(r))*dr(v,r)+k1_*dalpha0+ddalpha0)/g1_;
@@ -209,6 +275,7 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
     double z3 = phi - alpha2;
     double alpha3 = -k3_*z3 - g2_*z2 + dalpah2;
     double dalpha3 = -k3_*(p-dalpah2) - g2_*(dv(v,r,phi) - dalpha1) + ddalpha2;
+
     double z4 = p - alpha3;
 
     // update the errors
@@ -227,10 +294,13 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
     actuation[1] = - std::fabs(epsilon42_*actuation[0])*sat(errors_[2]/1e-4);
     actuation[1] *= ((mass_+a22_)*(Ixx_+a44_)-pow(mass_*cog_[2],2))/(Ixx_+a44_-tunnel_pos_*mass_*cog_[2]);
     // set saturation to the tunnel thrust
-    actuation[1] = std::fabs(actuation[1]) > 8 ? boost::math::sign(actuation[1])*8 : actuation[1];
+    actuation[1] = std::fabs(actuation[1]) > 6 ? boost::math::sign(actuation[1])*6 : actuation[1];
     // roll torque due to the shift of CG
     actuation[2] = mv_ * gravity_ * mass_pos*cos(phi);
     actuation[2] -= actuation[1] * tunnel_pos_;
+
+    if (current_time_ > 10)
+        actuation[2] = 0;
 
     // update the member data
     current_time_ += step_size;
@@ -243,62 +313,5 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
 
     return actuation;
 }
-
-//// define the member function
-//std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelocity, const Vector6d &position,
-//                                                      const double &heading_ref, const double &step_size) {
-//    double v = rvelocity[1]; // sway velocity
-//    double w = rvelocity[2]; // heave velocity
-
-//    if (std::isnan(w)) {
-//        w = -1e-4;
-//    }
-
-//    double p = rvelocity[3]; // roll rate
-//    double r = rvelocity[5]; // yaw rate
-//    double phi = position[3]; // roll angle
-//    double psi = position[5]; // yaw angle
-
-//    double epsi = psi - heading_ref; // heading error
-//    double alpha0 = -k0_*epsi;
-//    double dalpha0 = -k0_*r;
-//    double ddalpha0 = -k0_*(f1(r) + g1_*v);
-
-//    double z1 = r - alpha0;
-//    double alpha1 = (-k1_*z1-epsi-f1(r)+dalpha0)/g1_;
-//    double dalpha1 = (-r-(k1_+pf1pr(r))*dr(v,r)+k1_*dalpha0+ddalpha0)/g1_;
-
-//    double z2 = v - alpha1;
-
-//    // update the errors
-//    errors_ = {epsi, z1, z2};
-//    // actuation stores both the mass position, tunnel thrust and the roll torque
-//    std::vector<double> actuation(3, 0); // initialized as {0, 0, 0}
-
-//    // internal mass is disabled
-//    double mass_pos = 0;
-
-//    // internal moving mass position
-//    actuation[0] = mass_pos;
-//    // tunnel thrust along y axis
-//    actuation[1] = -k2_*z2 - g1_*z1 - f2(v,r) + dalpha1 - p*w - g2_*phi;
-//    actuation[1] *= ((mass_+a22_)*(Ixx_+a44_)-pow(mass_*cog_[2],2))/(Ixx_+a44_-tunnel_pos_*mass_*cog_[2]);
-//    // set saturation to the tunnel thrust
-//    actuation[1] = std::fabs(actuation[1]) > 3 ? boost::math::sign(actuation[1])*3 : actuation[1];
-//    // roll torque due to the shift of CG
-//    actuation[2] = mv_ * gravity_ * mass_pos*cos(phi);
-//    actuation[2] -= actuation[1] * tunnel_pos_;
-
-//    // update the member data
-//    current_time_ += step_size;
-//    mass_position_ = mass_pos;
-//    tunnel_thrust_ = actuation[1];
-//    roll_torque_ = actuation[2];
-
-//    // save the data into a file
-//    MovingMassController::OutputData("app");
-
-//    return actuation;
-//}
 
 #endif //REMUSIMM_CONTROLLER_H

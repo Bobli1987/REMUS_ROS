@@ -352,34 +352,6 @@ Remus::Vector6d Remus::RestoringForceVector(const Vector6d &vec) const {
     return restoring;
 }
 
-//// time derivative of the system state
-//Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d &position, const double) const {
-//    Vector12d state_derivative;
-//    Vector6d vec1, vec2;
-//    Eigen::Vector3d angle;
-//    angle << position[3], position[4], position[5];
-//    // ignore some dofs
-//    Vector6d diag1;
-//    diag1 << 1, 1, 0, 1, 0, 1; // ignore heave and pitch
-//    Vector6d current_velocity = CurrentVelocity(position);
-//    Vector6d relative_velocity = diag1.asDiagonal() * (velocity - current_velocity);
-//    Matrix6d total_mass_matrix = RigidBodyInertiaMatrix() + AddedMassMatrix();
-//    vec1 = total_mass_matrix.inverse() *
-//           ((DisplacedMassInertiaMatrix() + AddedMassMatrix()) * CurrentAcceleration(velocity, position)
-//            + DisplacedMassCCMatrix(velocity) * current_velocity
-//            - AddedMassCCMatrix(relative_velocity) * relative_velocity
-//            - RigidBodyCCMatrix(velocity) * velocity
-//            + ViscousDampingVector(relative_velocity)
-//            + RestoringForceVector(position)
-//            + actuation_);
-//    vec2 = TransformationMatrix(angle) * velocity;
-//    state_derivative << vec1, vec2;
-//    // ignore some dofs
-//    Vector12d diag2;
-//    diag2 << 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1; // ignore heave and pitch
-//    return diag2.asDiagonal() * state_derivative;
-//}
-
 // time derivative of the system state
 Remus::Vector12d Remus::StateDerivative(const Vector6d &velocity, const Vector6d &position, const double) const {
     Vector12d state_derivative;
