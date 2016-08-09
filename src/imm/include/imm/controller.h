@@ -295,12 +295,16 @@ std::vector<double> MovingMassController::ComputeActuation(const Vector6d &rvelo
     actuation[1] *= ((mass_+a22_)*(Ixx_+a44_)-pow(mass_*cog_[2],2))/(Ixx_+a44_-tunnel_pos_*mass_*cog_[2]);
     // set saturation to the tunnel thrust
     actuation[1] = std::fabs(actuation[1]) > 6 ? boost::math::sign(actuation[1])*6 : actuation[1];
+
     // roll torque due to the shift of CG
     actuation[2] = mv_ * gravity_ * mass_pos*cos(phi);
-    actuation[2] -= actuation[1] * tunnel_pos_;
 
-    if (current_time_ > 10)
+    ////////////////////////
+    if (current_time_ > 15)
         actuation[2] = 0;
+    ////////////////////////
+
+    actuation[2] -= actuation[1] * tunnel_pos_;
 
     // update the member data
     current_time_ += step_size;
